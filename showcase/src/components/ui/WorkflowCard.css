@@ -13,6 +13,8 @@
   box-shadow: 0 4px 24px -1px rgba(0, 0, 0, 0.2);
   position: relative;
   overflow: hidden;
+  box-sizing: border-box;
+  width: 100%;
 }
 
 /* Subtle top glow line */
@@ -116,10 +118,17 @@
   
   .workflow-card__example {
     padding: 1rem;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    width: 100%;
+    box-sizing: border-box;
   }
   
   .example-cmd {
     font-size: 0.8rem;
+    white-space: pre-wrap;
     word-break: break-all;
+    display: inline-block;
+    min-width: 100%; /* Ensure background colors stretch if scrolled */
   }
 }

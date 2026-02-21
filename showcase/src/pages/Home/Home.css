@@ -411,68 +411,163 @@
   }
 }
 
+/* PREMIUM MOBILE OVERHAUL */
 @media (max-width: 768px) {
+  .home-container {
+    padding: 0 1rem;
+    overflow-x: hidden; /* Prevent horizontal overflow */
+  }
+
   .page-section {
+    padding-top: 1rem;
+  }
+
+  /* Hero Adjustments */
+  .hero-section {
+    min-height: auto; /* Remove strict min-height */
     padding-top: 2rem;
+    padding-bottom: 3rem;
   }
   
   .hero-content {
-    margin-top: 2rem;
+    margin-top: 0;
+    width: 100%;
+  }
+
+  .main-sphere {
+    width: 400px;
+    height: 400px;
+    top: -50px;
   }
   
   .glass-badge {
-    font-size: 0.75rem;
-    padding: 0.4rem 1rem;
+    font-size: 0.7rem;
+    padding: 0.35rem 0.85rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .hero-title {
+    font-size: clamp(2.2rem, 8vw, 3rem); /* Smaller for true mobile */
+    margin-bottom: 1rem;
+    line-height: 1.1;
+  }
+
+  .hero-subtitle {
+    font-size: 0.95rem;
+    margin-bottom: 2rem;
+    padding: 0 0.5rem;
   }
   
   .hero-actions {
     flex-direction: column;
     width: 100%;
-    padding: 0 1rem;
+    gap: 0.85rem;
   }
 
   .btn-large {
     width: 100%;
     justify-content: center;
+    padding: 0.75rem 1rem;
+    font-size: 0.95rem;
+  }
+
+  /* Stats Bar Adjustment */
+  .stats-bar {
+    margin-top: 1rem;
+    margin-bottom: 4rem;
+    border-radius: 20px;
+  }
+
+  /* Bento Layouts */
+  .pillars-section {
+    padding-bottom: 4rem;
   }
 
   .bento-card {
-    padding: 1.75rem;
-    gap: 1rem;
+    padding: 1.5rem;
+    border-radius: 20px;
   }
-  
-  .cta-inner {
-    padding: 3rem 1.5rem;
-    border-radius: 24px;
-  }
-}
 
-@media (max-width: 600px) {
+  .bento-card h3 {
+    font-size: 1.25rem;
+  }
+
+  .bento-card p {
+    font-size: 0.95rem;
+  }
+
+  /* Walkthrough adjustments */
+  .walkthrough-section {
+    padding-bottom: 5rem;
+  }
+
   .step-row {
     flex-direction: column;
     align-items: flex-start;
-    gap: 1.25rem;
+    gap: 1rem;
     padding: 1.5rem;
+    border-radius: 20px;
+  }
+
+  .step-icon-wrap {
+    width: 48px;
+    height: 48px;
+  }
+
+  .step-body h3 {
+    font-size: 1.1rem;
+  }
+
+  .step-body p {
+    font-size: 0.9rem;
   }
   
+  /* CTA Adjustments */
+  .cta-section {
+    padding-bottom: 3rem;
+  }
+
+  .cta-inner {
+    padding: 2.5rem 1.25rem;
+    border-radius: 24px;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+  }
+
+  .cta-inner h2 {
+    font-size: 1.75rem;
+  }
+
+  .cta-inner p {
+    font-size: 0.95rem;
+    margin-bottom: 2rem;
+  }
+  
+  .cta-actions {
+    flex-direction: column;
+    width: 100%;
+    gap: 0.85rem;
+  }
+  
+  .cta-actions .btn-large {
+    width: 100%;
+  }
+}
+
+/* Extreme Small Mobile (iPhone SE etc) */
+@media (max-width: 400px) {
   .stats-bar {
     grid-template-columns: 1fr;
   }
   .stat-item {
     border-right: none;
     border-bottom: 1px solid var(--glass-border);
+    padding: 1.5rem 1rem;
   }
   .stat-item:last-child {
     border-bottom: none;
   }
-  
-  .cta-actions {
-    flex-direction: column;
-    width: 100%;
-  }
-  
-  .cta-actions .btn-large {
-    width: 100%;
-    justify-content: center;
+  .stat-value {
+    font-size: 2rem;
   }
 }

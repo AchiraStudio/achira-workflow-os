@@ -124,28 +124,49 @@
 @media (max-width: 768px) {
   .workflows-grid {
     grid-template-columns: 1fr;
-    gap: 1rem;
+    gap: 1.25rem;
   }
   
+  .terminal-intro {
+    border-radius: 20px;
+    margin-bottom: 3rem;
+    width: 100%;
+    box-sizing: border-box;
+    overflow-x: hidden;
+  }
+
   .terminal-body {
-    padding: 1.25rem 1rem;
+    padding: 1.5rem 1.25rem;
     font-size: 0.85rem;
+    line-height: 1.8;
+    word-break: break-all;
+    overflow-wrap: break-word;
+    box-sizing: border-box;
   }
   
   .terminal-bar {
-    padding: 0.65rem 1rem;
+    padding: 0.75rem 1.25rem;
+    box-sizing: border-box;
+  }
+
+  .terminal-title-label {
+    margin-left: max(0.25rem, auto);
+    text-align: right;
+    font-size: 0.65rem;
   }
   
   .filter-tabs {
     flex-wrap: nowrap;
     overflow-x: auto; /* Allow horizontal scroll for tabs */
-    padding-bottom: 0.5rem; /* Space for scrollbar */
+    padding-bottom: 0.25rem; /* Space for scrollbar */
     justify-content: flex-start;
     -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
     padding: 0.35rem; 
     white-space: nowrap;
     margin-bottom: 2rem;
     scrollbar-width: none; 
+    border-radius: 20px;
+    width: 100%;
   }
   
   .filter-tabs::-webkit-scrollbar {
@@ -153,7 +174,7 @@
   }
 
   .filter-tab {
-    padding: 0.4rem 1rem;
+    padding: 0.5rem 1rem;
     font-size: 0.85rem;
   }
 }

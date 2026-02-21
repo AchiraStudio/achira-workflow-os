@@ -12,6 +12,10 @@
   background: var(--glass-bg);
   border-radius: var(--border-radius-xl);
   border: 1px solid var(--glass-border);
+  overflow-x: auto; /* Enable horizontal scrolling inside the panel */
+  -webkit-overflow-scrolling: touch;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .panel-title {
@@ -220,10 +224,65 @@
 }
 
 @media (max-width: 768px) {
+  .arch-container {
+    overflow-x: hidden;
+    width: 100%;
+    padding: 0 1rem 4rem;
+  }
+  
+  .tree-panel {
+    padding: 1.5rem; /* Tighter padding */
+    border-radius: 20px;
+  }
+
+  .skill-category {
+    padding: 1.5rem;
+    border-radius: 20px;
+  }
+
+  /* Wrap long directory names on very small screens */
+  .tree-name {
+    word-break: normal;
+    white-space: normal;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  /* Hide description text on mobile — it's decorative secondary info */
+  .tree-desc {
+    display: none;
+  }
+
+  /* Halve the tree indentation depth */
+  .tree-children {
+    padding-left: 0.75rem;
+    margin-left: 0.75rem;
+  }
+
+  .tree-node__row {
+    padding: 0.35rem 0.5rem;
+    gap: 0.5rem;
+  }
+
   .install-banner {
     flex-direction: column;
     text-align: center;
     align-items: center;
     padding: 2.5rem 1.5rem;
+    border-radius: 20px;
+  }
+  
+  .install-cmd-block {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 1.25rem 1rem;
+    overflow-x: auto; /* Ensure code fits */
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  .install-cmd-line code {
+    white-space: pre-wrap;
+    word-break: break-all;
+    font-size: 0.95rem;
   }
 }
