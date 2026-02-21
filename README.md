@@ -4,6 +4,8 @@
 
 Achira Workflow OS is a premium orchestration toolkit that transforms your development environment into a high-performance laboratory of **20 specialist agents**, **38 domain skills**, and **14 mission-critical workflows**.
 
+_Based on [antigravity-kit](https://github.com/vudovn/antigravity-kit)_
+
 [![npm version](https://img.shields.io/npm/v/achira-wf?style=for-the-badge&color=success)](https://www.npmjs.com/package/achira-wf)
 [![License](https://img.shields.io/github/license/AchiraStudio/achira-workflow-os?style=for-the-badge&color=orange)](LICENSE)
 [![GitHub Stars](https://img.shields.io/github/stars/AchiraStudio/achira-workflow-os?style=for-the-badge)](https://github.com/AchiraStudio/achira-workflow-os/stargazers)
