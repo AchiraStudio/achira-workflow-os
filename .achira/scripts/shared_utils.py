@@ -35,13 +35,13 @@ def print_error(text: str):
 
 def resolve_achira_path(base_path: Path) -> Path:
     """Ensure we find the .achira directory even if run from subfolders."""
-    curr = base_path.resolve()
+    curr: Path = base_path.resolve()
     for _ in range(5):  # search up to 5 levels
-        if (curr / ".achira").exists():
-            return curr / ".achira"
-        if curr.parent == curr:
+        if (curr / ".achira").exists():  # type: ignore
+            return curr / ".achira"  # type: ignore
+        if curr.parent == curr:  # type: ignore
             break
-        curr = curr.parent
+        curr = curr.parent  # type: ignore
     return base_path / ".achira"
 
 def get_python_cmd() -> List[str]:

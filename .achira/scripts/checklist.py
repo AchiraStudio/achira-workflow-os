@@ -27,7 +27,7 @@ from typing import List, Tuple, Optional
 
 # Import shared utilities
 sys.path.append(str(Path(__file__).parent))
-from shared_utils import Colors, print_header, print_step, print_success, print_warning, print_error, get_python_cmd
+from shared_utils import Colors, print_header, print_step, print_success, print_warning, print_error, get_python_cmd  # type: ignore
 
 # Define priority-ordered checks
 CORE_CHECKS = [
@@ -83,7 +83,7 @@ def run_script(name: str, script_path: Path, project_path: str, url: Optional[st
             print_error(f"{name}: FAILED")
             if result.stderr:
                 err_msg = str(result.stderr)
-                print(f"  Error: {err_msg[:200]}")
+                print(f"  Error: {err_msg[:200]}")  # type: ignore
         
         return {
             "name": name,

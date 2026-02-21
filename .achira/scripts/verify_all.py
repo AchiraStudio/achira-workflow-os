@@ -25,15 +25,15 @@ import sys
 import argparse
 import subprocess
 from pathlib import Path
-from typing import List, Dict, Optional
+from typing import List, Dict, Optional, Tuple, Any
 from datetime import datetime
 
 # Import shared utilities
 sys.path.append(str(Path(__file__).parent))
-from shared_utils import Colors, print_header, print_step, print_success, print_warning, print_error, get_python_cmd
+from shared_utils import Colors, print_header, print_step, print_success, print_warning, print_error, get_python_cmd  # type: ignore
 
 # Complete verification suite
-VERIFICATION_SUITE = [
+VERIFICATION_SUITE: List[Dict[str, Any]] = [
     # P0: Security (CRITICAL)
     {
         "category": "Security",
@@ -154,7 +154,7 @@ def run_script(name: str, script_path: Path, project_path: str, url: Optional[st
             print_error(f"{name}: FAILED ({duration:.1f}s)")
             if result.stderr:
                 err_msg = str(result.stderr)
-                print(f"  {err_msg[:300]}")
+                print(f"  {err_msg[:300]}")  # type: ignore
         
         return {
             "name": name,
@@ -223,7 +223,7 @@ def print_final_report(results: List[dict], start_time: datetime):
             if not r["passed"] and not r.get("skipped"):
                 print(f"\n{Colors.RED}✗ {r['name']}{Colors.ENDC}")
                 if r.get("error"):
-                    error_preview = str(r["error"])[:200]
+                    error_preview = str(r["error"])[:200]  # type: ignore
                     print(f"  Error: {error_preview}")
         print()
     

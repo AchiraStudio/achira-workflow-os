@@ -2,7 +2,7 @@
 
 > **The first Agentic Operating System for AI-native software engineering.**
 
-Achira Workflow OS is a premium orchestration toolkit that transforms your development environment into a high-performance laboratory of 20 specialist agents, 38 domain skills, and 14 mission-critical workflows.
+Achira Workflow OS is a premium orchestration toolkit that transforms your development environment into a high-performance laboratory of **20 specialist agents**, **38 domain skills**, and **14 mission-critical workflows**.
 
 [![npm version](https://img.shields.io/npm/v/achira-wf?style=for-the-badge&color=success)](https://www.npmjs.com/package/achira-wf)
 [![License](https://img.shields.io/github/license/AchiraStudio/achira-workflow-os?style=for-the-badge&color=orange)](LICENSE)
@@ -16,26 +16,49 @@ Achira Workflow OS is a premium orchestration toolkit that transforms your devel
 Most AI tools just "code." Achira **thinks**, **architects**, and **verifies**.
 
 - 🧠 **Socratic Discovery**: Mandatory discovery layers that prevent architectural debt before a single file is created.
-- 🎨 **Deep Design Thinking**: Built-in design intelligence that rejects generic templates in favor of premium, high-contrast UI/UX.
-- 🛡️ **Mission-Critical Integrity**: A multi-layered verification engine (Security → Lint → Tests → UX) powered by `uv` for blazing-fast execution.
+- 🎨 **Deep Design Thinking**: Built-in design intelligence that rejects generic templates in favor of premium, high-contrast UI/UX. No magic numbers, only tokens.
+- 🛡️ **Mission-Critical Integrity**: A multi-layered verification engine (Security → Lint → Tests → UX) ensuring every commit is production-ready.
+- 🚀 **Standardized Excellence**: Strict enforcement of Clean Code, Accessibility (a11y), and Performance guidelines across all projects.
+
+---
+
+## � Installation
+
+Achira Workflow OS is designed to be globally accessible.
+
+### 1. Install via NPM
+
+Deploy the CLI tools to your system:
+
+```bash
+npm install -g achira-wf
+```
+
+### 2. Initialize in Your Project
+
+Navigate to any project directory and inject the OS:
+
+```bash
+achira-wf init
+```
+
+_This command installs the agents, skills, and workflows into a `.achira` directory and syncs slash commands for IDE discovery._
 
 ---
 
 ## 🚀 One-Click Scaffolding
 
-Get from zero to a production-ready foundation in seconds.
+Generate production-ready foundations with pre-configured directory structures, absolute imports, testing suites, and linter rules.
 
 ```bash
-# Initialize the OS in any directory
-achira-wf init
-
-# Scaffold a React + Vite SPA with service architecture
+# Scaffold a React + Vite SPA (Absolute Imports, Service-Architecture, Vitest)
+# No Tailwind. No TypeScript. Just pure, scalable React.
 achira-wf create react
 
-# Scaffold a full-stack Next.js App Router project
+# Scaffold a Full-Stack Next.js App Router project (Typescript, Zod, Zustand)
 achira-wf create next
 
-# Scaffold a clean, modular Vanilla project
+# Scaffold a modular Vanilla HTML + CSS + JS project (Vite-powered, JSDoc)
 achira-wf create html
 ```
 
@@ -45,49 +68,40 @@ achira-wf create html
 
 Achira OS deploys a specialized task force for every domain.
 
-| Squadron            | Role                                                                |
-| :------------------ | :------------------------------------------------------------------ |
-| **The Strategists** | `orchestrator`, `project-planner`, `product-owner`                  |
-| **The Builders**    | `frontend-specialist`, `backend-specialist`, `mobile-developer`     |
-| **The Sentinels**   | `security-auditor`, `penetration-tester`, `qa-automation-engineer`  |
-| **The Analysts**    | `database-architect`, `code-archaeologist`, `performance-optimizer` |
+| Squadron            | Role                                                                    |
+| :------------------ | :---------------------------------------------------------------------- |
+| **The Strategists** | `orchestrator`, `project-planner`, `product-owner`                      |
+| **The Builders**    | `frontend-specialist`, `backend-specialist`, `mobile-developer`         |
+| **The Sentinels**   | `security-auditor`, `penetration-tester`, `qa-automation-engineer`      |
+| **The Analysts**    | `database-architect`, `code-archae考古ologist`, `performance-optimizer` |
 
 ---
 
-## 🛠 Advanced Features
+## 🛠 Advanced CLI Commands
 
-### 🎨 Design Token Automation
+| Command                       | Purpose                                                      |
+| :---------------------------- | :----------------------------------------------------------- |
+| `achira-wf init`              | Install or repair the `.achira/` core in the current folder. |
+| `achira-wf create <template>` | Scaffold a project (react, next, html).                      |
+| `achira-wf list`              | View all registered workflows and templates.                 |
+| `achira-wf doctor`            | Check system integrity and agent health.                     |
 
-Instantly generate premium CSS themes and Google Font imports based on your niche.
+---
 
-```bash
-python .achira/core/shared/ui-ux-pro-max/scripts/generate_theme.py fintech
-```
+## � Operational Workflows
 
-### 📋 Priority Verification
-
-Catch critical errors before you even finish the feature.
-
-```bash
-# Run Security, Lint, and Tests in 2 seconds (using UV)
-python .achira/scripts/checklist.py .
-```
-
-### 🛤 Operational Workflows
-
-Use powerful slash commands to handle complex, multi-agent operations.
+Access powerful slash commands in your AI assistant once the OS is initialized:
 
 - `/orchestrate`: Lead a cross-domain squad of agents.
-- `/plan`: Deep implementation blueprints.
-- `/ui-ux-pro-max`: Access 50+ unique design styles.
+- `/plan`: Generate deep implementation blueprints.
+- `/ui-ux-pro-max`: Access 50+ unique design styles and premium UI patterns.
+- `/debug`: Systematic, multi-agent troubleshooting flow.
 
 ---
 
-## 📦 Getting Started
+## � License
 
-1.  **Clone** the repository.
-2.  **Link** the CLI: `npm link`.
-3.  **Launch**: `achira-wf init`.
+Distributed under the MIT License. See `LICENSE` for more information.
 
 ---
 
