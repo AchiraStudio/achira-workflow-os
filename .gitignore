@@ -1,0 +1,34 @@
+# Node
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# Backups (dev-only)
+backups/
+.agent_backup/
+
+# OS Files
+.DS_Store
+Thumbs.db
+*.swp
+
+# Editor
+.vscode/settings.json
+.idea/
+*.iml
+
+# Build artifacts
+dist/
+build/
+out/
+
+# Environment
+.env
+.env.*
+!.env.example
+
+# Logs
+*.log
+logs/

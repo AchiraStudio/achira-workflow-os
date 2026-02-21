@@ -1,0 +1,48 @@
+{
+  "name": "achira-wf",
+  "version": "3.1.0",
+  "description": "Achira Workflow OS — AI-driven development ecosystem with 20 agents, 38 skills, and project scaffolds.",
+  "main": "cli.js",
+  "bin": {
+    "achira-wf": "cli.js"
+  },
+  "type": "module",
+  "keywords": [
+    "ai",
+    "agents",
+    "workflow",
+    "scaffold",
+    "react",
+    "nextjs",
+    "vite",
+    "developer-tools",
+    "cli",
+    "llm",
+    "gemini",
+    "agentic",
+    "ai-workflow",
+    "code-generation"
+  ],
+  "author": "Achira",
+  "license": "MIT",
+  "homepage": "https://github.com/AchiraStudio/achira-workflow-os#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AchiraStudio/achira-workflow-os.git"
+  },
+  "bugs": {
+    "url": "https://github.com/AchiraStudio/achira-workflow-os/issues"
+  },
+  "files": [
+    ".achira",
+    ".agent",
+    "cli.js",
+    "README.md",
+    "LICENSE"
+  ],
+  "dependencies": {
+    "chalk": "^5.3.0",
+    "commander": "^11.1.0",
+    "fs-extra": "^11.2.0"
+  }
+}
