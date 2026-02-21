@@ -134,3 +134,25 @@
   background: rgba(41, 151, 255, 0.05);
   border-color: rgba(41, 151, 255, 0.2);
 }
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .agent-card {
+    padding: 1.5rem;
+    gap: 1rem;
+  }
+
+  .agent-avatar {
+    width: 48px;
+    height: 48px;
+    font-size: 1.15rem;
+  }
+
+  .agent-card__meta h3 {
+    font-size: 1.15rem;
+  }
+
+  .agent-card__desc {
+    font-size: 0.9rem;
+  }
+}

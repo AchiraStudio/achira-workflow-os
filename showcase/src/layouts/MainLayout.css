@@ -201,6 +201,40 @@
   
   .minimal-nav {
     min-width: 0;
-    width: 90%;
+    width: 95%;
+    padding: 0.6rem 0.8rem;
+  }
+
+  .nav-actions .btn-outline {
+    display: none; /* Hide secondary button to save space */
+  }
+
+  .btn-solid {
+    padding: 0.4rem 1rem;
+    font-size: 0.8rem;
+  }
+
+  /* Main content padding adjustment */
+  .main-content {
+    padding-top: 6rem;
+  }
+
+  /* Complete Footer Overhaul for Mobile */
+  .minimal-footer {
+    padding: 3rem 1.5rem 2rem;
+    margin-top: 4rem;
+  }
+
+  .footer-links {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .brand-logo span {
+    font-size: 0.95rem;
   }
 }

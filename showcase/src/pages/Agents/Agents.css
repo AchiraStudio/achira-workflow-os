@@ -93,11 +93,48 @@
 }
 
 @media (max-width: 768px) {
-  .agents-grid {
-    grid-template-columns: 1fr;
+  .page-container {
+    padding: 0 1rem 4rem;
   }
 
   .agent-summary {
     gap: 1rem;
+    flex-direction: column;
+  }
+  
+  .summary-item {
+    padding: 1rem 1.25rem;
+    min-width: 100%; /* Take full width on mobile */
+  }
+
+  .summary-count {
+    font-size: 2rem;
+  }
+
+  .agents-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .filter-tabs {
+    flex-wrap: nowrap;
+    overflow-x: auto; /* Allow horizontal scroll for tabs */
+    padding-bottom: 0.5rem; /* Space for scrollbar */
+    justify-content: flex-start;
+    -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+    padding: 0.35rem; 
+    white-space: nowrap;
+    margin-bottom: 2rem;
+    /* Optional: hide scrollbar visually */
+    scrollbar-width: none; 
+  }
+  
+  .filter-tabs::-webkit-scrollbar {
+    display: none;
+  }
+
+  .filter-tab {
+    padding: 0.4rem 1rem;
+    font-size: 0.85rem;
   }
 }

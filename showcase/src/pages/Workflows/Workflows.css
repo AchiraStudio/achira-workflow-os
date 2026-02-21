@@ -84,12 +84,6 @@
   gap: 1.5rem;
 }
 
-@media (max-width: 768px) {
-  .workflows-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
 /* Filter Tabs - Premium Segmented Control */
 .filter-tabs {
   display: inline-flex;
@@ -125,4 +119,41 @@
   color: var(--color-text);
   font-weight: 600;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+@media (max-width: 768px) {
+  .workflows-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .terminal-body {
+    padding: 1.25rem 1rem;
+    font-size: 0.85rem;
+  }
+  
+  .terminal-bar {
+    padding: 0.65rem 1rem;
+  }
+  
+  .filter-tabs {
+    flex-wrap: nowrap;
+    overflow-x: auto; /* Allow horizontal scroll for tabs */
+    padding-bottom: 0.5rem; /* Space for scrollbar */
+    justify-content: flex-start;
+    -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+    padding: 0.35rem; 
+    white-space: nowrap;
+    margin-bottom: 2rem;
+    scrollbar-width: none; 
+  }
+  
+  .filter-tabs::-webkit-scrollbar {
+    display: none;
+  }
+
+  .filter-tab {
+    padding: 0.4rem 1rem;
+    font-size: 0.85rem;
+  }
 }
