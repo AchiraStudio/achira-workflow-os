@@ -97,7 +97,18 @@ Access powerful slash commands in your AI assistant once the OS is initialized:
 - `/orchestrate`: Lead a cross-domain squad of agents.
 - `/plan`: Generate deep implementation blueprints.
 - `/ui-ux-pro-max`: Access 50+ unique design styles and premium UI patterns.
-- `/debug`: Systematic, multi-agent troubleshooting flow.
+
+## 🍱 Visual Showcase
+
+Experience the full power of Achira Workflow OS in action. Our official showcase is a premium React + Vite application, engineered from the ground up using our very own `/react+vite` workflow.
+
+It serves as a living blueprint for:
+
+- 🎨 **Premium UI/UX**: High-fidelity Sapphire Glassmorphism and fluid motion.
+- 🏗️ **Service-Oriented Architecture**: Clean separation of concerns and scalable logic.
+- ⚡ **Performance**: Optimized asset delivery and lightning-fast interactions.
+
+👉 **[Live Showcase](https://achira-workflow-os.pages.dev/)**
 
 ---
 
