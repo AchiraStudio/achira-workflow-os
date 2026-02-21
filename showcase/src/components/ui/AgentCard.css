@@ -1,0 +1,111 @@
+.agent-card {
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--border-radius-xl);
+  padding: 2.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  transition: var(--transition-default);
+  cursor: default;
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+  position: relative;
+}
+
+.agent-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; height: 3px;
+  background: var(--color-text-muted);
+}
+
+.agent-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--glass-border-hover);
+  background: rgba(255,255,255,0.08);
+}
+
+/* Group accent borders */
+.agent-card--masters::before { background: #F59E0B; }
+.agent-card--architects::before { background: var(--color-primary); }
+.agent-card--guards::before { background: #EF4444; }
+.agent-card--specialists::before { background: #14B8A6; }
+
+.agent-card__header {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.agent-avatar {
+  width: 54px;
+  height: 54px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 1.35rem;
+  flex-shrink: 0;
+  font-family: 'Inter', sans-serif;
+}
+
+.agent-avatar--masters { background: rgba(245, 158, 11, 0.15); color: #F59E0B; }
+.agent-avatar--architects { background: rgba(41, 151, 255, 0.15); color: var(--color-primary); }
+.agent-avatar--guards { background: rgba(239, 68, 68, 0.15); color: #EF4444; }
+.agent-avatar--specialists { background: rgba(20, 184, 166, 0.15); color: #14B8A6; }
+
+.agent-card__meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.agent-card__meta h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  font-family: 'Inter', sans-serif;
+  color: var(--color-text);
+  margin: 0;
+}
+
+.agent-card__tagline {
+  font-size: 0.85rem;
+  color: var(--color-text-dim);
+  font-family: 'JetBrains Mono', monospace;
+  letter-spacing: 0.02em;
+}
+
+.agent-card__desc {
+  font-size: 0.95rem;
+  color: var(--color-text-dim);
+  line-height: 1.6;
+  flex: 1;
+}
+
+.agent-card__skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--glass-border);
+}
+
+.skill-chip {
+  padding: 0.25rem 0.75rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--glass-border);
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  color: var(--color-text-dim);
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.skill-chip--more {
+  color: var(--color-primary);
+  border-color: var(--glass-border-hover);
+}

@@ -1,0 +1,206 @@
+.layout-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  background-color: var(--color-bg);
+}
+
+/* Minimal Floating Navbar (Apple Pill Style) */
+.minimal-nav {
+  position: fixed;
+  top: 1.5rem;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  width: fit-content;
+  min-width: 820px;
+  max-width: 90%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  z-index: 100;
+  border-radius: var(--border-radius-pill);
+  background: rgba(1, 10, 26, 0.6); /* Darker sapphire glass */
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
+}
+
+.brand-wrapper {
+  flex: 1 1 0%;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.brand-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Inter', sans-serif;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--color-text);
+  letter-spacing: -0.01em;
+  padding-left: 0.5rem;
+  transition: var(--transition-fast);
+}
+
+.brand-logo:active {
+  transform: scale(0.96);
+}
+
+.logo-icon {
+  color: var(--color-text);
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.nav-link {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--color-text-dim);
+  letter-spacing: 0.01em;
+  transition: var(--transition-fast);
+}
+
+.nav-link:hover, .nav-link.active {
+  color: var(--color-text);
+}
+
+.nav-actions {
+  flex: 1 1 0%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: .55rem;
+  margin-left: 20px;
+}
+
+/* Premium Buttons */
+.btn-solid {
+  background: var(--color-text);
+  color: var(--color-bg);
+  padding: 0.5rem 1.25rem;
+  border-radius: var(--border-radius-pill);
+  font-weight: 500;
+  font-size: 0.85rem;
+  border: none;
+  transition: var(--transition-fast);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+}
+
+.btn-solid:hover {
+  background: #E5E5E5;
+  transform: scale(1.02);
+}
+
+.btn-solid:active {
+  transform: scale(0.96);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--color-text);
+  padding: 0.5rem 1.25rem;
+  border-radius: var(--border-radius-pill);
+  font-weight: 500;
+  font-size: 0.85rem;
+  border: 1px solid var(--glass-border);
+  transition: var(--transition-fast);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+}
+
+.btn-outline:hover {
+  background: var(--glass-bg);
+  border-color: var(--glass-border-hover);
+}
+
+.btn-outline:active {
+  transform: scale(0.96);
+}
+
+/* Main Content Area */
+.main-content {
+  flex: 1;
+  padding-top: 8rem; /* Account for floating nav */
+  width: 100%;
+}
+
+/* Footer */
+.minimal-footer {
+  border-top: 1px solid var(--glass-border);
+  padding: 4rem 1.5rem;
+  margin-top: 6rem;
+  background: linear-gradient(to top, rgba(10,10,10,1), transparent);
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
+  text-align: center;
+}
+
+.footer-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 1.25rem;
+  color: var(--color-text);
+  letter-spacing: -0.02em;
+}
+
+.footer-logo {
+  color: var(--color-text);
+}
+
+.footer-tagline {
+  color: var(--color-text-dim);
+  max-width: 400px;
+  font-size: 0.9rem;
+}
+
+.footer-links {
+  display: flex;
+  gap: 2rem;
+  margin-top: 1rem;
+}
+
+.footer-links a {
+  color: var(--color-text-dim);
+  font-size: 0.85rem;
+  transition: var(--transition-fast);
+}
+
+.footer-links a:hover {
+  color: var(--color-text);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
+  
+  .minimal-nav {
+    min-width: 0;
+    width: 90%;
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "engine": "3.x",
+  "engine_min": "3.0.0",
+  "version": "3.1.0",
+  "templates": {
+    "react": {
+      "workflow": "react+vite.md",
+      "description": "React + Vite SPA with Router, absolute imports, services layer",
+      "tags": ["frontend", "spa", "vite"]
+    },
+    "next": {
+      "workflow": "next.js.md",
+      "description": "Next.js App Router full-stack with feature-driven architecture",
+      "tags": ["fullstack", "ssr", "nextjs"]
+    },
+    "html": {
+      "workflow": "html+js+css.md",
+      "description": "Vanilla HTML + CSS + JS multi-page site with Vite dev server",
+      "tags": ["static", "vanilla", "vite"]
+    }
+  },
+  "commands": {
+    "brainstorm": { "workflow": "brainstorm.md", "description": "Socratic discovery" },
+    "create": { "workflow": "create.md", "description": "Create new features" },
+    "debug": { "workflow": "debug.md", "description": "Debug issues" },
+    "deploy": { "workflow": "deploy.md", "description": "Deploy application" },
+    "enhance": { "workflow": "enhance.md", "description": "Improve existing code" },
+    "orchestrate": { "workflow": "orchestrate.md", "description": "Multi-agent coordination" },
+    "plan": { "workflow": "plan.md", "description": "Task breakdown" },
+    "preview": { "workflow": "preview.md", "description": "Preview changes" },
+    "status": { "workflow": "status.md", "description": "Check project status" },
+    "test": { "workflow": "test.md", "description": "Run tests" },
+    "ui-ux-pro-max": { "workflow": "ui-ux-pro-max.md", "description": "Design with 50 styles" }
+  }
+}

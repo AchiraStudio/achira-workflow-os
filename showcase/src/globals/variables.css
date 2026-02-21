@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+:root {
+  /* Core Colors - Midnight Blue Aesthetic */
+  --color-bg: #010A1A; /* Deep Midnight */
+  --color-surface: #02112B; /* Navy surface */
+  --color-surface-soft: #051B3D; /* Lighter navy hover */
+  
+  --color-text: #FFFFFF; /* High-contrast white */
+  --color-text-dim: #94A3B8; /* Slate blue-gray */
+  --color-text-muted: #64748B;
+  
+  /* Brand Accents */
+  --color-primary: #3399FF; /* Electric Blue */
+  --color-primary-glow: rgba(51, 153, 255, 0.4);
+  --color-secondary: #0066CC; /* Deep Ocean Blue */
+  --color-accent: #E0F2FE;
+
+  /* UI Tokens - Sapphire Glassmorphism */
+  --glass-bg: rgba(255, 255, 255, 0.03); 
+  --glass-border: rgba(51, 153, 255, 0.15); 
+  --glass-border-hover: rgba(51, 153, 255, 0.3);
+  --glass-blur: blur(24px); 
+  
+  --border-radius-sm: 8px;
+  --border-radius-md: 16px;
+  --border-radius-lg: 24px;
+  --border-radius-xl: 32px; 
+  --border-radius-pill: 9999px;
+  
+  --transition-fast: 0.15s ease-out;
+  --transition-default: 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+  --transition-slow: 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+  
+  --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 20px 40px -5px rgba(0, 0, 0, 0.6);
+  --shadow-glow: 0 0 30px var(--color-primary-glow);
+}
