@@ -51,62 +51,65 @@ _This command installs the agents, skills, and workflows into a `.achira` direct
 
 ## 🚀 One-Click Scaffolding
 
-Generate production-ready foundations with pre-configured directory structures, absolute imports, testing suites, and linter rules.
+Achira Workflow OS enables high-performance scaffolding directly through your AI assistant. Once `achira-wf init` is run, all templates become available as **slash commands** in your IDE.
 
 ```bash
 # Web Foundations
-achira-wf create react          # React + Vite SPA
-achira-wf create next           # Next.js App Router (Fullstack)
-achira-wf create html           # Vanilla HTML + CSS + JS (Vite)
+/react          # React + Vite SPA
+/next           # Next.js App Router (Fullstack)
+/html           # Vanilla HTML + CSS + JS (Vite)
 
 # Verticals
-achira-wf create saas           # Next.js + Supabase Auth/DB + Stripe
-achira-wf create landing-page   # SEO-Optimized Marketing Page
+/saas           # Next.js + Supabase Auth/DB + Stripe
+/landing-page   # SEO-Optimized Marketing Page
 
 # Apps & Desktop
-achira-wf create flutter        # Multi-platform Dart 3 (Riverpod)
-achira-wf create avalonia       # C# Desktop (Zafiro/MVVM)
+/flutter        # Multi-platform Dart 3 (Riverpod)
+/avalonia       # C# Desktop (Zafiro/MVVM)
 
 # specialized
-achira-wf create shopify        # Apps, Extensions, or Themes
-achira-wf create unity          # Unity 6 LTS C# Game Dev
-achira-wf create python-backend # FastAPI / Django (managed by uv)
-achira-wf create database       # Schema Design & RLS Policies
+/shopify        # Apps, Extensions, or Themes
+/unity          # Unity 6 LTS C# Game Dev
+/python-backend # FastAPI / Django (managed by uv)
+/database       # Schema Design & RLS Policies
 ```
 
 ---
 
-## 🤖 The Elite 20 Agents
+## 🤖 The Elite Agents
 
 Achira OS deploys a specialized task force for every domain.
 
-| Squadron            | Role                                                                                       |
-| :------------------ | :----------------------------------------------------------------------------------------- |
-| **The Strategists** | `orchestrator`, `project-planner`, `product-owner`, `ai-specialist`                        |
-| **The Builders**    | `frontend-specialist`, `backend-specialist`, `mobile-developer`                            |
-| **The Sentinels**   | `security-auditor`, `penetration-tester`, `qa-automation-engineer`                         |
-| **The Analysts**    | `database-architect`, `code-archae考古ologist`, `performance-optimizer`, `devops-engineer` |
+| Squadron            | Role                                                                                   |
+| :------------------ | :------------------------------------------------------------------------------------- |
+| **The Strategists** | `orchestrator`, `project-planner`, `product-owner`, `ai-specialist`                    |
+| **The Builders**    | `frontend-specialist`, `backend-specialist`, `mobile-developer`                        |
+| **The Sentinels**   | `security-auditor`, `penetration-tester`, `qa-automation-engineer`                     |
+| **The Analysts**    | `database-architect`, `code-archaeologist`, `performance-optimizer`, `devops-engineer` |
 
 ---
 
 ## 🛠 Advanced CLI Commands
 
-| Command                       | Purpose                                                      |
-| :---------------------------- | :----------------------------------------------------------- |
-| `achira-wf init`              | Install or repair the `.achira/` core in the current folder. |
-| `achira-wf create <template>` | Scaffold a project (react, next, html).                      |
-| `achira-wf list`              | View all registered workflows and templates.                 |
-| `achira-wf doctor`            | Check system integrity and agent health.                     |
+While most day-to-day work happens via slash commands, the CLI provides core lifecycle tools.
+
+| Command            | Purpose                                                      |
+| :----------------- | :----------------------------------------------------------- |
+| `achira-wf init`   | Install or repair the `.achira/` core in the current folder. |
+| `achira-wf list`   | View all registered workflows and templates.                 |
+| `achira-wf doctor` | Check system integrity and agent health.                     |
 
 ---
 
-## � Operational Workflows
+## 🍱 Operational Workflows
 
-Access powerful slash commands in your AI assistant once the OS is initialized:
+Access powerful slash commands once the OS is initialized:
 
 - `/orchestrate`: Lead a cross-domain squad of agents.
 - `/plan`: Generate deep implementation blueprints.
 - `/ui-ux-pro-max`: Access 50+ unique design styles and premium UI patterns.
+- `/debug`: Systematically investigate and resolve bugs.
+- `/test`: Generate comprehensive test suites.
 
 ## 🍱 Visual Showcase
 

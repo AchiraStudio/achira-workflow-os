@@ -24,7 +24,7 @@ const DIRECTORY_TREE = [
       {
         name: "workflows/",
         icon: Folder,
-        description: "14 slash command procedures + registry.",
+        description: "22 slash command procedures + registry.",
         children: [
           { name: "registry.json", icon: FileText, description: "Discovery map." },
           { name: "*.md", icon: FileText, description: "Workflow procedures." },

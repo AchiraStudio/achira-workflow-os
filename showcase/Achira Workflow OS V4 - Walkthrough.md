@@ -24,15 +24,15 @@ We have replaced the external 3,000+ file `awesome-skills` dependency with seven
 
 ## 🚀 2. Scaffolding Workflows
 
-V4.1 introduces 22 mission-critical scaffolds. Use `achira-wf create <template>` or the respective slash command to trigger them.
+V4.1 introduces 22 mission-critical scaffolds. Once initialized, these are available as **Slash Commands** directly in your AI assistant.
 
 ### Web & Fullstack
 
-- **`/react+vite`**: Scalable SPA with Service Layer and Vitest.
-- **`/next.js`**: Enterprise App Router setup with Feature-driven folders.
+- **`/react`**: Scalable SPA with Service Layer and Vitest.
+- **`/next`**: Enterprise App Router setup with Feature-driven folders.
 - **`/saas`**: The "Startup in a Box" — Next.js + Supabase + Stripe.
 - **`/landing-page`**: SEO-optimized, high-performance marketing foundations.
-- **`/html+js+css`**: Modernized Vanilla Web with Vite-powered HMR.
+- **`/html`**: Modernized Vanilla Web with Vite-powered HMR.
 
 ### Mobile & Desktop
 
@@ -65,19 +65,19 @@ V4.1 introduces the **AI Specialist** agent (`ai-specialist.md`). This persona i
 
 ---
 
-## ⚒️ 5. CLI Improvements (v2.2.0)
+## ⚒️ 5. CLI Improvements (v4.1.1)
 
-- **Internal Syringe**: The CLI no longer copies thousands of files. It now injects a curated set of 22 workflows and 7 expert skills directly into your project.
+- **Internal Syringe**: The CLI no longer copies thousands of files. It now injects a curated set of 22 workflows and 7 expert Master Skills directly into your project.
 - **Self-Healing Doctor**: Enhanced `achira-wf doctor` command checks for both Agent health and Skill validity.
-- **Absolute Discovery**: All workflows are automatically synced to `.agent/workflows/` with absolute pathing to ensure your IDE assistant never loses track of its mission.
+- **Absolute Discovery**: All workflows are automatically synced to `.agent/workflows/` and `.cursorrules` are linked to ensure your IDE assistant never loses track of its mission.
 
 ---
 
 ## 📈 6. How to Get Started
 
-1.  **Update**: `npm install -g achira-wf` (once published).
+1.  **Update**: `npm install -g achira-wf`
 2.  **Initialize**: `achira-wf init` in your project root.
-3.  **Deploy**: Use `/plan` to strategy, then `/create <template>` to build.
+3.  **Deploy**: Use `/plan` to strategize, then call any scaffold like `/next` or `/saas` to build.
 
 ---
 

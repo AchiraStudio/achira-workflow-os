@@ -7,7 +7,7 @@ import { motion } from "framer-motion";
 
 const STATS = [
   { value: "21", label: "Specialist Agents" },
-  { value: "7", label: "Expert Pillars" },
+  { value: "7", label: "Master Pillars" },
   { value: "22", label: "Mission Workflows" },
   { value: "Socratic", label: "Discovery" },
   { value: "~90%", label: "Dev Coverage" },
@@ -61,8 +61,8 @@ const PILLARS = [
   },
   {
     icon: Shield,
-    title: "Mission-Critical Integrity",
-    description: "Speed never comes at the cost of stability. A layered verification suite gates every deployment.",
+    title: "V4.1 Mission Integrity",
+    description: "Speed never comes at the cost of stability. A 7-pillar verification suite gates every deployment.",
     colSpan: 3,
   },
 ];

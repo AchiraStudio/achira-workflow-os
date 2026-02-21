@@ -91,7 +91,18 @@ program
       );
     }
 
-    // 3. Print registry summary
+    // 3. Sync .cursorrules for automatic IDE rules
+    try {
+      const cursorRulesPath = path.join(target, ".cursorrules");
+      const geminiRulesPath = path.join(ACHIRA_DIR, "rules", "GEMINI.md");
+      await fs.remove(cursorRulesPath); 
+      await fs.ensureSymlink(geminiRulesPath, cursorRulesPath, "file");
+      console.log(chalk.green("  ✔  Linked .cursorrules → .achira/rules/GEMINI.md\n"));
+    } catch (err) {
+      console.log(chalk.yellow(`  ⚠  Could not link .cursorrules: ${err.message}\n`));
+    }
+
+    // 4. Print registry summary
     const registryFile = path.join(dest, "workflows", "registry.json");
     if (fs.existsSync(registryFile)) {
       try {
@@ -110,7 +121,7 @@ program
         console.log(chalk.cyan("  Project Scaffolds:\n"));
         for (const [key, val] of Object.entries(registry.templates || {})) {
           console.log(
-            chalk.white(`    achira-wf create ${key}`) +
+            chalk.white(`    /${key}`) +
               chalk.gray(`  — ${val.description}`),
           );
         }
@@ -174,14 +185,14 @@ program
       process.exit(1);
     }
 
-    console.log(chalk.cyan(`\n  achira-wf create ${template}\n`));
+    console.log(chalk.cyan(`\n  /${template}\n`));
     console.log(chalk.green(`  ✔  Template: ${entry.description}`));
     console.log(
       chalk.green(`  ✔  Workflow: .achira/workflows/${entry.workflow}`),
     );
     console.log(
       chalk.white(
-        `\n  → Open the workflow file and follow the steps, or use the /create slash command.\n`,
+        `\n  → Follow the workflow steps in the IDE, or use the /${template} slash command.\n`,
       ),
     );
   });
@@ -219,7 +230,7 @@ program
     console.log(chalk.cyan("  Project Scaffolds:\n"));
     for (const [key, val] of Object.entries(registry.templates || {})) {
       console.log(
-        chalk.white(`    achira-wf create ${key}`) +
+        chalk.white(`    /${key}`) +
           chalk.gray(`  — ${val.description}`),
       );
     }

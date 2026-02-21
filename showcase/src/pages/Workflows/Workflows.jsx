@@ -44,8 +44,8 @@ export default function WorkflowsPage() {
           <div className="terminal-body">
             <p><span className="prompt">$</span> achira-wf list</p>
             <p className="out muted">Querying workflow registry...</p>
-            <p className="out success">Found 22 registered workflows. 21 agents on standby.</p>
-            <p className="out"><span className="key">Tip:</span> Use a slash command in your IDE to invoke any workflow.</p>
+            <p className="out success">Found 22 mission scaffolds. .cursorrules linked.</p>
+            <p className="out"><span className="key">Tip:</span> Use slash commands (e.g. /next, /saas) for instant scaffolding.</p>
             <p className="cursor">█</p>
           </div>
         </motion.div>
