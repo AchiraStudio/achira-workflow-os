@@ -1,8 +1,8 @@
-# 🤖 Achira Workflow OS V3
+# 🤖 Achira Workflow OS V4
 
 > **The first Agentic Operating System for AI-native software engineering.**
 
-Achira Workflow OS is a premium orchestration toolkit that transforms your development environment into a high-performance laboratory of **20 specialist agents**, **38 domain skills**, and **14 mission-critical workflows**.
+Achira Workflow OS is a premium orchestration toolkit that transforms your development environment into a high-performance laboratory of **21 specialist agents**, **7 native master skills**, and **22 mission-critical workflows**.
 
 _Based on [antigravity-kit](https://github.com/vudovn/antigravity-kit)_
 
@@ -21,10 +21,11 @@ Most AI tools just "code." Achira **thinks**, **architects**, and **verifies**.
 - 🎨 **Deep Design Thinking**: Built-in design intelligence that rejects generic templates in favor of premium, high-contrast UI/UX. No magic numbers, only tokens.
 - 🛡️ **Mission-Critical Integrity**: A multi-layered verification engine (Security → Lint → Tests → UX) ensuring every commit is production-ready.
 - 🚀 **Standardized Excellence**: Strict enforcement of Clean Code, Accessibility (a11y), and Performance guidelines across all projects.
+- 🌍 **Native Mastery**: Powered by **7 internal Expert Pillars** distilling thousands of rules for web, app, game, ai, and devops engineering into zero-latency core knowledge.
 
 ---
 
-## � Installation
+## 🏗️ Installation
 
 Achira Workflow OS is designed to be globally accessible.
 
@@ -44,7 +45,7 @@ Navigate to any project directory and inject the OS:
 achira-wf init
 ```
 
-_This command installs the agents, skills, and workflows into a `.achira` directory and syncs slash commands for IDE discovery._
+_This command installs the agents, skills, and workflows into a `.achira` directory, bundles relevant awesome-skills, and syncs slash commands for IDE discovery._
 
 ---
 
@@ -53,15 +54,24 @@ _This command installs the agents, skills, and workflows into a `.achira` direct
 Generate production-ready foundations with pre-configured directory structures, absolute imports, testing suites, and linter rules.
 
 ```bash
-# Scaffold a React + Vite SPA (Absolute Imports, Service-Architecture, Vitest)
-# No Tailwind. No TypeScript. Just pure, scalable React.
-achira-wf create react
+# Web Foundations
+achira-wf create react          # React + Vite SPA
+achira-wf create next           # Next.js App Router (Fullstack)
+achira-wf create html           # Vanilla HTML + CSS + JS (Vite)
 
-# Scaffold a Full-Stack Next.js App Router project (Typescript, Zod, Zustand)
-achira-wf create next
+# Verticals
+achira-wf create saas           # Next.js + Supabase Auth/DB + Stripe
+achira-wf create landing-page   # SEO-Optimized Marketing Page
 
-# Scaffold a modular Vanilla HTML + CSS + JS project (Vite-powered, JSDoc)
-achira-wf create html
+# Apps & Desktop
+achira-wf create flutter        # Multi-platform Dart 3 (Riverpod)
+achira-wf create avalonia       # C# Desktop (Zafiro/MVVM)
+
+# specialized
+achira-wf create shopify        # Apps, Extensions, or Themes
+achira-wf create unity          # Unity 6 LTS C# Game Dev
+achira-wf create python-backend # FastAPI / Django (managed by uv)
+achira-wf create database       # Schema Design & RLS Policies
 ```
 
 ---
@@ -70,12 +80,12 @@ achira-wf create html
 
 Achira OS deploys a specialized task force for every domain.
 
-| Squadron            | Role                                                                    |
-| :------------------ | :---------------------------------------------------------------------- |
-| **The Strategists** | `orchestrator`, `project-planner`, `product-owner`                      |
-| **The Builders**    | `frontend-specialist`, `backend-specialist`, `mobile-developer`         |
-| **The Sentinels**   | `security-auditor`, `penetration-tester`, `qa-automation-engineer`      |
-| **The Analysts**    | `database-architect`, `code-archae考古ologist`, `performance-optimizer` |
+| Squadron            | Role                                                                                       |
+| :------------------ | :----------------------------------------------------------------------------------------- |
+| **The Strategists** | `orchestrator`, `project-planner`, `product-owner`, `ai-specialist`                        |
+| **The Builders**    | `frontend-specialist`, `backend-specialist`, `mobile-developer`                            |
+| **The Sentinels**   | `security-auditor`, `penetration-tester`, `qa-automation-engineer`                         |
+| **The Analysts**    | `database-architect`, `code-archae考古ologist`, `performance-optimizer`, `devops-engineer` |
 
 ---
 

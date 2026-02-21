@@ -1,7 +1,7 @@
 ---
 name: project-setup
 description: Universal architecture standards for all Achira web projects — covers html+js+css, react+vite, and next.js workflows.
-version: 3.0
+version: 6.0
 ---
 
 # 🏗️ Achira Project Standards
@@ -12,13 +12,23 @@ This skill is the **single source of truth** for how all Achira projects are str
 
 ---
 
-## 🗺️ Workflow Map
+## 🗺️ Skill Explorer
 
-| Slash Command  | Tech Stack              | Ideal Use Case                          |
-| -------------- | ----------------------- | --------------------------------------- |
-| `/html+js+css` | Vanilla HTML + CSS + JS | Multi-page sites, lightweight, no-build |
-| `/react+vite`  | React + Vite + Router   | SPAs, highly interactive client apps    |
-| `/next.js`     | Next.js App Router + TS | Full-stack, SSR, SEO-heavy, SaaS        |
+Achira v4 contains 10 primary workflows. Each workflow automatically invokes specific expert skills from the `.achira/core/skills/` library.
+
+| Slash Command     | Tech Stack / Domain          | Key Skills Injected                               |
+| ----------------- | ---------------------------- | ------------------------------------------------- |
+| `/react+vite`     | React SPA + Vitest           | `web-expert`                                      |
+| `/next.js`        | Next.js App Router Fullstack | `web-expert`                                      |
+| `/html+js+css`    | Vanilla Web                  | `web-expert`                                      |
+| `/avalonia`       | C# Desktop + Zafiro          | `app-expert`                                      |
+| `/flutter`        | Multi-platform Dart 3        | `app-expert`                                      |
+| `/shopify`        | E-commerce Apps/Themes       | `commerce-expert`                                 |
+| `/saas`           | Next.js + Supabase + Stripe  | `web-expert`, `backend-expert`, `commerce-expert` |
+| `/landing-page`   | Marketing Websites           | `web-expert`                                      |
+| `/unity`          | Unity 6 LTS Game Dev         | `game-expert`                                     |
+| `/python-backend` | FastAPI / Django             | `backend-expert`                                  |
+| `/database`       | Schema Design                | `backend-expert`                                  |
 
 ---
 
@@ -278,14 +288,30 @@ Add a `.vscode/settings.json` to each project for consistent DX across team memb
 
 ## 🚦 Universal Do / Don't
 
-| ✅ DO                                                      | ❌ DON'T                                                |
-| :--------------------------------------------------------- | :------------------------------------------------------ |
-| Co-locate CSS and Test files next to their components      | Scatter styles/tests across random global folders       |
-| Use CSS variables (`var(--token)`) for styling             | Hard-code `#6366f1` or `16px` inside a component CSS    |
-| Use absolute paths (`@/components/...`)                    | Use relative paths deeper than one level (`../../../`)  |
-| Keep Pages thin; delegate business logic to hooks/features | Write API calls or heavy logic directly inside a View   |
-| Route env variables through a central, typed config file   | Access `import.meta.env` / `process.env` directly in UI |
-| Enforce strict Single Responsibility per hook/function     | Mix unrelated state/logic into a massive "God hook"     |
-| Separate Server Actions/API calls from UI presentation     | Mix database queries directly into client components    |
-| Use semantic HTML and ARIA attributes                      | Use `<div>` for everything and ignore keyboard access   |
-| Use Conventional Commits for every commit                  | Write vague commits like "fix stuff" or "update"        |
+## 1. Directory Structure
+
+Never place files at the root level unless absolutely necessary (e.g., config files like `package.json`, `.gitignore`). All source code must be encapsulated within a `src/` directory to maintain a clean root workspace.
+
+## 2. Advanced Code Quality (Clean Code & Linting)
+
+- **Descriptive Naming**: Use explicit, non-abbreviated variable and function names. `getUserData` is better than `fetchData`.
+- **Single Responsibility**: Functions and classes should do one thing only. If a function requires comments to explain _sections_ of its code, break it down.
+- **Strict Linting**: Treat compiler warnings and linter rules as errors. Do not use `// eslint-disable-next-line` unless there is a strictly documented architectural reason.
+- **Type Safety**: Avoid implicit `any` in TypeScript.
+
+## 3. Testing Standards (TDD & Automation)
+
+- **Test-Driven Intent**: Even if not doing strict TDD, write code _as if_ it needs to be tested immediately. Use Dependency Injection to make mocking easier.
+- **Unit Tests**: Cover core business logic, utils, and reducers.
+- **Integration Tests**: Ensure Database/API boundaries are tested with realistic (but mocked) payloads.
+  | ✅ DO | ❌ DON'T |
+  | :--------------------------------------------------------- | :------------------------------------------------------ |
+  | Co-locate CSS and Test files next to their components | Scatter styles/tests across random global folders |
+  | Use CSS variables (`var(--token)`) for styling | Hard-code `#6366f1` or `16px` inside a component CSS |
+  | Use absolute paths (`@/components/...`) | Use relative paths deeper than one level (`../../../`) |
+  | Keep Pages thin; delegate business logic to hooks/features | Write API calls or heavy logic directly inside a View |
+  | Route env variables through a central, typed config file | Access `import.meta.env` / `process.env` directly in UI |
+  | Enforce strict Single Responsibility per hook/function | Mix unrelated state/logic into a massive "God hook" |
+  | Separate Server Actions/API calls from UI presentation | Mix database queries directly into client components |
+  | Use semantic HTML and ARIA attributes | Use `<div>` for everything and ignore keyboard access |
+  | Use Conventional Commits for every commit | Write vague commits like "fix stuff" or "update" |

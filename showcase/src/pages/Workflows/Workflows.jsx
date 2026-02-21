@@ -44,7 +44,7 @@ export default function WorkflowsPage() {
           <div className="terminal-body">
             <p><span className="prompt">$</span> achira-wf list</p>
             <p className="out muted">Querying workflow registry...</p>
-            <p className="out success">Found 14 registered workflows. 20 agents on standby.</p>
+            <p className="out success">Found 22 registered workflows. 21 agents on standby.</p>
             <p className="out"><span className="key">Tip:</span> Use a slash command in your IDE to invoke any workflow.</p>
             <p className="cursor">█</p>
           </div>

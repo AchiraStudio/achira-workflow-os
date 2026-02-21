@@ -34,7 +34,7 @@ export default function AgentsPage() {
         <motion.div initial="hidden" animate="visible" variants={fadeUp}>
           <SectionHeader
             eyebrow="The Elite Team"
-            title="20 Specialist Agents."
+            title="21 Specialist Agents."
             subtitle="Each persona has a strict domain boundary, a set of trigger keywords, and a curated skill stack it loads on-demand."
           />
         </motion.div>

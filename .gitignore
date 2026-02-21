@@ -8,6 +8,7 @@ yarn-error.log*
 # Backups (dev-only)
 backups/
 .agent_backup/
+awesome-skills/
 
 # OS Files
 .DS_Store

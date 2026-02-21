@@ -6,10 +6,10 @@ import { ArrowRight, Cpu, Zap, Shield, GitBranch, CheckCircle, Sparkles, Layers 
 import { motion } from "framer-motion";
 
 const STATS = [
-  { value: "20", label: "Specialist Agents" },
-  { value: "38", label: "Skill Modules" },
-  { value: "14", label: "Slash Commands" },
-  { value: "4", label: "Master Scripts" },
+  { value: "21", label: "Specialist Agents" },
+  { value: "7", label: "Expert Pillars" },
+  { value: "22", label: "Mission Workflows" },
+  { value: "Socratic", label: "Discovery" },
   { value: "~90%", label: "Dev Coverage" },
 ];
 
@@ -100,6 +100,7 @@ export default function Home() {
             
             <motion.p variants={fadeUp} className="hero-subtitle">
               An AI-native operating system for orchestrated, verified execution.
+              <span className="live-tag">V4.1 is now live.</span>
             </motion.p>
             
             <motion.div variants={fadeUp} className="hero-actions">
@@ -211,7 +212,7 @@ export default function Home() {
         >
           <div className="cta-inner glass-panel">
             <h2>Ready to explore the OS?</h2>
-            <p>Browse all 20 elite agents, view the full system architecture, or explore every slash command.</p>
+            <p>Browse all 21 elite agents, view the full 7-pillar architecture, or explore every mission workflow.</p>
             <div className="cta-actions">
               <Link to="/agents" className="btn-solid btn-large">Explore Agents</Link>
               <Link to="/workflows" className="btn-outline btn-large">View Workflows</Link>

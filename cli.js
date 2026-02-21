@@ -17,7 +17,7 @@ const program = new Command();
 program
   .name("achira-wf")
   .description(
-    "Achira Workflow OS — Install agents, skills, and project scaffolds into any folder"
+    "Achira Workflow OS — Install agents, skills, and project scaffolds into any folder",
   )
   .version(pkg.version);
 
@@ -25,10 +25,13 @@ program
 
 program
   .command("init")
-  .description("Install .achira/ (agents, skills, workflows, scripts) into the current directory")
+  .description(
+    "Install .achira/ (agents, skills, workflows, scripts) into the current directory",
+  )
+  .argument("[directory]", "Target directory (default: current directory)")
   .option("-f, --force", "Overwrite existing .achira/ directory")
-  .action(async (options) => {
-    const target = process.cwd();
+  .action(async (directory, options) => {
+    const target = directory ? path.resolve(process.cwd(), directory) : process.cwd();
     const src = path.join(__dirname, ACHIRA_DIR);
     const dest = path.join(target, ACHIRA_DIR);
 
@@ -42,32 +45,50 @@ program
 
     if (fs.existsSync(dest) && !options.force) {
       console.log(chalk.yellow("  ⚠  .achira/ already exists at target."));
-      console.log(chalk.yellow(`     Use ${chalk.bold("--force")} to overwrite.\n`));
+      console.log(
+        chalk.yellow(`     Use ${chalk.bold("--force")} to overwrite.\n`),
+      );
       process.exit(1);
     }
 
     // 1. Install .achira/
     try {
-      await fs.ensureDir(dest);
-      await fs.copy(src, dest, { overwrite: true });
-      console.log(chalk.green("  ✔  .achira/ installed\n"));
+      if (src !== dest) {
+        await fs.ensureDir(dest);
+        await fs.copy(src, dest, { overwrite: true });
+        console.log(chalk.green("  ✔  .achira/ installed\n"));
+      } else {
+        console.log(chalk.gray("  ℹ  Running in source directory, skipping .achira/ copy\n"));
+      }
     } catch (err) {
       console.log(chalk.red(`  ✖  Failed: ${err.message}\n`));
       process.exit(1);
     }
+
+    console.log(chalk.blue("═════════════════════════════════════════\n"));
 
     // 2. Sync .agent/workflows/ for IDE slash command discovery
     try {
       const agentWfDir = path.join(target, ".agent", "workflows");
       await fs.ensureDir(agentWfDir);
       const wfSrc = path.join(dest, "workflows");
-      const mdFiles = (await fs.readdir(wfSrc)).filter((f) => f.endsWith(".md"));
+      const mdFiles = (await fs.readdir(wfSrc)).filter((f) =>
+        f.endsWith(".md"),
+      );
       for (const file of mdFiles) {
-        await fs.copy(path.join(wfSrc, file), path.join(agentWfDir, file), { overwrite: true });
+        await fs.copy(path.join(wfSrc, file), path.join(agentWfDir, file), {
+          overwrite: true,
+        });
       }
-      console.log(chalk.green(`  ✔  Synced ${mdFiles.length} workflows → .agent/workflows/\n`));
+      console.log(
+        chalk.green(
+          `  ✔  Synced ${mdFiles.length} workflows → .agent/workflows/\n`,
+        ),
+      );
     } catch (err) {
-      console.log(chalk.yellow(`  ⚠  Could not sync .agent/workflows/: ${err.message}\n`));
+      console.log(
+        chalk.yellow(`  ⚠  Could not sync .agent/workflows/: ${err.message}\n`),
+      );
     }
 
     // 3. Print registry summary
@@ -79,16 +100,25 @@ program
         const registryEngine = registry.engine || "unknown";
         const registryMajor = parseInt(registryEngine.split(".")[0], 10);
         if (engineMajor !== registryMajor) {
-          console.log(chalk.yellow(`  ⚠  Engine mismatch: CLI v${pkg.version} / registry engine ${registryEngine}\n`));
+          console.log(
+            chalk.yellow(
+              `  ⚠  Engine mismatch: CLI v${pkg.version} / registry engine ${registryEngine}\n`,
+            ),
+          );
         }
         console.log(chalk.white("  Achira Workflow OS initialized.\n"));
         console.log(chalk.cyan("  Project Scaffolds:\n"));
         for (const [key, val] of Object.entries(registry.templates || {})) {
-          console.log(chalk.white(`    achira-wf create ${key}`) + chalk.gray(`  — ${val.description}`));
+          console.log(
+            chalk.white(`    achira-wf create ${key}`) +
+              chalk.gray(`  — ${val.description}`),
+          );
         }
         console.log(chalk.cyan("\n  Slash Commands:\n"));
         for (const [key, val] of Object.entries(registry.commands || {})) {
-          console.log(chalk.white(`    /${key}`) + chalk.gray(`  — ${val.description}`));
+          console.log(
+            chalk.white(`    /${key}`) + chalk.gray(`  — ${val.description}`),
+          );
         }
         console.log("");
       } catch {
@@ -101,15 +131,15 @@ program
 
 program
   .command("create <template>")
-  .description("Scaffold a project from a registered template (react, next, html)")
+  .description(
+    "Scaffold a project from a registered template (react, next, html)",
+  )
   .action((template) => {
     const registryFile = path.join(process.cwd(), REGISTRY_PATH);
 
     if (!fs.existsSync(registryFile)) {
       console.log(
-        chalk.red(
-          "\n  ✖  No .achira/ found. Run `achira-wf init` first.\n"
-        )
+        chalk.red("\n  ✖  No .achira/ found. Run `achira-wf init` first.\n"),
       );
       process.exit(1);
     }
@@ -125,9 +155,7 @@ program
     const entry = registry.templates?.[template];
     if (!entry) {
       const available = Object.keys(registry.templates || {}).join(", ");
-      console.log(
-        chalk.red(`\n  ✖  Unknown template: "${template}"`)
-      );
+      console.log(chalk.red(`\n  ✖  Unknown template: "${template}"`));
       console.log(chalk.gray(`     Available: ${available}\n`));
       process.exit(1);
     }
@@ -136,12 +164,12 @@ program
       process.cwd(),
       ACHIRA_DIR,
       "workflows",
-      entry.workflow
+      entry.workflow,
     );
 
     if (!fs.existsSync(workflowPath)) {
       console.log(
-        chalk.red(`\n  ✖  Workflow file not found: ${entry.workflow}\n`)
+        chalk.red(`\n  ✖  Workflow file not found: ${entry.workflow}\n`),
       );
       process.exit(1);
     }
@@ -149,12 +177,12 @@ program
     console.log(chalk.cyan(`\n  achira-wf create ${template}\n`));
     console.log(chalk.green(`  ✔  Template: ${entry.description}`));
     console.log(
-      chalk.green(`  ✔  Workflow: .achira/workflows/${entry.workflow}`)
+      chalk.green(`  ✔  Workflow: .achira/workflows/${entry.workflow}`),
     );
     console.log(
       chalk.white(
-        `\n  → Open the workflow file and follow the steps, or use the /create slash command.\n`
-      )
+        `\n  → Open the workflow file and follow the steps, or use the /create slash command.\n`,
+      ),
     );
   });
 
@@ -168,9 +196,7 @@ program
 
     if (!fs.existsSync(registryFile)) {
       console.log(
-        chalk.red(
-          "\n  ✖  No .achira/ found. Run `achira-wf init` first.\n"
-        )
+        chalk.red("\n  ✖  No .achira/ found. Run `achira-wf init` first.\n"),
       );
       process.exit(1);
     }
@@ -185,21 +211,23 @@ program
 
     console.log(chalk.cyan("\n  Achira Workflow OS\n"));
     console.log(
-      chalk.gray(`  Engine: ${registry.engine}  Version: ${registry.version}\n`)
+      chalk.gray(
+        `  Engine: ${registry.engine}  Version: ${registry.version}\n`,
+      ),
     );
 
     console.log(chalk.cyan("  Project Scaffolds:\n"));
     for (const [key, val] of Object.entries(registry.templates || {})) {
       console.log(
         chalk.white(`    achira-wf create ${key}`) +
-          chalk.gray(`  — ${val.description}`)
+          chalk.gray(`  — ${val.description}`),
       );
     }
 
     console.log(chalk.cyan("\n  Slash Commands:\n"));
     for (const [key, val] of Object.entries(registry.commands || {})) {
       console.log(
-        chalk.white(`    /${key}`) + chalk.gray(`  — ${val.description}`)
+        chalk.white(`    /${key}`) + chalk.gray(`  — ${val.description}`),
       );
     }
     console.log("");
@@ -253,7 +281,9 @@ program
     if (fs.existsSync(skillsDir)) {
       const skillCount = fs
         .readdirSync(skillsDir)
-        .filter((f) => fs.statSync(path.join(skillsDir, f)).isDirectory()).length;
+        .filter((f) =>
+          fs.statSync(path.join(skillsDir, f)).isDirectory(),
+        ).length;
       console.log(chalk.gray(`  Skills: ${skillCount}`));
     }
     if (fs.existsSync(workflowsDir)) {
@@ -270,8 +300,8 @@ program
         const registry = fs.readJsonSync(registryFile);
         console.log(
           chalk.gray(
-            `  Registry: engine ${registry.engine}, version ${registry.version}`
-          )
+            `  Registry: engine ${registry.engine}, version ${registry.version}`,
+          ),
         );
       } catch {
         console.log(chalk.yellow("  ⚠  registry.json parse error"));
@@ -284,7 +314,7 @@ program
       console.log(chalk.green("  All checks passed. System healthy.\n"));
     } else {
       console.log(
-        chalk.red("  Some checks failed. Run `achira-wf init` to repair.\n")
+        chalk.red("  Some checks failed. Run `achira-wf init` to repair.\n"),
       );
       process.exit(1);
     }

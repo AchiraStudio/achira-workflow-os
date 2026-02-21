@@ -1,20 +1,28 @@
 .terminal-intro {
-  background: var(--color-bg);
-  border: 1px solid var(--glass-border);
-  border-radius: var(--border-radius-xl);
+  background: var(--color-bg); /* Kept original theme base */
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
   overflow: hidden;
   margin-bottom: 4rem;
   font-family: 'JetBrains Mono', monospace;
-  box-shadow: var(--shadow-lg);
+  box-shadow: 0 20px 50px -10px rgba(0, 0, 0, 0.5);
+  position: relative;
+}
+
+.terminal-intro::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
 }
 
 .terminal-bar {
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  padding: 1rem 1.25rem;
-  background: rgba(255,255,255,0.03);
-  border-bottom: 1px solid var(--glass-border);
+  padding: 0.85rem 1.25rem;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.02) 100%);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .terminal-bar .dot {
@@ -29,10 +37,11 @@
 
 .terminal-title-label {
   margin-left: 0.75rem;
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   color: var(--color-text-muted);
   font-family: 'Inter', sans-serif;
   font-weight: 500;
+  letter-spacing: 0.02em;
 }
 
 .terminal-body {
@@ -41,12 +50,14 @@
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
-  background: rgba(1, 10, 26, 0.5);
+  background: rgba(0, 0, 0, 0.4);
+  box-shadow: inset 0 5px 20px rgba(0,0,0,0.4);
 }
 
 .prompt {
   color: var(--color-primary);
   margin-right: 0.75rem;
+  text-shadow: 0 0 10px rgba(41, 151, 255, 0.4);
 }
 
 .out { color: var(--color-text-dim); }
@@ -77,4 +88,41 @@
   .workflows-grid {
     grid-template-columns: 1fr;
   }
+}
+
+/* Filter Tabs - Premium Segmented Control */
+.filter-tabs {
+  display: inline-flex;
+  gap: 0.25rem;
+  margin-bottom: 3rem;
+  flex-wrap: wrap;
+  background: rgba(0, 0, 0, 0.2);
+  padding: 0.35rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: inset 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.filter-tab {
+  padding: 0.5rem 1.5rem;
+  background: transparent;
+  border: none;
+  border-radius: 999px;
+  color: var(--color-text-dim);
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.filter-tab:hover:not(.active) {
+  color: var(--color-text);
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.filter-tab.active {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--color-text);
+  font-weight: 600;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.1);
 }

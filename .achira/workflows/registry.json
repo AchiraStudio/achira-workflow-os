@@ -1,7 +1,7 @@
 {
   "engine": "3.x",
   "engine_min": "3.0.0",
-  "version": "3.1.0",
+  "version": "4.0.0",
   "templates": {
     "react": {
       "workflow": "react+vite.md",
@@ -17,6 +17,46 @@
       "workflow": "html+js+css.md",
       "description": "Vanilla HTML + CSS + JS multi-page site with Vite dev server",
       "tags": ["static", "vanilla", "vite"]
+    },
+    "saas": {
+      "workflow": "saas.md",
+      "description": "Next.js + Supabase + Stripe full-stack SaaS",
+      "tags": ["fullstack", "saas", "supabase"]
+    },
+    "landing-page": {
+      "workflow": "landing-page.md",
+      "description": "SEO-optimized marketing landing page",
+      "tags": ["static", "marketing", "seo"]
+    },
+    "avalonia": {
+      "workflow": "avalonia.md",
+      "description": "C# Desktop App with Avalonia and Zafiro",
+      "tags": ["desktop", "csharp", "mvvm"]
+    },
+    "flutter": {
+      "workflow": "flutter.md",
+      "description": "Multi-platform Dart 3 app with Riverpod",
+      "tags": ["mobile", "cross-platform", "dart"]
+    },
+    "shopify": {
+      "workflow": "shopify.md",
+      "description": "Shopify App, Extension, or Theme via CLI",
+      "tags": ["ecommerce", "shopify", "liquid"]
+    },
+    "unity": {
+      "workflow": "unity.md",
+      "description": "Unity 6 LTS C# Game Development",
+      "tags": ["game", "csharp", "unity"]
+    },
+    "python-backend": {
+      "workflow": "python-backend.md",
+      "description": "High-performance Python backend (FastAPI)",
+      "tags": ["backend", "python", "api"]
+    },
+    "database": {
+      "workflow": "database.md",
+      "description": "Postgres/Supabase Schema Design",
+      "tags": ["database", "schema", "postgres"]
     }
   },
   "commands": {

@@ -1,15 +1,16 @@
 .agent-card {
-  background: var(--glass-bg);
-  backdrop-filter: var(--glass-blur);
-  border: 1px solid var(--glass-border);
-  border-radius: var(--border-radius-xl);
+  background: rgba(10, 15, 30, 0.4); /* Deeper, richer glass */
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 20px; /* Softer, modern corners */
   padding: 2.25rem;
   display: flex;
   flex-direction: column;
   gap: 1.25rem;
-  transition: var(--transition-default);
+  transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
   cursor: default;
-  box-shadow: var(--shadow-sm);
+  box-shadow: 0 4px 24px -1px rgba(0, 0, 0, 0.2);
   overflow: hidden;
   position: relative;
 }
@@ -17,22 +18,38 @@
 .agent-card::before {
   content: '';
   position: absolute;
-  top: 0; left: 0; right: 0; height: 3px;
-  background: var(--color-text-muted);
+  top: 0; left: 0; right: 0; height: 100%;
+  background: linear-gradient(180deg, rgba(255,255,255,0.03) 0%, transparent 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+/* Subtle top glow line instead of solid thick border */
+.agent-card::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 10%; right: 10%; height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  opacity: 0.3;
 }
 
 .agent-card:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-md);
-  border-color: var(--glass-border-hover);
-  background: rgba(255,255,255,0.08);
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px -8px rgba(0, 0, 0, 0.4);
+  border-color: rgba(255, 255, 255, 0.12);
+  background: rgba(15, 22, 40, 0.6);
 }
 
-/* Group accent borders */
-.agent-card--masters::before { background: #F59E0B; }
-.agent-card--architects::before { background: var(--color-primary); }
-.agent-card--guards::before { background: #EF4444; }
-.agent-card--specialists::before { background: #14B8A6; }
+.agent-card:hover::before {
+  opacity: 1;
+}
+
+/* Group accent glows on hover */
+.agent-card--masters:hover { box-shadow: 0 20px 40px -8px rgba(245, 158, 11, 0.15); border-color: rgba(245, 158, 11, 0.3); }
+.agent-card--architects:hover { box-shadow: 0 20px 40px -8px rgba(41, 151, 255, 0.15); border-color: rgba(41, 151, 255, 0.3); }
+.agent-card--guards:hover { box-shadow: 0 20px 40px -8px rgba(239, 68, 68, 0.15); border-color: rgba(239, 68, 68, 0.3); }
+.agent-card--specialists:hover { box-shadow: 0 20px 40px -8px rgba(20, 184, 166, 0.15); border-color: rgba(20, 184, 166, 0.3); }
 
 .agent-card__header {
   display: flex;
@@ -91,21 +108,29 @@
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
-  padding-top: 1rem;
-  border-top: 1px solid var(--glass-border);
+  padding-top: 1.25rem;
+  border-top: 1px dashed rgba(255, 255, 255, 0.1); /* Softer dashed line */
+  margin-top: auto; /* Push to bottom if desc is short */
 }
 
 .skill-chip {
-  padding: 0.25rem 0.75rem;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid var(--glass-border);
-  border-radius: 9999px;
+  padding: 0.35rem 0.85rem;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 8px; /* Square-ish modern chips */
   font-size: 0.75rem;
   color: var(--color-text-dim);
   font-family: 'JetBrains Mono', monospace;
+  transition: all 0.2s ease;
+}
+
+.agent-card:hover .skill-chip {
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--color-text);
 }
 
 .skill-chip--more {
   color: var(--color-primary);
-  border-color: var(--glass-border-hover);
+  background: rgba(41, 151, 255, 0.05);
+  border-color: rgba(41, 151, 255, 0.2);
 }

@@ -38,6 +38,16 @@ export const agents = [
     triggers: ["mvp", "backlog", "user story", "priority", "business value"],
   },
   {
+    id: "ai-specialist",
+    name: "AI Specialist",
+    group: AGENT_GROUPS.MASTERS,
+    tagline: "LLM & RAG Architect",
+    description:
+      "Expert in RAG pipelines, foundation model selection, and token economics. Protects against prompt injection.",
+    skills: ["ai-expert", "brainstorming"],
+    triggers: ["ai", "llm", "rag", "embeddings", "vector db", "prompt"],
+  },
+  {
     id: "product-manager",
     name: "Product Manager",
     group: AGENT_GROUPS.MASTERS,
@@ -213,7 +223,7 @@ export const agents = [
 ];
 
 export const agentStats = {
-  total: agents.length,
+  total: 21,
   masters: agents.filter((a) => a.group === AGENT_GROUPS.MASTERS).length,
   architects: agents.filter((a) => a.group === AGENT_GROUPS.ARCHITECTS).length,
   guards: agents.filter((a) => a.group === AGENT_GROUPS.GUARDS).length,

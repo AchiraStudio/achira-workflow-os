@@ -55,7 +55,7 @@ export default function MainLayout({ children }) {
         <div className="footer-content">
           <div className="footer-brand">
             <Layers size={18} strokeWidth={1.5} className="footer-logo" />
-            <span className="footer-title">Achira OS V3</span>
+            <span className="footer-title">Achira OS V4.1</span>
           </div>
           <p className="footer-tagline">The blueprint for AI-native software engineering.</p>
           <div className="footer-links">
