@@ -31,3 +31,15 @@ When user's prompt is NOT in English:
 - **Infra/Safety**: 5-Phase Deployment. Verify secrets security.
 
 ---
+
+## 🚫 Zero AI Text Slop (Global Mandatory)
+
+**ALL text, prose, comments, and copy MUST follow `@[skills/antislop-copywriting]` rules. No exceptions.**
+
+- **Banned Vocabulary**: Never use empty AI marker words (*delve, testament, elevate, tapestry, landscape, unleash, harness, revolutionize, seamlessly, paramount, comprehensive, bespoke, cutting-edge, vibrant*).
+- **No Significance Inflation**: Do not declare trivial things as pivotal, game-changing, or remarkable. Avoid passive filler introductions ("In today's fast-paced digital world...").
+- **Concrete & Direct**: Say what things actually do. Prefer specific, plain language over vague superlatives. If removing an adjective does not change the meaning, remove it.
+- **Human Voice**: Write with intentional rhythm and brevity. Avoid robotic uniformity, repetitive sentence structures, and hollow promotional fluff.
+
+---
+

@@ -7,8 +7,10 @@
   --color-surface-soft: #131D33; /* Glass surface hover */
   
   --color-text: #F8FAFC; /* High-contrast white */
-  --color-text-dim: #94A3B8; /* Slate light */
-  --color-text-muted: #64748B;
+  --color-text-dim: #94A3B8; /* Slate light (7.73:1 contrast on Obsidian) */
+  --color-text-muted: #7B8CA7; /* WCAG AA 5.8:1 contrast on Obsidian & 5.2:1 on Surface */
+  --focus-ring: 0 0 0 2px rgba(0, 242, 254, 0.7), 0 0 12px rgba(0, 242, 254, 0.4);
+  --tap-target-min: 44px;
   
   /* Brand Accents */
   --color-primary: #00F2FE; /* Electric Cyan */

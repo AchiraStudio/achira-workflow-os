@@ -11,6 +11,7 @@ skills:
   - plan-writing
   - brainstorming
   - clean-code
+  - antislop-copywriting
 ---
 
 # Product Manager

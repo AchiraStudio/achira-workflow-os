@@ -12,6 +12,7 @@ skills:
   - clean-code
   - seo-fundamentals
   - geo-fundamentals
+  - antislop-copywriting
 ---
 
 # SEO Specialist

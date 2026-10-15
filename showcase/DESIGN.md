@@ -1,7 +1,7 @@
 ---
-version: 5.0.0
-name: Achira Workflow V5 - Cyber-Minimalist Engineering
-description: Normative design token specification and visual rationale for Achira Workflow V5 showcase portal.
+version: 5.1.0
+name: Achira Workflow V5.1 - Cyber-Minimalist Engineering
+description: Normative design token specification and visual rationale for Achira Workflow V5.1 showcase portal.
 colors:
   primary: "#00F2FE"
   primary-dark: "#0284C7"
@@ -94,11 +94,11 @@ components:
     padding: "10px 20px"
 ---
 
-# Achira Workflow V5 — Design Specification
+# Achira Workflow V5.1 — Design Specification
 
 ## Overview
 
-Achira Workflow V5 embodies the **Cyber-Minimalist Engineering** visual aesthetic: high-contrast dark space, electric cyan streams representing multi-agent orchestration, signal amber telemetry nodes, and glassmorphic depth. It strictly rejects uninspired AI clichés, generic template cards, and purple slop.
+Achira Workflow V5.1 embodies the **Cyber-Minimalist Engineering** visual aesthetic: high-contrast dark space, electric cyan streams representing multi-agent orchestration, signal amber telemetry nodes, and glassmorphic depth. It strictly rejects uninspired AI clichés, generic template cards, and purple slop.
 
 ## Colors
 
@@ -130,7 +130,7 @@ Achira Workflow V5 embodies the **Cyber-Minimalist Engineering** visual aestheti
 
 ## Components
 
-- **V5 Brand Header**: Fixed glass navigation with live Antigravity connection indicator.
+- **V5.1 Brand Header**: Fixed glass navigation with live Antigravity connection indicator and accessible mobile drawer.
 - **Interactive Skills Matrix**: Multi-filter tabs (Master Pillars, Frontend, Backend, AI & Data, DevOps, Quality), real-time search, expandable detail drawer.
 - **Workflows & Scaffolds Explorer**: Toggle between Project Scaffolds and Operational Commands with 1-click copy feedback.
 - **Terminal Simulator / Quickstart**: Copyable `npm install -g achira-wf` and `achira-wf global install` pills.

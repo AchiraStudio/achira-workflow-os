@@ -3,7 +3,7 @@ import { agents } from "@/data/agents";
 import { skills } from "@/data/skills";
 import { workflows } from "@/data/workflows";
 
-describe("Achira Workflow V5 Ecosystem", () => {
+describe("Achira Workflow V5.1 Ecosystem", () => {
   it("loads all 21 autonomous specialist agents", () => {
     expect(agents.length).toBe(21);
     const agentIds = agents.map((a) => a.id);
@@ -13,13 +13,15 @@ describe("Achira Workflow V5 Ecosystem", () => {
     expect(agentIds).toContain("devops-engineer");
   });
 
-  it("loads all 54 modern engineering skills", () => {
-    expect(skills.length).toBe(54);
+  it("loads all 60 modern engineering skills", () => {
+    expect(skills.length).toBe(60);
     const skillIds = skills.map((s) => s.id);
     expect(skillIds).toContain("clean-code");
     expect(skillIds).toContain("frontend-design");
     expect(skillIds).toContain("design-spec");
     expect(skillIds).toContain("app-builder");
+    expect(skillIds).toContain("antislop");
+    expect(skillIds).toContain("antislop-copywriting");
   });
 
   it("loads all 25 mission workflows and scaffolds", () => {

@@ -1,7 +1,7 @@
 {
   "engine": "5.x",
   "engine_min": "3.0.0",
-  "version": "5.0.0",
+  "version": "5.1.0",
   "templates": {
     "react": {
       "workflow": "react+vite.md",

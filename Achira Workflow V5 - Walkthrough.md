@@ -1,16 +1,16 @@
-# Achira Workflow V5 — Technical Walkthrough
+# Achira Workflow V5.1 — Technical Walkthrough
 
-Welcome to the future of agentic engineering. Achira Workflow V5 is a massive leap forward in how AI assistants perceive, plan, and execute complex software engineering tasks.
+Welcome to the future of agentic engineering. Achira Workflow V5.1 is a massive leap forward in how AI assistants perceive, plan, and execute complex software engineering tasks.
 
-By combining high-density **7 Native Master Pillars** with **47 progressive domain skills**, **25 mission-critical workflows**, and a **Google Antigravity-native runtime contract**, we have created a development ecosystem that is faster, safer, and globally accessible across every project on your machine.
+By combining high-density **7 Native Master Pillars** with **53 progressive domain skills** (60 total skills including the Anti-Slop Engineering suite), **25 mission-critical workflows**, and a **Google Antigravity-native runtime contract**, we have created a development ecosystem that is faster, safer, and globally accessible across every project on your machine.
 
 ---
 
 ## 🏗️ 1. The Core Infrastructure
 
-### Native Skill Engine (7 Master Pillars + 47 Domain Skills = 54 Skills)
+### Native Skill Engine (7 Master Pillars + 53 Domain Skills = 60 Skills)
 
-Achira replaces external bloated rule sets with 54 high-density, progressively disclosed skills located in `.achira/core/skills/`:
+Achira replaces external bloated rule sets with 60 high-density, progressively disclosed skills located in `.achira/core/skills/`:
 
 1.  **`web-expert`**: The gold standard for Next.js 15, React 19, and vanilla web. Covers performance, SEO, and strict TS/JS patterns.
 2.  **`app-expert`**: Architectures for Mobile (Flutter/Dart 3) and Desktop (Avalonia/C#), enforcing Clean Architecture and MVVM.
@@ -74,15 +74,15 @@ Located in `.achira/memory/` (and `.agents/memory/`), the persistent memory engi
 
 ## 🌐 4. Global Accessibility Across All Projects
 
-Achira Workflow V5 operates **machine-wide across every project** without needing manual `.achira/` setup in every folder:
+Achira Workflow V5.1 operates **machine-wide across every project** without needing manual `.achira/` setup in every folder:
 
 1. **Global Plugin (`~/.gemini/config/plugins/achira-workflow-os/`)**:
    - Contains all **21 specialized agents** with full capability definitions.
-   - Contains all **54 modern engineering skills**.
+   - Contains all **60 modern engineering skills**.
    - Contains `rules/AGENTS.md` and `hooks.json` for safety gates.
    - Automatically discovered and loaded by Google Antigravity & Gemini CLI in any workspace.
 2. **Global Skills Engine (`~/.gemini/config/skills/`)**:
-   - All 54 skills are registered in the global catalog, available immediately on-demand in any conversation.
+   - All 60 skills are registered in the global catalog, available immediately on-demand in any conversation.
 3. **Global Machine Rules (`~/.gemini/GEMINI.md`)**:
    - Enforces universal anti-slop rules, clean code, accessibility, and agent routing protocol across all directories.
 4. **Global CLI Management**:

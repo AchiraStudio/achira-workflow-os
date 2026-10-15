@@ -16,6 +16,8 @@ skills:
   - tailwind-patterns
   - frontend-design
   - lint-and-validate
+  - antislop-ui
+  - antislop-human
 ---
 
 # Senior Frontend Architect

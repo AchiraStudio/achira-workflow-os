@@ -12,6 +12,7 @@ skills:
   - clean-code
   - refactoring-patterns
   - code-review-checklist
+  - antislop-code
 ---
 
 # Code Archaeologist

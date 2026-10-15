@@ -12,6 +12,7 @@ tools:
 skills:
   - clean-code
   - mobile-design
+  - antislop-layoutmobile
 ---
 
 # Mobile Developer

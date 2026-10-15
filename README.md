@@ -1,8 +1,8 @@
-# ⚡ Achira Workflow V5
+# ⚡ Achira Workflow V5.1
 
 > **The premier multi-agent orchestration framework for AI-native software engineering.**
 
-Achira Workflow V5 is a high-performance laboratory of **21 specialist agents**, **54 skills** (7 native master pillars + 47 progressive domain skills), and **25 mission-critical workflows**, built natively for Google Antigravity & Gemini.
+Achira Workflow V5.1 is a high-performance laboratory of **21 specialist agents**, **60 skills** (7 native master pillars + 53 progressive domain skills), and **25 mission-critical workflows**, built natively for Google Antigravity & Gemini.
 
 _Based on [antigravity-kit](https://github.com/vudovn/antigravity-kit)_
 
@@ -23,7 +23,7 @@ Most AI tools just "code." Achira **thinks**, **architects**, and **verifies**.
 - ⚡ **Native Safety Hook**: PreToolUse gate preventing high-confidence destructive operations.
 - 🧠 **Persistent Memory**: Cross-session recall for conventions, preferences, and technical decisions (`.achira/memory/`).
 - 🚀 **Standardized Excellence**: Strict enforcement of Clean Code, Accessibility (WCAG AA), and Performance guidelines across all projects.
-- 🌍 **Native Mastery**: Powered by **7 internal Expert Pillars** plus **47 progressive skills** distilling thousands of rules for web, app, game, ai, devops, and security engineering into zero-latency core knowledge.
+- 🌍 **Native Mastery**: Powered by **7 internal Expert Pillars** plus **53 progressive skills** distilling thousands of rules for web, app, game, ai, devops, and security engineering into zero-latency core knowledge.
 
 ---
 
@@ -47,7 +47,7 @@ Deploy Achira Workflow OS to your machine's global Google Antigravity & Gemini r
 achira-wf global install
 ```
 
-> **Instant Machine-Wide Superpowers:** All **21 specialized agents**, **54 modern engineering skills**, and universal anti-slop rules immediately become active across **every folder and project** you open in Google Antigravity or Gemini CLI—with zero project configuration required!
+> **Instant Machine-Wide Superpowers:** All **21 specialized agents**, **60 modern engineering skills**, and universal anti-slop rules immediately become active across **every folder and project** you open in Google Antigravity or Gemini CLI—with zero project configuration required!
 
 ### 3. Initialize in a Specific Project (Optional Project Workflows)
 
@@ -109,7 +109,7 @@ While most day-to-day work happens via slash commands, the CLI provides core lif
 | Command                    | Purpose                                                                                |
 | :------------------------- | :------------------------------------------------------------------------------------- |
 | `achira-wf global install` | **NEW** Deploy Achira OS globally into `~/.gemini/config/` for machine-wide access.     |
-| `achira-wf global doctor`  | **NEW** Validate health of the global Antigravity plugin, 54 skills, and agents.       |
+| `achira-wf global doctor`  | **NEW** Validate health of the global Antigravity plugin, 60 skills, and agents.       |
 | `achira-wf global sync`    | **NEW** Sync the latest agents and skills to the global environment.                   |
 | `achira-wf global status`  | **NEW** View global installation paths and active status.                              |
 | `achira-wf init`           | Install or repair the `.achira/` core and sync `.agent/` in the target folder.          |

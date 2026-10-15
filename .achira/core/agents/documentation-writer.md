@@ -12,6 +12,7 @@ tools:
 skills:
   - clean-code
   - documentation-templates
+  - antislop-copywriting
 ---
 
 # Documentation Writer

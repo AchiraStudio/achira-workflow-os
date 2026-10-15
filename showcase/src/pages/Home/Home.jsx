@@ -7,7 +7,7 @@ import { motion } from "framer-motion";
 
 const STATS = [
   { value: "21", label: "Specialist Agents" },
-  { value: "54", label: "Modern Skills" },
+  { value: "60", label: "Modern Skills" },
   { value: "25", label: "Mission Workflows" },
   { value: "Global", label: "Runtime Engine" },
   { value: "100%", label: "Zero Slop" },
@@ -61,7 +61,7 @@ const PILLARS = [
   },
   {
     icon: Shield,
-    title: "V5.0 Mission Integrity",
+    title: "V5.1 Mission Integrity",
     description: "Speed never comes at the cost of stability. PreToolUse safety gates and a 7-pillar verification suite guard every release.",
     colSpan: 3,
   },
@@ -100,7 +100,7 @@ export default function Home() {
             
             <motion.p variants={fadeUp} className="hero-subtitle">
               The multi-agent orchestration framework for verified, zero-slop execution.
-              <span className="live-tag">V5.0 is now live.</span>
+              <span className="live-tag">V5.1 is now live.</span>
             </motion.p>
             
             <motion.div variants={fadeUp} className="hero-actions">

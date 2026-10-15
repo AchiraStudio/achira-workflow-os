@@ -9,7 +9,7 @@ const DIRECTORY_TREE = [
   {
     name: ".achira/",
     icon: Folder,
-    description: "Root of the Achira Workflow V5 project configuration.",
+    description: "Root of the Achira Workflow V5.1 project configuration.",
     children: [
       {
         name: "core/",
@@ -17,7 +17,7 @@ const DIRECTORY_TREE = [
         description: "The core intelligence hub — personas, skills, datasets.",
         children: [
           { name: "agents/", icon: Cpu, description: "21 autonomous specialist AI personas." },
-          { name: "skills/", icon: Zap, description: "54 progressive engineering skills." },
+          { name: "skills/", icon: Zap, description: "60 progressive engineering skills." },
           { name: "memory/", icon: Folder, description: "Cross-session persistent project memory." },
           { name: "shared/", icon: Folder, description: "Shared datasets and design system tokens." },
         ],
@@ -183,7 +183,7 @@ export default function ArchitecturePage() {
           variants={fadeUp}
         >
           <div className="install-text">
-            <h3>Install Achira Workflow V5.</h3>
+            <h3>Install Achira Workflow V5.1.</h3>
             <p>One command provisions the entire local intelligence directory or workstation-wide plugin.</p>
           </div>
           <div className="install-cmd-block">

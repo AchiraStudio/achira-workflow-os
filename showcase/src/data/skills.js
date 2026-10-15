@@ -93,6 +93,17 @@ export const skillCategories = [
       { id: "documentation-templates", label: "Documentation Templates", description: "Production API specs, architectural diagrams, and runbooks." },
     ],
   },
+  {
+    name: "Anti-Slop Engineering",
+    skills: [
+      { id: "antislop", label: "Anti-Slop Core", description: "Universal filter stopping generic AI output, clichés, and hallucinated polish." },
+      { id: "antislop-copywriting", label: "Anti-Slop Copywriting", description: "Bans empty AI buzzwords (delve, elevate, tapestry) in favor of crisp human prose." },
+      { id: "antislop-code", label: "Anti-Slop Code Comments", description: "Eliminates restated obvious code comments while preserving architectural insights." },
+      { id: "antislop-ui", label: "Anti-Slop UI Craft", description: "Bans generic cards, purple glows, and cookie-cutter layouts in favor of intentional UI." },
+      { id: "antislop-human", label: "Anti-Slop Human & A11y", description: "WCAG contrast checker, keyboard accessibility, and real human usability states." },
+      { id: "antislop-layoutmobile", label: "Anti-Slop Responsive Layout", description: "Fluid reflow across screen sizes, touch ergonomics, and zero horizontal scroll." },
+    ],
+  },
 ];
 
 export const totalSkills = skillCategories.reduce((sum, cat) => sum + cat.skills.length, 0);

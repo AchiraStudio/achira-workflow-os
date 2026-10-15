@@ -1,6 +1,6 @@
 # Achira Workflow — Architecture
 
-> Unified AI-Driven Development Ecosystem — v5.0.0
+> Unified AI-Driven Development Ecosystem — v5.1.0
 
 ---
 
@@ -9,7 +9,7 @@
 Achira Workflow is an Antigravity-native agentic engineering ecosystem consisting of:
 
 - **21 Specialist Agents** — Role-based AI personas + AI Specialist
-- **54 Skills** — 7 Native Master Pillars + 47 Progressive Domain Knowledge Modules
+- **60 Skills** — 7 Native Master Pillars + 53 Progressive Domain Knowledge Modules
 - **25 Workflows** — 11 Mission-Critical Scaffolds + 14 Operational Slash Commands
 - **Persistent Memory System** — Cross-session context, preferences, conventions, decisions
 - **Native Antigravity Integration** — Runtime contract (`antigravity.json`), `PreToolUse` safety gate (`hooks.json`), Antigravity Doctor, MCP synchronization
@@ -38,7 +38,7 @@ Achira Workflow is an Antigravity-native agentic engineering ecosystem consistin
 │   └── schemas/
 ├── core/                        # The brain — agents, skills, shared data
 │   ├── agents/                  # 21 Specialist Agents
-│   ├── skills/                  # 54 Skills (7 Pillars + 47 Domain Skills)
+│   ├── skills/                  # 60 Skills (7 Pillars + 53 Domain Skills)
 │   └── shared/                  # Shared data (ui-ux-pro-max data & styles)
 ├── workflows/                   # All 25 workflows + dynamic registry
 │   ├── registry.json            # Dynamic workflow & template discovery
@@ -114,7 +114,7 @@ Specialist AI personas for different engineering domains.
 
 ---
 
-## 🧩 Skills (54)
+## 🧩 Skills (60)
 
 ### 1. Master Expert Pillars (7)
 High-density internalized expert domain knowledge:
@@ -171,6 +171,14 @@ High-density internalized expert domain knowledge:
 ### 7. Specialized & Operations (15)
 - `mobile-design`, `game-development`, `seo-fundamentals`, `geo-fundamentals`, `i18n-localization`, `powershell-windows`, `bash-linux`, `mcp-builder`, `documentation-templates`, `brainstorming`, `plan-writing`, `architecture`, `app-builder`, `behavioral-modes`, `intelligent-routing`.
 
+### 8. Anti-Slop Engineering (6)
+- `antislop`: Core anti-slop rules, usage modes, and delivery gate.
+- `antislop-copywriting`: Anti-AI marketing copy, banned corporate clichés, headline craft.
+- `antislop-code`: Clean code comments without restating trivial implementation or AI noise.
+- `antislop-ui`: Visual interface craftsmanship without generic cards, AI glows, or clichés.
+- `antislop-human`: Human accessibility, keyboard navigation, and WCAG contrast check.
+- `antislop-layoutmobile`: Mobile-first responsive layouts, viewport scaling, and touch ergonomics.
+
 ---
 
 ## 🔄 Workflows (25)
@@ -216,7 +224,7 @@ Achira Workflow OS adheres to the Google Antigravity runtime contract across bot
 
 1. **Local Discovery**: Automatically discovered from `.agents/` or `.agent/` at repository root.
 2. **Global Discovery**:
-   - Packaged as a global plugin in `~/.gemini/config/plugins/achira-workflow-os/` exposing all 21 agents, 54 skills, rules (`rules/AGENTS.md`), and safety hooks (`hooks.json`).
+   - Packaged as a global plugin in `~/.gemini/config/plugins/achira-workflow-os/` exposing all 21 agents, 60 skills, rules (`rules/AGENTS.md`), and safety hooks (`hooks.json`).
    - Global skills in `~/.gemini/config/skills/` providing immediate on-demand access in any folder across the machine.
    - Global rules in `~/.gemini/GEMINI.md` enforcing anti-slop guidelines and agent routing.
 3. **PreToolUse Safety Gate**: Registers `hooks.json` to inspect `run_command` payloads and prevent destructive commands (root filesystem deletion, raw-drive formatting).
