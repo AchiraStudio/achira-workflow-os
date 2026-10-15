@@ -8,7 +8,14 @@ export default function Footer() {
       <div className="container">
         <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6 pb-8 border-b border-slate-900">
           <div className="flex items-center gap-3">
-            <img src={v5Icon} alt="Achira Workflow" className="w-7 h-7" />
+            <img
+              src={v5Icon}
+              alt="Achira Workflow"
+              width="28"
+              height="28"
+              className="w-7 h-7"
+              style={{ width: "28px", height: "28px", flexShrink: 0 }}
+            />
             <div>
               <div className="flex items-center gap-2">
                 <span className="font-extrabold text-base text-white tracking-tight">Achira Workflow</span>

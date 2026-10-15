@@ -8,7 +8,14 @@ export default function Navbar({ onNavigate, activeSection }) {
       <div className="container flex items-center justify-between h-16">
         {/* Brand Logo */}
         <div className="flex items-center gap-3 cursor-pointer" onClick={() => onNavigate("hero")}>
-          <img src={v5Icon} alt="Achira Workflow V5" className="w-8 h-8 drop-shadow-[0_0_12px_rgba(0,242,254,0.35)]" />
+          <img
+            src={v5Icon}
+            alt="Achira Workflow V5"
+            width="32"
+            height="32"
+            className="w-8 h-8 drop-shadow-[0_0_12px_rgba(0,242,254,0.35)]"
+            style={{ width: "32px", height: "32px", flexShrink: 0 }}
+          />
           <div className="flex items-center gap-2">
             <span className="font-extrabold text-lg tracking-tight text-white">Achira Workflow</span>
             <span className="text-[11px] font-mono font-bold px-2 py-0.5 rounded-full bg-cyan-500/10 text-cyan-400 border border-cyan-500/30">

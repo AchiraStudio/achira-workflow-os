@@ -16,7 +16,14 @@ export default function Hero({ onExploreSkills, onExploreWorkflows }) {
       <div className="container relative z-10 flex flex-col items-center text-center">
         {/* Release Pill */}
         <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyan-950/60 border border-cyan-500/30 text-cyan-300 text-xs font-mono mb-8 backdrop-blur-md">
-          <img src={v5Icon} alt="V5" className="w-3.5 h-3.5" />
+          <img
+            src={v5Icon}
+            alt="V5"
+            width="14"
+            height="14"
+            className="w-3.5 h-3.5"
+            style={{ width: "14px", height: "14px", flexShrink: 0 }}
+          />
           <span className="font-semibold text-white">V5 RELEASE</span>
           <span className="text-cyan-600">•</span>
           <span>GLOBAL ANTIGRAVITY ENGINE</span>
