@@ -11,41 +11,60 @@ export default function MainLayout({ children }) {
   return (
     <div className="layout-container">
       <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
-      {/* Floating Nano Navbar */}
-      <motion.nav 
-        className="minimal-nav glass-panel"
-        initial={{ y: -100, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.6, ease: [0.25, 1, 0.5, 1] }}
-      >
-        <div className="brand-wrapper">
-          <Link to="/" className="brand-logo" style={{ display: "flex", alignItems: "center", gap: "10px" }}>
-            <img src="/favicon.svg" alt="Achira Workflow V5" style={{ width: "24px", height: "24px" }} />
-            <span style={{ fontWeight: 800 }}>Achira Workflow</span>
-            <span style={{ fontSize: "11px", fontWeight: 700, padding: "2px 6px", borderRadius: "9999px", background: "rgba(0, 242, 254, 0.12)", color: "#00F2FE", border: "1px solid rgba(0, 242, 254, 0.3)" }}>V5.0</span>
+      {/* Floating Precision Navbar */}
+      <header className="navbar-wrapper">
+        <motion.nav 
+          className="minimal-nav"
+          initial={{ y: -80, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+        >
+          {/* Brand Identity */}
+          <Link to="/" className="brand-link" title="Achira Workflow Home">
+            <div className="brand-icon-wrapper">
+              <img src="/favicon.svg" alt="Achira Workflow V5" className="brand-icon" />
+              <span className="brand-glow-halo" aria-hidden="true" />
+            </div>
+            <span className="brand-title">Achira Workflow</span>
+            <span className="brand-badge">V5.0</span>
           </Link>
-        </div>
 
-        <div className="nav-links">
-          <NavLink to="/architecture" className={({ isActive }) => `nav-link ${isActive ? "active" : ""}`}>
-            Architecture
-          </NavLink>
-          <NavLink to="/agents" className={({ isActive }) => `nav-link ${isActive ? "active" : ""}`}>
-            Agents
-          </NavLink>
-          <NavLink to="/workflows" className={({ isActive }) => `nav-link ${isActive ? "active" : ""}`}>
-            Workflows
-          </NavLink>
-          <a href="https://github.com/AchiraStudio/achira-workflow-os" target="_blank" rel="noopener noreferrer" className="nav-link">
-            Repository
-          </a>
-        </div>
+          {/* Navigation Links */}
+          <div className="nav-links">
+            <NavLink to="/architecture" className={({ isActive }) => `nav-link ${isActive ? "active" : ""}`}>
+              Architecture
+            </NavLink>
+            <NavLink to="/agents" className={({ isActive }) => `nav-link ${isActive ? "active" : ""}`}>
+              Agents
+              <span className="nav-count">21</span>
+            </NavLink>
+            <NavLink to="/workflows" className={({ isActive }) => `nav-link ${isActive ? "active" : ""}`}>
+              Workflows
+              <span className="nav-count">25</span>
+            </NavLink>
+            <a 
+              href="https://github.com/AchiraStudio/achira-workflow-os" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="nav-link nav-github"
+            >
+              GitHub
+            </a>
+          </div>
 
-        <div className="nav-actions">
-          <Link to="/workflows" className="btn-outline">Guide</Link>
-          <button className="btn-solid" onClick={() => setIsModalOpen(true)}>Get Started</button>
-        </div>
-      </motion.nav>
+          {/* Actions */}
+          <div className="nav-actions">
+            <div className="engine-status" title="Antigravity Engine Active">
+              <span className="status-dot" aria-hidden="true" />
+              <span className="status-text">Active</span>
+            </div>
+            <Link to="/workflows" className="btn-nav-guide">Guide</Link>
+            <button className="btn-nav-primary" onClick={() => setIsModalOpen(true)}>
+              Get Started
+            </button>
+          </div>
+        </motion.nav>
+      </header>
 
       <main className="main-content">
         {children}
