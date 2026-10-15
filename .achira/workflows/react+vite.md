@@ -1,5 +1,10 @@
 ---
+name: react+vite
 description: Scaffold a mature, scalable React + Vite project with Absolute Imports, React Router, and a Service-oriented architecture.
+version: 4.2.0
+requires_agents: frontend-specialist
+requires_skills: web-expert, nextjs-react-expert, frontend-architecture, verify-changes
+artifact_outputs: react-architecture, project-structure
 ---
 
 > 🔗 Skill: .achira/core/skills/web-expert

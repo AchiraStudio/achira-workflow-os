@@ -1,5 +1,10 @@
 ---
+name: saas
 description: Scaffold a full-stack SaaS project using Next.js App Router, Supabase Auth/DB, and Stripe billing.
+version: 4.2.0
+requires_agents: frontend-specialist, backend-specialist
+requires_skills: web-expert, backend-expert, commerce-expert, database-design, verify-changes
+artifact_outputs: saas-architecture, environment-template
 ---
 
 > 🔗 Skill: .achira/core/skills/web-expert

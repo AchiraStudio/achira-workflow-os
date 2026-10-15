@@ -1,5 +1,10 @@
 ---
+name: html+js+css
 description: Scaffold a clean, scalable vanilla HTML + CSS + JavaScript project with clear separation of concerns.
+version: 4.2.0
+requires_agents: frontend-specialist
+requires_skills: web-expert, clean-code, web-design-guidelines, verify-changes
+artifact_outputs: vanilla-architecture, web-structure
 ---
 
 > 🔗 Skill: .achira/core/skills/web-expert

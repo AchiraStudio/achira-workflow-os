@@ -1,7 +1,7 @@
 {
   "name": "achira-wf",
-  "version": "4.1.2",
-  "description": "Achira Workflow OS — AI-driven development ecosystem with 21 agents, 7 master pillars, and 22 project scaffolds.",
+  "version": "5.0.0",
+  "description": "Achira Workflow — AI-driven development ecosystem with 21 agents, 54 skills, and 25 mission-critical workflows.",
   "main": "cli.js",
   "bin": {
     "achira-wf": "cli.js"
@@ -35,6 +35,7 @@
   },
   "files": [
     ".achira",
+    "lib",
     "cli.js",
     "README.md",
     "LICENSE"

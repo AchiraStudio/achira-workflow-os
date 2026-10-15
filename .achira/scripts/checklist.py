@@ -27,7 +27,7 @@ from typing import List, Tuple, Optional
 
 # Import shared utilities
 sys.path.append(str(Path(__file__).parent))
-from shared_utils import Colors, print_header, print_step, print_success, print_warning, print_error, get_python_cmd  # type: ignore
+from shared_utils import Colors, print_header, print_step, print_success, print_warning, print_error, get_python_cmd, resolve_achira_path  # type: ignore
 
 # Define priority-ordered checks
 CORE_CHECKS = [
@@ -157,16 +157,17 @@ Examples:
         print_error(f"Project path does not exist: {project_path}")
         sys.exit(1)
     
-    print_header("🚀 ACHIRA WORKFLOW OS - MASTER CHECKLIST")
+    print_header("⚡ ACHIRA WORKFLOW V5 - MASTER CHECKLIST")
     print(f"Project: {project_path}")
     print(f"URL: {args.url if args.url else 'Not provided (performance checks skipped)'}")
     
+    toolkit_root = resolve_achira_path(Path(__file__).parent).parent
     results = []
     
     # Run core checks
     print_header("📋 CORE CHECKS")
     for name, script_path, required in CORE_CHECKS:
-        script = project_path / script_path
+        script = (project_path / script_path) if (project_path / script_path).exists() else (toolkit_root / script_path)
         result = run_script(name, script, str(project_path))
         results.append(result)
         
@@ -180,7 +181,7 @@ Examples:
     if args.url and not args.skip_performance:
         print_header("⚡ PERFORMANCE CHECKS")
         for name, script_path, required in PERFORMANCE_CHECKS:
-            script = project_path / script_path
+            script = (project_path / script_path) if (project_path / script_path).exists() else (toolkit_root / script_path)
             result = run_script(name, script, str(project_path), args.url)
             results.append(result)
     

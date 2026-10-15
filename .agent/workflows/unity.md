@@ -1,5 +1,10 @@
 ---
+name: unity
 description: Scaffold a Unity game development project focusing on C#, best practices, and performance.
+version: 4.2.0
+requires_agents: game-developer
+requires_skills: game-expert, game-development, clean-code, verify-changes
+artifact_outputs: game-architecture, unity-structure
 ---
 
 > 🔗 Skill: .achira/core/skills/game-expert

@@ -1,35 +1,45 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React, { useState } from "react";
+import Navbar from "./components/Navbar";
+import Hero from "./components/Hero";
+import StatsHud from "./components/StatsHud";
+import SkillsMatrix from "./components/SkillsMatrix";
+import WorkflowsExplorer from "./components/WorkflowsExplorer";
+import AgentsDirectory from "./components/AgentsDirectory";
+import GlobalArchitecture from "./components/GlobalArchitecture";
+import Footer from "./components/Footer";
 
-function App() {
-  const [count, setCount] = useState(0)
+export default function App() {
+  const [activeSection, setActiveSection] = useState("hero");
+
+  const scrollToSection = (sectionId) => {
+    setActiveSection(sectionId);
+    if (sectionId === "hero") {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+      return;
+    }
+    const el = document.getElementById(sectionId);
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth" });
+    }
+  };
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+    <div className="min-h-screen flex flex-col bg-[#070A0F] text-[#F8FAFC]">
+      <Navbar onNavigate={scrollToSection} activeSection={activeSection} />
+      
+      <main className="flex-1">
+        <Hero
+          onExploreSkills={() => scrollToSection("skills")}
+          onExploreWorkflows={() => scrollToSection("workflows")}
+        />
+        <StatsHud />
+        <SkillsMatrix />
+        <WorkflowsExplorer />
+        <AgentsDirectory />
+        <GlobalArchitecture />
+      </main>
 
-export default App
+      <Footer />
+    </div>
+  );
+}

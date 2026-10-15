@@ -7,8 +7,8 @@ export default function Modal({ isOpen, onClose }) {
   const [copiedId, setCopiedId] = useState(null);
   
   const steps = [
-    { id: 'install', label: '1. Install CLI', command: 'npm i achira-wf' },
-    { id: 'init', label: '2. Initialize OS', command: 'npx achira-wf init' }
+    { id: 'install', label: '1. Install CLI', command: 'npm i -g achira-wf' },
+    { id: 'init', label: '2. Initialize Workflow', command: 'npx achira-wf init' }
   ];
 
   const copyToClipboard = (text, id) => {

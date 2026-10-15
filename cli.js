@@ -5,6 +5,12 @@ import chalk from "chalk";
 import fs from "fs-extra";
 import path from "path";
 import { fileURLToPath } from "url";
+import {
+  installGlobal,
+  doctorGlobal,
+  uninstallGlobal,
+  getGlobalPaths,
+} from "./lib/global-manager.js";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const pkg = fs.readJsonSync(path.join(__dirname, "package.json"));
@@ -17,7 +23,7 @@ const program = new Command();
 program
   .name("achira-wf")
   .description(
-    "Achira Workflow OS — Install agents, skills, and project scaffolds into any folder",
+    "Achira Workflow V5 — Install agents, skills, and project scaffolds into any folder",
   )
   .version(pkg.version);
 
@@ -85,6 +91,13 @@ program
           `  ✔  Synced ${mdFiles.length} workflows → .agent/workflows/\n`,
         ),
       );
+
+      // Sync hooks.json if present
+      const hooksSrc = path.join(dest, "hooks.json");
+      if (fs.existsSync(hooksSrc)) {
+        await fs.copy(hooksSrc, path.join(target, ".agent", "hooks.json"), { overwrite: true });
+        console.log(chalk.green("  ✔  Synced Antigravity safety gate → .agent/hooks.json\n"));
+      }
     } catch (err) {
       console.log(
         chalk.yellow(`  ⚠  Could not sync .agent/workflows/: ${err.message}\n`),
@@ -94,12 +107,19 @@ program
     // 3. Sync .cursorrules for automatic IDE rules
     try {
       const cursorRulesPath = path.join(target, ".cursorrules");
-      const geminiRulesPath = path.join(ACHIRA_DIR, "rules", "GEMINI.md");
-      await fs.remove(cursorRulesPath); 
-      await fs.ensureSymlink(geminiRulesPath, cursorRulesPath, "file");
-      console.log(chalk.green("  ✔  Linked .cursorrules → .achira/rules/GEMINI.md\n"));
+      const geminiRulesPath = path.join(dest, "rules", "GEMINI.md");
+      await fs.remove(cursorRulesPath);
+      try {
+        await fs.ensureSymlink(geminiRulesPath, cursorRulesPath, "file");
+        console.log(chalk.green("  ✔  Linked .cursorrules → .achira/rules/GEMINI.md\n"));
+      } catch {
+        if (fs.existsSync(geminiRulesPath)) {
+          await fs.copy(geminiRulesPath, cursorRulesPath);
+          console.log(chalk.green("  ✔  Synced .cursorrules → .achira/rules/GEMINI.md\n"));
+        }
+      }
     } catch (err) {
-      console.log(chalk.yellow(`  ⚠  Could not link .cursorrules: ${err.message}\n`));
+      console.log(chalk.yellow(`  ⚠  Could not setup .cursorrules: ${err.message}\n`));
     }
 
     // 4. Print registry summary
@@ -117,7 +137,7 @@ program
             ),
           );
         }
-        console.log(chalk.white("  Achira Workflow OS initialized.\n"));
+        console.log(chalk.white("  Achira Workflow V5 initialized.\n"));
         console.log(chalk.cyan("  Project Scaffolds:\n"));
         for (const [key, val] of Object.entries(registry.templates || {})) {
           console.log(
@@ -132,6 +152,7 @@ program
           );
         }
         console.log("");
+        console.log(chalk.gray("  Tip: Run `achira-wf global install` to enable all 54 skills & 21 agents globally across all projects!\n"));
       } catch {
         console.log(chalk.yellow("  ⚠  Could not parse registry.json\n"));
       }
@@ -220,7 +241,7 @@ program
       process.exit(1);
     }
 
-    console.log(chalk.cyan("\n  Achira Workflow OS\n"));
+    console.log(chalk.cyan("\n  Achira Workflow V5\n"));
     console.log(
       chalk.gray(
         `  Engine: ${registry.engine}  Version: ${registry.version}\n`,
@@ -248,10 +269,57 @@ program
 
 program
   .command("doctor")
-  .description("Validate .achira/ installation integrity")
-  .action(() => {
+  .description("Validate .achira/ installation integrity (local or global)")
+  .option("-g, --global", "Check global Antigravity installation (~/.gemini/config/)")
+  .action(async (options) => {
+    if (options.global) {
+      console.log(chalk.cyan("\n  achira-wf doctor --global\n"));
+      const doc = await doctorGlobal({ baseDir: path.join(__dirname, ACHIRA_DIR) });
+      for (const check of doc.checks) {
+        if (check.ok) {
+          console.log(chalk.green(`  ✔  ${check.label}`));
+        } else {
+          console.log(chalk.red(`  ✖  ${check.label} — MISSING (${check.path})`));
+        }
+      }
+      console.log(chalk.gray(`\n  Plugin Agents:        ${doc.counts.agents}`));
+      console.log(chalk.gray(`  Plugin Skills:        ${doc.counts.skills}`));
+      console.log(chalk.gray(`  Global Config Skills: ${doc.counts.globalSkills}`));
+      console.log(
+        chalk.gray(
+          `  Antigravity LS:       ${doc.lsOnline ? chalk.green("Online") : chalk.yellow("Offline/Inactive")}`,
+        ),
+      );
+
+      console.log("");
+      if (doc.allOk) {
+        console.log(chalk.green("  ✔  Global Antigravity ecosystem is healthy and active machine-wide!\n"));
+      } else {
+        console.log(chalk.yellow("  ⚠  Some global components are missing. Run `achira-wf global install` to fix.\n"));
+      }
+      return;
+    }
+
     const base = path.join(process.cwd(), ACHIRA_DIR);
     console.log(chalk.cyan("\n  achira-wf doctor\n"));
+
+    if (!fs.existsSync(base)) {
+      console.log(chalk.yellow(`  ⚠  No local .achira/ found in: ${process.cwd()}\n`));
+      const doc = await doctorGlobal({ baseDir: path.join(__dirname, ACHIRA_DIR) });
+      if (doc.allOk) {
+        console.log(chalk.green("  ✔  Global Achira Workflow V5 is ACTIVE machine-wide!"));
+        console.log(chalk.gray(`     (${doc.counts.skills} skills, ${doc.counts.agents} agents available globally)\n`));
+        console.log(
+          chalk.cyan("  Tip:") +
+            chalk.white(" Run ") +
+            chalk.bold("`achira-wf init`") +
+            chalk.white(" to initialize local project workflows and safety gates.\n"),
+        );
+      } else {
+        console.log(chalk.gray("  Run `achira-wf init` to initialize in this directory, or `achira-wf global install` for global access.\n"));
+      }
+      return;
+    }
 
     const checks = [
       { label: ".achira/", path: base },
@@ -265,6 +333,9 @@ program
       },
       { label: "scripts/", path: path.join(base, "scripts") },
       { label: "rules/GEMINI.md", path: path.join(base, "rules", "GEMINI.md") },
+      { label: "memory/", path: path.join(base, "memory") },
+      { label: "hooks.json", path: path.join(base, "hooks.json") },
+      { label: "antigravity.json", path: path.join(base, "antigravity.json") },
       { label: "ARCHITECTURE.md", path: path.join(base, "ARCHITECTURE.md") },
     ];
 
@@ -329,6 +400,115 @@ program
       );
       process.exit(1);
     }
+  });
+
+// ─── achira-wf global ────────────────────────────────────────────────────────
+
+const globalCmd = program
+  .command("global")
+  .description("Manage global Antigravity & Gemini integration (~/.gemini/config/)");
+
+globalCmd
+  .command("install")
+  .description("Deploy Achira Workflow V5 globally across all projects on your machine")
+  .action(async () => {
+    console.log(chalk.cyan("\n  achira-wf global install\n"));
+    try {
+      const res = await installGlobal({ baseDir: path.join(__dirname, ACHIRA_DIR) });
+      console.log(chalk.green(`  ✔  Global Plugin deployed → ${res.pluginDir}`));
+      console.log(chalk.green(`  ✔  ${res.agentsInstalled} Agents registered globally`));
+      console.log(chalk.green(`  ✔  ${res.skillsInstalled} Skills registered globally → ${res.configSkillsDir}`));
+      console.log(chalk.green(`  ✔  Universal Rules active → ${res.geminiMdPath}`));
+      if (res.lsNotified) {
+        console.log(chalk.green("  ✔  Antigravity IDE Language Server notified & plugin enabled live!"));
+      } else {
+        console.log(chalk.gray("  ℹ  Note: Restart Antigravity IDE if open to pick up global plugin discovery."));
+      }
+      console.log(chalk.cyan("\n  Success! Achira Workflow V5 is now accessible in ALL projects machine-wide.\n"));
+    } catch (err) {
+      console.log(chalk.red(`  ✖  Global installation failed: ${err.message}\n`));
+      process.exit(1);
+    }
+  });
+
+globalCmd
+  .command("sync")
+  .description("Sync latest agents, skills, and rules to global ~/.gemini/config/")
+  .action(async () => {
+    console.log(chalk.cyan("\n  achira-wf global sync\n"));
+    try {
+      const res = await installGlobal({ baseDir: path.join(__dirname, ACHIRA_DIR) });
+      console.log(
+        chalk.green(
+          `  ✔  Synchronized ${res.skillsInstalled} skills & ${res.agentsInstalled} agents to global config\n`,
+        ),
+      );
+    } catch (err) {
+      console.log(chalk.red(`  ✖  Sync failed: ${err.message}\n`));
+      process.exit(1);
+    }
+  });
+
+globalCmd
+  .command("doctor")
+  .description("Validate global Antigravity installation health")
+  .action(async () => {
+    console.log(chalk.cyan("\n  achira-wf global doctor\n"));
+    const doc = await doctorGlobal({ baseDir: path.join(__dirname, ACHIRA_DIR) });
+    for (const check of doc.checks) {
+      if (check.ok) {
+        console.log(chalk.green(`  ✔  ${check.label}`));
+      } else {
+        console.log(chalk.red(`  ✖  ${check.label} — MISSING`));
+      }
+    }
+    console.log(chalk.gray(`\n  Plugin Agents:        ${doc.counts.agents}`));
+    console.log(chalk.gray(`  Plugin Skills:        ${doc.counts.skills}`));
+    console.log(chalk.gray(`  Global Config Skills: ${doc.counts.globalSkills}`));
+    console.log(
+      chalk.gray(
+        `  Antigravity LS:       ${doc.lsOnline ? chalk.green("Online") : chalk.yellow("Offline/Inactive")}`,
+      ),
+    );
+
+    console.log("");
+    if (doc.allOk) {
+      console.log(chalk.green("  ✔  Global Antigravity ecosystem is healthy and active machine-wide!\n"));
+    } else {
+      console.log(chalk.yellow("  ⚠  Some global components are missing. Run `achira-wf global install` to fix.\n"));
+    }
+  });
+
+globalCmd
+  .command("status")
+  .description("Show global installation status and active plugins")
+  .action(async () => {
+    const paths = getGlobalPaths();
+    console.log(chalk.cyan("\n  Achira Workflow V5 — Global Status\n"));
+    console.log(chalk.gray(`  Plugin Directory: ${paths.pluginTargetDir}`));
+    console.log(chalk.gray(`  Skills Directory: ${paths.configSkillsDir}`));
+    console.log(chalk.gray(`  Rules File:       ${paths.geminiMdPath}\n`));
+
+    const pluginExists = fs.existsSync(paths.pluginTargetDir);
+    const rulesExists = fs.existsSync(paths.geminiMdPath);
+    console.log(pluginExists ? chalk.green("  ✔  Plugin installed") : chalk.yellow("  ✖  Plugin not installed"));
+    console.log(rulesExists ? chalk.green("  ✔  Global rules active") : chalk.yellow("  ✖  Global rules missing"));
+    console.log("");
+  });
+
+globalCmd
+  .command("uninstall")
+  .description("Safely remove Achira Workflow V5 from global ~/.gemini/config/")
+  .action(async () => {
+    console.log(chalk.cyan("\n  achira-wf global uninstall\n"));
+    const res = await uninstallGlobal();
+    if (res.removedPlugin) {
+      console.log(chalk.green("  ✔  Removed global plugin"));
+    }
+    if (res.cleanedGeminiMd) {
+      console.log(chalk.green("  ✔  Cleaned universal rules from GEMINI.md"));
+    }
+    console.log(chalk.cyan("\n  Uninstalled global Achira Workflow V5 components.\n"));
   });
 
 program.parse();

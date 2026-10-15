@@ -14,21 +14,40 @@ This skill is the **single source of truth** for how all Achira projects are str
 
 ## 🗺️ Skill Explorer
 
-Achira v4 contains 10 primary workflows. Each workflow automatically invokes specific expert skills from the `.achira/core/skills/` library.
+Achira OS contains 25 mission-critical workflows (11 scaffolds + 14 operational slash commands). Each workflow automatically invokes specific expert skills from the `.achira/core/skills/` library.
 
+### Scaffolding Workflows
 | Slash Command     | Tech Stack / Domain          | Key Skills Injected                               |
 | ----------------- | ---------------------------- | ------------------------------------------------- |
-| `/react+vite`     | React SPA + Vitest           | `web-expert`                                      |
-| `/next.js`        | Next.js App Router Fullstack | `web-expert`                                      |
-| `/html+js+css`    | Vanilla Web                  | `web-expert`                                      |
-| `/avalonia`       | C# Desktop + Zafiro          | `app-expert`                                      |
-| `/flutter`        | Multi-platform Dart 3        | `app-expert`                                      |
-| `/shopify`        | E-commerce Apps/Themes       | `commerce-expert`                                 |
-| `/saas`           | Next.js + Supabase + Stripe  | `web-expert`, `backend-expert`, `commerce-expert` |
-| `/landing-page`   | Marketing Websites           | `web-expert`                                      |
-| `/unity`          | Unity 6 LTS Game Dev         | `game-expert`                                     |
-| `/python-backend` | FastAPI / Django             | `backend-expert`                                  |
-| `/database`       | Schema Design                | `backend-expert`                                  |
+| `/react+vite`     | React SPA + Vitest           | `web-expert`, `nextjs-react-expert`, `frontend-architecture`, `verify-changes` |
+| `/next.js`        | Next.js App Router Fullstack | `web-expert`, `nextjs-react-expert`, `tailwind-patterns`, `verify-changes` |
+| `/html+js+css`    | Vanilla Web                  | `web-expert`, `clean-code`, `web-design-guidelines`, `verify-changes` |
+| `/avalonia`       | C# Desktop + Zafiro          | `app-expert`, `mobile-design`, `clean-code`, `verify-changes` |
+| `/flutter`        | Multi-platform Dart 3        | `app-expert`, `mobile-design`, `clean-code`, `verify-changes` |
+| `/shopify`        | E-commerce Apps/Themes       | `commerce-expert`, `clean-code`, `verify-changes` |
+| `/saas`           | Next.js + Supabase + Stripe  | `web-expert`, `backend-expert`, `commerce-expert`, `database-design`, `verify-changes` |
+| `/landing-page`   | Marketing Websites           | `web-expert`, `design-spec`, `seo-fundamentals`, `geo-fundamentals`, `verify-changes` |
+| `/unity`          | Unity 6 LTS Game Dev         | `game-expert`, `game-development`, `clean-code`, `verify-changes` |
+| `/python-backend` | FastAPI / Django             | `backend-expert`, `python-patterns`, `api-patterns`, `verify-changes` |
+| `/database`       | Schema Design                | `database-design`, `backend-expert`, `clean-code`, `verify-changes` |
+
+### Operational Command Workflows
+| Slash Command     | Purpose                      | Key Skills Injected                               |
+| ----------------- | ---------------------------- | ------------------------------------------------- |
+| `/orchestrate`    | Multi-agent squad lead       | `coordinator-mode`, `parallel-agents`, `context-compression`, `verify-changes` |
+| `/coordinate`     | Advanced parallel dispatch   | `coordinator-mode`, `parallel-agents`, `plan-writing` |
+| `/plan`           | Socratic task blueprinting   | `plan-writing`, `architecture`, `brainstorming` |
+| `/brainstorm`     | Idea & trade-off exploration | `brainstorming`, `architecture` |
+| `/create`         | Full-app & feature builder   | `app-builder`, `design-spec`, `verify-changes` |
+| `/enhance`        | Iterative feature updates    | `simplify-code`, `clean-code`, `verify-changes` |
+| `/debug`          | Root-cause analysis          | `systematic-debugging`, `verify-changes` |
+| `/test`           | AAA Test suite generation    | `testing-patterns`, `tdd-workflow`, `webapp-testing`, `verify-changes` |
+| `/verify`         | Runtime evidence validation  | `verify-changes`, `lint-and-validate` |
+| `/deploy`         | 5-phase production release   | `deployment-procedures`, `server-management`, `verify-changes` |
+| `/preview`        | Dev server daemon lifecycle  | `verify-changes` |
+| `/remember`       | Persistent session memory    | `memory-system` |
+| `/status`         | Project & agent health board | `context-compression`, `memory-system` |
+| `/ui-ux-pro-max`  | 50 styles & token generation | `design-spec`, `frontend-design`, `web-design-guidelines`, `verify-changes` |
 
 ---
 

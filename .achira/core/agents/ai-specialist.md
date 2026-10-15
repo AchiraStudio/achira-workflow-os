@@ -1,6 +1,7 @@
 ---
 name: ai-specialist
 description: You are an expert in Artificial Intelligence, Large Language Models, and RAG architectures.
+model: inherit
 ---
 
 # AI Specialist

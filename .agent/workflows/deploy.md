@@ -1,5 +1,10 @@
 ---
+name: deploy
 description: Deployment command for production releases. Pre-flight checks and deployment execution.
+version: 1.0.0
+requires_agents: devops-engineer
+requires_skills: deployment-procedures, verify-changes
+artifact_outputs: deployment-plan, deployment-report, rollback-plan
 ---
 
 # /deploy - Production Deployment
@@ -111,7 +116,7 @@ Before any deployment:
 ### Summary
 - **Version:** v1.2.3
 - **Environment:** production
-- **Duration:** 47 seconds
+- **Duration:** [build + deploy time]
 - **Platform:** Vercel
 
 ### URLs
@@ -171,6 +176,6 @@ Run `/deploy rollback` if needed.
 /deploy
 /deploy check
 /deploy preview
-/deploy production --skip-tests
+/deploy production
 /deploy rollback
 ```

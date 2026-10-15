@@ -7,10 +7,10 @@ import { motion } from "framer-motion";
 
 const STATS = [
   { value: "21", label: "Specialist Agents" },
-  { value: "7", label: "Master Pillars" },
-  { value: "22", label: "Mission Workflows" },
-  { value: "Socratic", label: "Discovery" },
-  { value: "~90%", label: "Dev Coverage" },
+  { value: "54", label: "Modern Skills" },
+  { value: "25", label: "Mission Workflows" },
+  { value: "Global", label: "Runtime Engine" },
+  { value: "100%", label: "Zero Slop" },
 ];
 
 const HOW_IT_WORKS = [
@@ -61,8 +61,8 @@ const PILLARS = [
   },
   {
     icon: Shield,
-    title: "V4.1 Mission Integrity",
-    description: "Speed never comes at the cost of stability. A 7-pillar verification suite gates every deployment.",
+    title: "V5.0 Mission Integrity",
+    description: "Speed never comes at the cost of stability. PreToolUse safety gates and a 7-pillar verification suite guard every release.",
     colSpan: 3,
   },
 ];
@@ -99,8 +99,8 @@ export default function Home() {
             </motion.h1>
             
             <motion.p variants={fadeUp} className="hero-subtitle">
-              An AI-native operating system for orchestrated, verified execution.
-              <span className="live-tag">V4.1 is now live.</span>
+              The multi-agent orchestration framework for verified, zero-slop execution.
+              <span className="live-tag">V5.0 is now live.</span>
             </motion.p>
             
             <motion.div variants={fadeUp} className="hero-actions">
@@ -138,7 +138,7 @@ export default function Home() {
           <SectionHeader
             eyebrow="Core Philosophy"
             title="Unbreakable pillars."
-            subtitle="Every decision in Achira OS is a direct expression of these foundational principles."
+            subtitle="Every decision in Achira Workflow is a direct expression of these foundational principles."
           />
           <motion.div 
             className="bento-grid"
@@ -211,7 +211,7 @@ export default function Home() {
           variants={fadeUp}
         >
           <div className="cta-inner glass-panel">
-            <h2>Ready to explore the OS?</h2>
+            <h2>Ready to explore Achira Workflow?</h2>
             <p>Browse all 21 elite agents, view the full 7-pillar architecture, or explore every mission workflow.</p>
             <div className="cta-actions">
               <Link to="/agents" className="btn-solid btn-large">Explore Agents</Link>

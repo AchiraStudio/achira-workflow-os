@@ -1,5 +1,10 @@
 ---
+name: shopify
 description: Scaffold a Shopify project — routing to app, extension, or theme based on the user's goal.
+version: 4.2.0
+requires_agents: backend-specialist
+requires_skills: commerce-expert, clean-code, verify-changes
+artifact_outputs: shopify-architecture, configuration
 ---
 
 > 🔗 Skill: .achira/core/skills/commerce-expert

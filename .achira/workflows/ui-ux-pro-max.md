@@ -1,9 +1,10 @@
 ---
-description: Plan and implement UI
----
-
----
-description: AI-powered design intelligence with 50+ styles, 95+ color palettes, and automated design system generation
+name: ui-ux-pro-max
+description: AI-powered design intelligence with 50+ styles, 95+ color palettes, and automated design system generation.
+version: 4.2.0
+requires_agents: frontend-specialist
+requires_skills: design-spec, frontend-design, web-design-guidelines, verify-changes
+artifact_outputs: design-system, tokens
 ---
 
 # ui-ux-pro-max

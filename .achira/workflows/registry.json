@@ -1,7 +1,7 @@
 {
-  "engine": "4.x",
+  "engine": "5.x",
   "engine_min": "3.0.0",
-  "version": "4.1.2",
+  "version": "5.0.0",
   "templates": {
     "react": {
       "workflow": "react+vite.md",
@@ -61,15 +61,18 @@
   },
   "commands": {
     "brainstorm": { "workflow": "brainstorm.md", "description": "Socratic discovery" },
-    "create": { "workflow": "create.md", "description": "Create new features" },
-    "debug": { "workflow": "debug.md", "description": "Debug issues" },
-    "deploy": { "workflow": "deploy.md", "description": "Deploy application" },
-    "enhance": { "workflow": "enhance.md", "description": "Improve existing code" },
+    "coordinate": { "workflow": "coordinate.md", "description": "Advanced multi-agent coordination with parallel dispatch and synthesis" },
+    "create": { "workflow": "create.md", "description": "Create new features and applications" },
+    "debug": { "workflow": "debug.md", "description": "Systematic root-cause problem investigation" },
+    "deploy": { "workflow": "deploy.md", "description": "Deploy application with pre-flight checks" },
+    "enhance": { "workflow": "enhance.md", "description": "Safely improve existing code and add features" },
     "orchestrate": { "workflow": "orchestrate.md", "description": "Multi-agent coordination" },
-    "plan": { "workflow": "plan.md", "description": "Task breakdown" },
-    "preview": { "workflow": "preview.md", "description": "Preview changes" },
-    "status": { "workflow": "status.md", "description": "Check project status" },
-    "test": { "workflow": "test.md", "description": "Run tests" },
-    "ui-ux-pro-max": { "workflow": "ui-ux-pro-max.md", "description": "Design with 50 styles" }
+    "plan": { "workflow": "plan.md", "description": "Task breakdown and plan file generation" },
+    "preview": { "workflow": "preview.md", "description": "Manage local development preview servers" },
+    "remember": { "workflow": "remember.md", "description": "Persistent memory management across sessions" },
+    "status": { "workflow": "status.md", "description": "Check project and agent status" },
+    "test": { "workflow": "test.md", "description": "Generate and execute test suites" },
+    "ui-ux-pro-max": { "workflow": "ui-ux-pro-max.md", "description": "Design with 50 styles and premium tokens" },
+    "verify": { "workflow": "verify.md", "description": "Prove code works through runtime execution" }
   }
 }

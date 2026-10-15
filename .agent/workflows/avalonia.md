@@ -1,5 +1,10 @@
 ---
+name: avalonia
 description: Scaffold a cross-platform desktop application using Avalonia UI and the Zafiro functional-reactive toolkit.
+version: 4.2.0
+requires_agents: mobile-developer
+requires_skills: app-expert, mobile-design, clean-code, verify-changes
+artifact_outputs: desktop-architecture, project-structure
 ---
 
 > 🔗 Skill: .achira/core/skills/app-expert

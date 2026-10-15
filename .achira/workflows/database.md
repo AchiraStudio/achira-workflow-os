@@ -1,5 +1,10 @@
 ---
+name: database
 description: Guides the LLM and user in designing optimal database schemas, choosing the right tool (Supabase/Postgres vs SQLite), and writing efficient queries.
+version: 4.2.0
+requires_agents: database-architect, backend-specialist
+requires_skills: database-design, backend-expert, clean-code, verify-changes
+artifact_outputs: schema-definition, migration-plan
 ---
 
 > 🔗 Skill: .achira/core/skills/backend-expert

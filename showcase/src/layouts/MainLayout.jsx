@@ -19,9 +19,10 @@ export default function MainLayout({ children }) {
         transition={{ duration: 0.6, ease: [0.25, 1, 0.5, 1] }}
       >
         <div className="brand-wrapper">
-          <Link to="/" className="brand-logo">
-            <Layers className="logo-icon" size={20} strokeWidth={2} />
-            <span>Achira OS</span>
+          <Link to="/" className="brand-logo" style={{ display: "flex", alignItems: "center", gap: "10px" }}>
+            <img src="/favicon.svg" alt="Achira Workflow V5" style={{ width: "24px", height: "24px" }} />
+            <span style={{ fontWeight: 800 }}>Achira Workflow</span>
+            <span style={{ fontSize: "11px", fontWeight: 700, padding: "2px 6px", borderRadius: "9999px", background: "rgba(0, 242, 254, 0.12)", color: "#00F2FE", border: "1px solid rgba(0, 242, 254, 0.3)" }}>V5.0</span>
           </Link>
         </div>
 
@@ -53,11 +54,11 @@ export default function MainLayout({ children }) {
       {/* Footer */}
       <footer className="minimal-footer">
         <div className="footer-content">
-          <div className="footer-brand">
-            <Layers size={18} strokeWidth={1.5} className="footer-logo" />
-            <span className="footer-title">Achira OS V4.1</span>
+          <div className="footer-brand" style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+            <img src="/favicon.svg" alt="Achira Workflow V5" style={{ width: "20px", height: "20px" }} />
+            <span className="footer-title">Achira Workflow V5.0</span>
           </div>
-          <p className="footer-tagline">The blueprint for AI-native software engineering.</p>
+          <p className="footer-tagline">The premier multi-agent orchestration framework for AI-native software engineering.</p>
           <div className="footer-links">
             <Link to="/architecture">Architecture</Link>
             <Link to="/agents">Agents</Link>

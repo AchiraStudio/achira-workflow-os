@@ -1,5 +1,10 @@
 ---
+name: flutter
 description: Scaffold a Flutter multi-platform app with clean architecture and Riverpod state management.
+version: 4.2.0
+requires_agents: mobile-developer
+requires_skills: app-expert, mobile-design, clean-code, verify-changes
+artifact_outputs: mobile-architecture, project-structure
 ---
 
 > 🔗 Skill: .achira/core/skills/app-expert

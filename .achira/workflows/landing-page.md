@@ -1,5 +1,10 @@
 ---
+name: landing-page
 description: Scaffold a high-converting, SEO-optimized marketing landing page.
+version: 4.2.0
+requires_agents: frontend-specialist, seo-specialist
+requires_skills: web-expert, design-spec, seo-fundamentals, geo-fundamentals, verify-changes
+artifact_outputs: landing-page-spec, landing-page-structure
 ---
 
 > 🔗 Skill: .achira/core/skills/web-expert

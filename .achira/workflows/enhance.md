@@ -1,5 +1,10 @@
 ---
+name: enhance
 description: Add or update features in existing application. Used for iterative development.
+version: 1.0.0
+requires_agents: code-archaeologist
+requires_skills: simplify-code, clean-code, verify-changes
+artifact_outputs: change-plan, changed-files, verification-report
 ---
 
 # /enhance - Update Application
@@ -26,9 +31,9 @@ This command adds features or makes updates to existing application.
 3. **Present Plan to User** (for major changes)
    ```
    "To add admin panel:
-   - I'll create 15 new files
-   - Update 8 files
-   - Takes ~10 minutes
+   - New files: admin routes, components, and access control
+   - Updates: navigation, auth middleware
+   - Scope: moderate (touches auth + routing)
    
    Should I start?"
    ```

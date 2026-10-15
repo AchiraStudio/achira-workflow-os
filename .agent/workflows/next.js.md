@@ -1,5 +1,10 @@
 ---
+name: next.js
 description: Scaffold a scalable, production-ready Next.js App Router project with feature-based architecture.
+version: 4.2.0
+requires_agents: frontend-specialist, backend-specialist
+requires_skills: web-expert, nextjs-react-expert, tailwind-patterns, verify-changes
+artifact_outputs: nextjs-architecture, feature-structure
 ---
 
 > 🔗 Skill: .achira/core/skills/web-expert

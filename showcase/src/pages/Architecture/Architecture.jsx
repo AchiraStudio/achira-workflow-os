@@ -9,45 +9,58 @@ const DIRECTORY_TREE = [
   {
     name: ".achira/",
     icon: Folder,
-    description: "Root of the Agentic OS.",
+    description: "Root of the Achira Workflow V5 project configuration.",
     children: [
       {
         name: "core/",
         icon: Folder,
-        description: "The brain — agents, skills, shared data.",
+        description: "The core intelligence hub — personas, skills, datasets.",
         children: [
-          { name: "agents/", icon: Cpu, description: "20 specialist AI persona definitions." },
-          { name: "skills/", icon: Zap, description: "38 domain-specific knowledge modules." },
-          { name: "shared/", icon: Folder, description: "Shared data: ui-ux-pro-max datasets..." },
+          { name: "agents/", icon: Cpu, description: "21 autonomous specialist AI personas." },
+          { name: "skills/", icon: Zap, description: "54 progressive engineering skills." },
+          { name: "memory/", icon: Folder, description: "Cross-session persistent project memory." },
+          { name: "shared/", icon: Folder, description: "Shared datasets and design system tokens." },
         ],
       },
       {
         name: "workflows/",
         icon: Folder,
-        description: "22 slash command procedures + registry.",
+        description: "25 production workflows (11 scaffolds + 14 slash commands).",
         children: [
-          { name: "registry.json", icon: FileText, description: "Discovery map." },
-          { name: "*.md", icon: FileText, description: "Workflow procedures." },
+          { name: "registry.json", icon: FileText, description: "Workflow discovery catalog." },
+          { name: "*.md", icon: FileText, description: "Executable workflow procedures." },
         ],
       },
       {
         name: "scripts/",
         icon: Wrench,
-        description: "Master validation & verification scripts.",
+        description: "12 deterministic validation & verification scripts.",
         children: [
-          { name: "checklist.py", icon: FileText, description: "Validation gates." },
-          { name: "verify_all.py", icon: FileText, description: "Full verification suite." },
+          { name: "checklist.py", icon: FileText, description: "Automated pre-flight validation gates." },
+          { name: "verify_all.py", icon: FileText, description: "Full verification suite runner." },
         ],
       },
       {
         name: "rules/",
         icon: Shield,
-        description: "Global AI constraints.",
+        description: "Global AI constraints and behavioral rules.",
         children: [
-          { name: "GEMINI.md", icon: FileText, description: "Master rules." },
+          { name: "GEMINI.md", icon: FileText, description: "Master behavioral governance." },
+          { name: "AGENTS.md", icon: FileText, description: "Multi-agent runtime protocol." },
         ],
       },
-      { name: "ARCHITECTURE.md", icon: FileText, description: "Living system map." },
+      { name: "ARCHITECTURE.md", icon: FileText, description: "Living system architecture specification." },
+      { name: "antigravity.json", icon: FileText, description: "Antigravity plugin registration manifest." },
+      { name: "hooks.json", icon: FileText, description: "Custom lifecycle hooks." },
+    ],
+  },
+  {
+    name: "~/.gemini/ (Global Runtime)",
+    icon: Shield,
+    description: "Workstation-wide global plugin for zero-config activation.",
+    children: [
+      { name: "plugins/achira-workflow/", icon: Folder, description: "Direct symlink to Achira Workflow core." },
+      { name: "GEMINI.md", icon: FileText, description: "Global agent routing and Socratic Gate." },
     ],
   },
 ];
@@ -94,7 +107,7 @@ export default function ArchitecturePage() {
           <SectionHeader
             eyebrow="System Anatomy"
             title="The .achira/ Core."
-            subtitle="Every component of the OS lives inside .achira — a modular directory you install into any project with a single CLI command."
+            subtitle="Every component of Achira Workflow lives inside .achira or workstation-wide in ~/.gemini/ plugins for global availability."
           />
         </motion.div>
 
@@ -170,17 +183,17 @@ export default function ArchitecturePage() {
           variants={fadeUp}
         >
           <div className="install-text">
-            <h3>Install Achira OS.</h3>
-            <p>One command provisions the entire local intelligence directory.</p>
+            <h3>Install Achira Workflow V5.</h3>
+            <p>One command provisions the entire local intelligence directory or workstation-wide plugin.</p>
           </div>
           <div className="install-cmd-block">
             <div className="install-cmd-line">
               <span className="install-prompt">$</span>
-              <code>npm i achira-wf</code>
+              <code>npm i -g achira-wf</code>
             </div>
             <div className="install-cmd-line">
               <span className="install-prompt">$</span>
-              <code>npx achira-wf init</code>
+              <code>achira-wf global link</code>
             </div>
           </div>
         </motion.div>

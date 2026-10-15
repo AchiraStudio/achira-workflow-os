@@ -1,5 +1,10 @@
 ---
+name: python-backend
 description: Scaffold a high-performance Python backend (FastAPI preferred).
+version: 4.2.0
+requires_agents: backend-specialist
+requires_skills: backend-expert, python-patterns, api-patterns, verify-changes
+artifact_outputs: fastapi-architecture, project-structure
 ---
 
 > 🔗 Skill: .achira/core/skills/backend-expert

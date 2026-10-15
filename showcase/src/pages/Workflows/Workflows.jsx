@@ -39,12 +39,12 @@ export default function WorkflowsPage() {
             <span className="dot dot-close" aria-hidden="true"></span>
             <span className="dot dot-min" aria-hidden="true"></span>
             <span className="dot dot-max" aria-hidden="true"></span>
-            <span className="terminal-title-label">root@achira-os ~ /workflows</span>
+            <span className="terminal-title-label">root@achira-wf ~ /workflows</span>
           </div>
           <div className="terminal-body">
             <p><span className="prompt">$</span> achira-wf list</p>
             <p className="out muted">Querying workflow registry...</p>
-            <p className="out success">Found 22 mission scaffolds. .cursorrules linked.</p>
+            <p className="out success">Found 25 mission workflows. .cursorrules linked.</p>
             <p className="out"><span className="key">Tip:</span> Use slash commands (e.g. /next, /saas) for instant scaffolding.</p>
             <p className="cursor">█</p>
           </div>

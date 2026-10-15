@@ -1,8 +1,8 @@
-# 🤖 Achira Workflow OS V4
+# ⚡ Achira Workflow V5
 
-> **The first Agentic Operating System for AI-native software engineering.**
+> **The premier multi-agent orchestration framework for AI-native software engineering.**
 
-Achira Workflow OS is a premium orchestration toolkit that transforms your development environment into a high-performance laboratory of **21 specialist agents**, **7 native master skills**, and **22 mission-critical workflows**.
+Achira Workflow V5 is a high-performance laboratory of **21 specialist agents**, **54 skills** (7 native master pillars + 47 progressive domain skills), and **25 mission-critical workflows**, built natively for Google Antigravity & Gemini.
 
 _Based on [antigravity-kit](https://github.com/vudovn/antigravity-kit)_
 
@@ -13,39 +13,51 @@ _Based on [antigravity-kit](https://github.com/vudovn/antigravity-kit)_
 
 ---
 
-## ✨ Why Achira OS?
+## ✨ Why Achira Workflow?
 
 Most AI tools just "code." Achira **thinks**, **architects**, and **verifies**.
 
 - 🧠 **Socratic Discovery**: Mandatory discovery layers that prevent architectural debt before a single file is created.
-- 🎨 **Deep Design Thinking**: Built-in design intelligence that rejects generic templates in favor of premium, high-contrast UI/UX. No magic numbers, only tokens.
+- 🎨 **Deep Design Thinking**: Built-in design intelligence (`DESIGN.md` token specification and `/ui-ux-pro-max` with 50+ styles) rejecting generic templates in favor of crafted UI/UX.
 - 🛡️ **Mission-Critical Integrity**: A multi-layered verification engine (Security → Lint → Tests → UX) ensuring every commit is production-ready.
-- 🚀 **Standardized Excellence**: Strict enforcement of Clean Code, Accessibility (a11y), and Performance guidelines across all projects.
-- 🌍 **Native Mastery**: Powered by **7 internal Expert Pillars** distilling thousands of rules for web, app, game, ai, and devops engineering into zero-latency core knowledge.
+- ⚡ **Native Safety Hook**: PreToolUse gate preventing high-confidence destructive operations.
+- 🧠 **Persistent Memory**: Cross-session recall for conventions, preferences, and technical decisions (`.achira/memory/`).
+- 🚀 **Standardized Excellence**: Strict enforcement of Clean Code, Accessibility (WCAG AA), and Performance guidelines across all projects.
+- 🌍 **Native Mastery**: Powered by **7 internal Expert Pillars** plus **47 progressive skills** distilling thousands of rules for web, app, game, ai, devops, and security engineering into zero-latency core knowledge.
 
 ---
 
 ## 🏗️ Installation
 
-Achira Workflow OS is designed to be globally accessible.
+Achira Workflow OS is designed to be accessible both **globally across all projects** and **locally within individual codebases**.
 
 ### 1. Install via NPM
 
-Deploy the CLI tools to your system:
+Install the CLI globally on your system:
 
 ```bash
 npm install -g achira-wf
 ```
 
-### 2. Initialize in Your Project
+### 2. Enable Globally Across All Projects (One Command)
 
-Navigate to any project directory and inject the OS:
+Deploy Achira Workflow OS to your machine's global Google Antigravity & Gemini runtime (`~/.gemini/config/`):
+
+```bash
+achira-wf global install
+```
+
+> **Instant Machine-Wide Superpowers:** All **21 specialized agents**, **54 modern engineering skills**, and universal anti-slop rules immediately become active across **every folder and project** you open in Google Antigravity or Gemini CLI—with zero project configuration required!
+
+### 3. Initialize in a Specific Project (Optional Project Workflows)
+
+When you want local workspace workflows, IDE slash command auto-completion, and dedicated project memory:
 
 ```bash
 achira-wf init
 ```
 
-_This command installs the agents, skills, and workflows into a `.achira` directory, bundles relevant awesome-skills, and syncs slash commands for IDE discovery._
+_This installs `.achira/`, syncs `.agent/workflows/` and `.agent/hooks.json`, links `.cursorrules`, and configures the PreToolUse safety gate for that repository._
 
 ---
 
@@ -55,21 +67,21 @@ Achira Workflow OS enables high-performance scaffolding directly through your AI
 
 ```bash
 # Web Foundations
-/react          # React + Vite SPA
-/next           # Next.js App Router (Fullstack)
-/html           # Vanilla HTML + CSS + JS (Vite)
+/react          # React + Vite SPA (Service Layer, Router, Vitest)
+/next           # Next.js App Router (Fullstack Feature Architecture)
+/html           # Vanilla HTML + CSS + JS (Vite HMR)
 
 # Verticals
-/saas           # Next.js + Supabase Auth/DB + Stripe
-/landing-page   # SEO-Optimized Marketing Page
+/saas           # Next.js 15 + Supabase Auth/DB + Stripe
+/landing-page   # SEO & GEO-Optimized Marketing Page
 
 # Apps & Desktop
-/flutter        # Multi-platform Dart 3 (Riverpod)
-/avalonia       # C# Desktop (Zafiro/MVVM)
+/flutter        # Multi-platform Dart 3 (Riverpod Clean Architecture)
+/avalonia       # C# Desktop (Zafiro / Reactive MVVM)
 
-# specialized
+# Specialized
 /shopify        # Apps, Extensions, or Themes
-/unity          # Unity 6 LTS C# Game Dev
+/unity          # Unity 6 LTS C# Game Dev (Zero-Allocation)
 /python-backend # FastAPI / Django (managed by uv)
 /database       # Schema Design & RLS Policies
 ```
@@ -78,14 +90,15 @@ Achira Workflow OS enables high-performance scaffolding directly through your AI
 
 ## 🤖 The Elite Agents
 
-Achira OS deploys a specialized task force for every domain.
+Achira OS deploys a specialized task force of 21 agents for every domain.
 
 | Squadron            | Role                                                                                   |
 | :------------------ | :------------------------------------------------------------------------------------- |
-| **The Strategists** | `orchestrator`, `project-planner`, `product-owner`, `ai-specialist`                    |
-| **The Builders**    | `frontend-specialist`, `backend-specialist`, `mobile-developer`                        |
-| **The Sentinels**   | `security-auditor`, `penetration-tester`, `qa-automation-engineer`                     |
+| **The Strategists** | `orchestrator`, `project-planner`, `product-owner`, `product-manager`, `ai-specialist` |
+| **The Builders**    | `frontend-specialist`, `backend-specialist`, `mobile-developer`, `game-developer`      |
+| **The Sentinels**   | `security-auditor`, `penetration-tester`, `qa-automation-engineer`, `test-engineer`, `debugger` |
 | **The Analysts**    | `database-architect`, `code-archaeologist`, `performance-optimizer`, `devops-engineer` |
+| **Specialized**     | `seo-specialist`, `documentation-writer`, `explorer-agent`                             |
 
 ---
 
@@ -93,23 +106,36 @@ Achira OS deploys a specialized task force for every domain.
 
 While most day-to-day work happens via slash commands, the CLI provides core lifecycle tools.
 
-| Command            | Purpose                                                      |
-| :----------------- | :----------------------------------------------------------- |
-| `achira-wf init`   | Install or repair the `.achira/` core in the current folder. |
-| `achira-wf list`   | View all registered workflows and templates.                 |
-| `achira-wf doctor` | Check system integrity and agent health.                     |
+| Command                    | Purpose                                                                                |
+| :------------------------- | :------------------------------------------------------------------------------------- |
+| `achira-wf global install` | **NEW** Deploy Achira OS globally into `~/.gemini/config/` for machine-wide access.     |
+| `achira-wf global doctor`  | **NEW** Validate health of the global Antigravity plugin, 54 skills, and agents.       |
+| `achira-wf global sync`    | **NEW** Sync the latest agents and skills to the global environment.                   |
+| `achira-wf global status`  | **NEW** View global installation paths and active status.                              |
+| `achira-wf init`           | Install or repair the `.achira/` core and sync `.agent/` in the target folder.          |
+| `achira-wf list`           | View all registered workflows, commands, and templates.                                 |
+| `achira-wf doctor`         | Check system integrity of the local workspace (or use `-g` for global check).         |
 
 ---
 
 ## 🍱 Operational Workflows
 
-Access powerful slash commands once the OS is initialized:
+Access 14 powerful operational slash commands once the OS is initialized:
 
-- `/orchestrate`: Lead a cross-domain squad of agents.
-- `/plan`: Generate deep implementation blueprints.
-- `/ui-ux-pro-max`: Access 50+ unique design styles and premium UI patterns.
-- `/debug`: Systematically investigate and resolve bugs.
-- `/test`: Generate comprehensive test suites.
+- `/orchestrate`: Lead a cross-domain squad of specialist agents through complex tasks.
+- `/coordinate`: **NEW** Advanced multi-agent coordination with parallel dispatch and synthesis.
+- `/plan`: Generate deep implementation blueprints (`{task-slug}.md`) before coding.
+- `/brainstorm`: Explore alternatives, pros/cons, and architectural trade-offs.
+- `/create`: Interactive feature and app builder with mandatory `DESIGN.md` spec.
+- `/enhance`: Safely modify and extend existing code with regression prevention.
+- `/verify`: **NEW** Prove code changes work through concrete runtime execution.
+- `/remember`: **NEW** Save conventions, preferences, and decisions to persistent memory.
+- `/ui-ux-pro-max`: Access 50+ unique design styles, 95+ palettes, and premium UI tokens.
+- `/debug`: Systematically investigate and resolve bugs with evidence-based root-cause analysis.
+- `/test`: Generate comprehensive AAA test suites with Vitest/Jest.
+- `/deploy`: 5-phase production release pre-flight checks and rollback runbooks.
+- `/preview`: Lifecycle management for local dev server daemons.
+- `/status`: Live project and agent health dashboard.
 
 ## 🍱 Visual Showcase
 
