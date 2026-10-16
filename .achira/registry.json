@@ -1,0 +1,79 @@
+{
+  "engine": "5.x",
+  "engine_min": "3.0.0",
+  "version": "5.2.0",
+  "templates": {
+    "react": {
+      "skill": "react+vite/SKILL.md",
+      "description": "React + Vite SPA with Router, absolute imports, services layer",
+      "tags": ["frontend", "spa", "vite"]
+    },
+    "next": {
+      "skill": "next.js/SKILL.md",
+      "description": "Next.js App Router full-stack with feature-driven architecture",
+      "tags": ["fullstack", "ssr", "nextjs"]
+    },
+    "html": {
+      "skill": "html+js+css/SKILL.md",
+      "description": "Vanilla HTML + CSS + JS multi-page site with Vite dev server",
+      "tags": ["static", "vanilla", "vite"]
+    },
+    "saas": {
+      "skill": "saas/SKILL.md",
+      "description": "Next.js + Supabase + Stripe full-stack SaaS",
+      "tags": ["fullstack", "saas", "supabase"]
+    },
+    "landing-page": {
+      "skill": "landing-page/SKILL.md",
+      "description": "SEO-optimized marketing landing page",
+      "tags": ["static", "marketing", "seo"]
+    },
+    "avalonia": {
+      "skill": "avalonia/SKILL.md",
+      "description": "C# Desktop App with Avalonia and Zafiro",
+      "tags": ["desktop", "csharp", "mvvm"]
+    },
+    "flutter": {
+      "skill": "flutter/SKILL.md",
+      "description": "Multi-platform Dart 3 app with Riverpod",
+      "tags": ["mobile", "cross-platform", "dart"]
+    },
+    "shopify": {
+      "skill": "shopify/SKILL.md",
+      "description": "Shopify App, Extension, or Theme via CLI",
+      "tags": ["ecommerce", "shopify", "liquid"]
+    },
+    "unity": {
+      "skill": "unity/SKILL.md",
+      "description": "Unity 6 LTS C# Game Development",
+      "tags": ["game", "csharp", "unity"]
+    },
+    "python-backend": {
+      "skill": "python-backend/SKILL.md",
+      "description": "High-performance Python backend (FastAPI)",
+      "tags": ["backend", "python", "api"]
+    },
+    "database": {
+      "skill": "database/SKILL.md",
+      "description": "Postgres/Supabase Schema Design",
+      "tags": ["database", "schema", "postgres"]
+    }
+  },
+  "commands": {
+    "brainstorm": { "skill": "brainstorm/SKILL.md", "description": "Socratic discovery" },
+    "coordinate": { "skill": "coordinate/SKILL.md", "description": "Advanced multi-agent coordination with parallel dispatch and synthesis" },
+    "create": { "skill": "create/SKILL.md", "description": "Create new features and applications" },
+    "debug": { "skill": "debug/SKILL.md", "description": "Systematic root-cause problem investigation" },
+    "deploy": { "skill": "deploy/SKILL.md", "description": "Deploy application with pre-flight checks" },
+    "enhance": { "skill": "enhance/SKILL.md", "description": "Safely improve existing code and add features" },
+    "orchestrate": { "skill": "orchestrate/SKILL.md", "description": "Multi-agent coordination" },
+    "plan": { "skill": "plan/SKILL.md", "description": "Task breakdown and plan file generation" },
+    "preview": { "skill": "preview/SKILL.md", "description": "Manage local development preview servers" },
+    "remember": { "skill": "remember/SKILL.md", "description": "Persistent memory management across sessions" },
+    "status": { "skill": "status/SKILL.md", "description": "Check project and agent status" },
+    "test": { "skill": "test/SKILL.md", "description": "Generate and execute test suites" },
+    "ui-ux-pro-max": { "skill": "ui-ux-pro-max/SKILL.md", "description": "Design with 50 styles and premium tokens" },
+    "verify": { "skill": "verify/SKILL.md", "description": "Prove code works through runtime execution" }
+  }
+}
+

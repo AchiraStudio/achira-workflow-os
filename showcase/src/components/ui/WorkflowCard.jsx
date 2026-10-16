@@ -1,6 +1,6 @@
 import "./WorkflowCard.css";
 import Badge from "./Badge";
-import { Terminal } from "lucide-react";
+import { Terminal, FileCode2 } from "lucide-react";
 
 export default function WorkflowCard({ workflow }) {
   return (
@@ -13,10 +13,20 @@ export default function WorkflowCard({ workflow }) {
         <Badge label={workflow.category} type="category" />
       </div>
 
+      {workflow.path && (
+        <div className="workflow-card__path">
+          <FileCode2 size={13} />
+          <code>{workflow.path}</code>
+        </div>
+      )}
+
       <p className="workflow-card__desc">{workflow.description}</p>
 
       <div className="workflow-card__example">
-        <div className="example-label">Example:</div>
+        <div className="example-row">
+          <span className="example-label">INVOKE</span>
+          {workflow.output && <span className="example-output">{workflow.output}</span>}
+        </div>
         <code className="example-cmd">{workflow.example}</code>
       </div>
     </div>

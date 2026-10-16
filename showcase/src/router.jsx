@@ -7,7 +7,7 @@ import ArchitecturePage from "@/pages/Architecture/Architecture";
 export const router = createBrowserRouter([
   { path: "/", element: <Home /> },
   { path: "/agents", element: <AgentsPage /> },
+  { path: "/skills", element: <WorkflowsPage /> },
   { path: "/workflows", element: <WorkflowsPage /> },
   { path: "/architecture", element: <ArchitecturePage /> },
 ]);
-

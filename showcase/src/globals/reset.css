@@ -13,12 +13,12 @@ html {
 }
 
 body {
-  font-family: 'Jost', sans-serif;
-  background: var(--color-bg);
-  background-image: 
-    radial-gradient(circle at 15% 50%, rgba(56, 189, 248, 0.08), transparent 25%),
-    radial-gradient(circle at 85% 30%, rgba(14, 165, 233, 0.08), transparent 25%);
-  background-attachment: fixed;
+  font-family: var(--font-sans);
+  background-color: var(--color-bg);
+  background-image:
+    linear-gradient(to right, rgba(148, 163, 184, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(148, 163, 184, 0.03) 1px, transparent 1px);
+  background-size: 48px 48px;
   color: var(--color-text);
   line-height: 1.6;
   overflow-x: hidden;
@@ -27,10 +27,10 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Bodoni Moda', serif;
+  font-family: var(--font-sans);
   font-weight: 600;
-  line-height: 1.1;
-  letter-spacing: -0.02em;
+  line-height: 1.15;
+  letter-spacing: -0.025em;
 }
 
 button, input, select, textarea {
@@ -41,7 +41,7 @@ button, input, select, textarea {
 a {
   text-decoration: none;
   color: inherit;
-  transition: var(--transition-default);
+  transition: var(--transition-fast);
 }
 
 ul {
@@ -65,9 +65,20 @@ img {
 
 ::-webkit-scrollbar-thumb {
   background: var(--color-surface-soft);
-  border-radius: 10px;
+  border-radius: 2px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
   background: var(--color-primary);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }

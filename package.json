@@ -1,7 +1,7 @@
 {
   "name": "achira-wf",
-  "version": "5.1.0",
-  "description": "Achira Workflow V5.1 — AI-driven development ecosystem with 21 agents, 60 skills, and 25 mission-critical workflows.",
+  "version": "5.2.0",
+  "description": "Achira Workflow V5.2 — AI-driven development ecosystem with 21 specialist agents and 85 modern engineering & command skills.",
   "main": "cli.js",
   "bin": {
     "achira-wf": "cli.js"

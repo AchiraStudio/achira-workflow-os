@@ -9,7 +9,7 @@ const DIRECTORY_TREE = [
   {
     name: ".achira/",
     icon: Folder,
-    description: "Root of the Achira Workflow V5.1 project configuration.",
+    description: "Root of the Achira Workflow V5.2 project configuration.",
     children: [
       {
         name: "core/",
@@ -17,19 +17,15 @@ const DIRECTORY_TREE = [
         description: "The core intelligence hub — personas, skills, datasets.",
         children: [
           { name: "agents/", icon: Cpu, description: "21 autonomous specialist AI personas." },
-          { name: "skills/", icon: Zap, description: "60 progressive engineering skills." },
+          { name: "skills/", icon: Zap, description: "85 unified progressive engineering and command skills." },
           { name: "memory/", icon: Folder, description: "Cross-session persistent project memory." },
           { name: "shared/", icon: Folder, description: "Shared datasets and design system tokens." },
         ],
       },
       {
-        name: "workflows/",
-        icon: Folder,
-        description: "25 production workflows (11 scaffolds + 14 slash commands).",
-        children: [
-          { name: "registry.json", icon: FileText, description: "Workflow discovery catalog." },
-          { name: "*.md", icon: FileText, description: "Executable workflow procedures." },
-        ],
+        name: "registry.json",
+        icon: FileText,
+        description: "Unified skill discovery catalog (85 skills).",
       },
       {
         name: "scripts/",
@@ -51,7 +47,16 @@ const DIRECTORY_TREE = [
       },
       { name: "ARCHITECTURE.md", icon: FileText, description: "Living system architecture specification." },
       { name: "antigravity.json", icon: FileText, description: "Antigravity plugin registration manifest." },
-      { name: "hooks.json", icon: FileText, description: "Custom lifecycle hooks." },
+      { name: "hooks.json", icon: FileText, description: "Custom lifecycle safety hooks." },
+    ],
+  },
+  {
+    name: ".agent/ (Workspace Customizations)",
+    icon: Folder,
+    description: "Local IDE discovery directory mounted automatically by Antigravity.",
+    children: [
+      { name: "skills/", icon: Zap, description: "25 slash-command & scaffold skills with SKILL.md specs." },
+      { name: "hooks.json", icon: FileText, description: "PreToolUse security and verification gates." },
     ],
   },
   {
@@ -59,7 +64,8 @@ const DIRECTORY_TREE = [
     icon: Shield,
     description: "Workstation-wide global plugin for zero-config activation.",
     children: [
-      { name: "plugins/achira-workflow/", icon: Folder, description: "Direct symlink to Achira Workflow core." },
+      { name: "config/plugins/achira-workflow/", icon: Folder, description: "Machine-wide Achira Workflow plugin." },
+      { name: "config/skills/", icon: Zap, description: "85 skills registered globally." },
       { name: "GEMINI.md", icon: FileText, description: "Global agent routing and Socratic Gate." },
     ],
   },

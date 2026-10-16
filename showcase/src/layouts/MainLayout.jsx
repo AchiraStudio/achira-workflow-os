@@ -9,7 +9,6 @@ export default function MainLayout({ children }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-  // Close mobile drawer on resize to desktop (antislop-layoutmobile)
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth > 768 && isMobileMenuOpen) {
@@ -20,7 +19,6 @@ export default function MainLayout({ children }) {
     return () => window.removeEventListener("resize", handleResize);
   }, [isMobileMenuOpen]);
 
-  // Lock body scroll when mobile drawer is open (antislop-human)
   useEffect(() => {
     if (isMobileMenuOpen) {
       document.body.style.overflow = "hidden";
@@ -37,24 +35,24 @@ export default function MainLayout({ children }) {
   return (
     <div className="layout-container">
       <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
-      
-      {/* Floating Precision Navbar */}
+
+      {/* Sleek Floating Navbar (Clean 14px radius, not an extreme pill) */}
       <header className="navbar-wrapper">
-        <motion.nav 
+        <motion.nav
           className="minimal-nav"
-          initial={{ y: -80, opacity: 0 }}
+          initial={{ y: -60, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+          transition={{ duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
           aria-label="Main Navigation"
         >
           {/* Brand Identity */}
           <Link to="/" className="brand-link" title="Achira Workflow Home" onClick={closeMenu}>
             <div className="brand-icon-wrapper">
-              <img src="/favicon.svg" alt="Achira Workflow V5.1" className="brand-icon" />
+              <img src="/favicon.svg" alt="Achira Workflow V5.2" className="brand-icon" />
               <span className="brand-glow-halo" aria-hidden="true" />
             </div>
             <span className="brand-title">Achira Workflow</span>
-            <span className="brand-badge">V5.1</span>
+            <span className="brand-badge">V5.2</span>
           </Link>
 
           {/* Navigation Links (Desktop) */}
@@ -66,14 +64,14 @@ export default function MainLayout({ children }) {
               Agents
               <span className="nav-count">21</span>
             </NavLink>
-            <NavLink to="/workflows" className={({ isActive }) => `nav-link ${isActive ? "active" : ""}`}>
-              Workflows
-              <span className="nav-count">25</span>
+            <NavLink to="/skills" className={({ isActive }) => `nav-link ${isActive ? "active" : ""}`}>
+              Skills
+              <span className="nav-count">85</span>
             </NavLink>
-            <a 
-              href="https://github.com/AchiraStudio/achira-workflow-os" 
-              target="_blank" 
-              rel="noopener noreferrer" 
+            <a
+              href="https://github.com/AchiraStudio/achira-workflow-os"
+              target="_blank"
+              rel="noopener noreferrer"
               className="nav-link nav-github"
             >
               GitHub
@@ -86,11 +84,13 @@ export default function MainLayout({ children }) {
               <span className="status-dot" aria-hidden="true" />
               <span className="status-text">Active</span>
             </div>
-            <Link to="/workflows" className="btn-nav-guide">Guide</Link>
+            <Link to="/skills" className="btn-nav-guide">
+              Skills
+            </Link>
             <button className="btn-nav-primary" onClick={() => setIsModalOpen(true)}>
               Get Started
             </button>
-            <button 
+            <button
               type="button"
               className="btn-mobile-toggle"
               aria-label={isMobileMenuOpen ? "Close navigation menu" : "Open navigation menu"}
@@ -102,11 +102,11 @@ export default function MainLayout({ children }) {
           </div>
         </motion.nav>
 
-        {/* Cyber-Glass Slide-down Sheet (antislop-layoutmobile + antislop-human) */}
+        {/* Mobile Drawer */}
         <AnimatePresence>
           {isMobileMenuOpen && (
             <>
-              <motion.div 
+              <motion.div
                 className="mobile-backdrop"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
@@ -115,7 +115,7 @@ export default function MainLayout({ children }) {
                 onClick={closeMenu}
                 aria-hidden="true"
               />
-              <motion.div 
+              <motion.div
                 className="mobile-drawer"
                 role="dialog"
                 aria-label="Mobile Navigation"
@@ -125,33 +125,33 @@ export default function MainLayout({ children }) {
                 transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
               >
                 <div className="mobile-drawer-links">
-                  <NavLink 
-                    to="/architecture" 
+                  <NavLink
+                    to="/architecture"
                     className={({ isActive }) => `mobile-nav-link ${isActive ? "active" : ""}`}
                     onClick={closeMenu}
                   >
                     <span>Architecture</span>
                   </NavLink>
-                  <NavLink 
-                    to="/agents" 
+                  <NavLink
+                    to="/agents"
                     className={({ isActive }) => `mobile-nav-link ${isActive ? "active" : ""}`}
                     onClick={closeMenu}
                   >
                     <span>Specialist Agents</span>
                     <span className="nav-count">21</span>
                   </NavLink>
-                  <NavLink 
-                    to="/workflows" 
+                  <NavLink
+                    to="/skills"
                     className={({ isActive }) => `mobile-nav-link ${isActive ? "active" : ""}`}
                     onClick={closeMenu}
                   >
-                    <span>Workflows & Scaffolds</span>
-                    <span className="nav-count">25</span>
+                    <span>Unified Skills & Scaffolds</span>
+                    <span className="nav-count">85</span>
                   </NavLink>
-                  <a 
-                    href="https://github.com/AchiraStudio/achira-workflow-os" 
-                    target="_blank" 
-                    rel="noopener noreferrer" 
+                  <a
+                    href="https://github.com/AchiraStudio/achira-workflow-os"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="mobile-nav-link"
                     onClick={closeMenu}
                   >
@@ -160,11 +160,11 @@ export default function MainLayout({ children }) {
                   </a>
                 </div>
                 <div className="mobile-drawer-actions">
-                  <Link to="/workflows" className="btn-mobile-secondary" onClick={closeMenu}>
-                    Guide
+                  <Link to="/skills" className="btn-mobile-secondary" onClick={closeMenu}>
+                    Skills
                   </Link>
-                  <button 
-                    className="btn-mobile-primary" 
+                  <button
+                    className="btn-mobile-primary"
                     onClick={() => {
                       closeMenu();
                       setIsModalOpen(true);
@@ -179,23 +179,25 @@ export default function MainLayout({ children }) {
         </AnimatePresence>
       </header>
 
-      <main className="main-content">
-        {children}
-      </main>
+      <main className="main-content">{children}</main>
 
       {/* Footer */}
       <footer className="minimal-footer">
         <div className="footer-content">
           <div className="footer-brand" style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-            <img src="/favicon.svg" alt="Achira Workflow V5.1" style={{ width: "20px", height: "20px" }} />
-            <span className="footer-title">Achira Workflow V5.1</span>
+            <img src="/favicon.svg" alt="Achira Workflow V5.2" style={{ width: "20px", height: "20px" }} />
+            <span className="footer-title">Achira Workflow V5.2</span>
           </div>
-          <p className="footer-tagline">The premier multi-agent orchestration framework for AI-native software engineering.</p>
+          <p className="footer-tagline">
+            The premier multi-agent orchestration framework for AI-native software engineering.
+          </p>
           <div className="footer-links">
             <Link to="/architecture">Architecture</Link>
             <Link to="/agents">Agents</Link>
-            <Link to="/workflows">Workflows</Link>
-            <a href="https://github.com/AchiraStudio/achira-workflow-os" target="_blank" rel="noopener noreferrer">Repository</a>
+            <Link to="/skills">Skills</Link>
+            <a href="https://github.com/AchiraStudio/achira-workflow-os" target="_blank" rel="noopener noreferrer">
+              Repository
+            </a>
           </div>
         </div>
       </footer>

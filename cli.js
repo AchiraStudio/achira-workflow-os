@@ -16,14 +16,14 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const pkg = fs.readJsonSync(path.join(__dirname, "package.json"));
 
 const ACHIRA_DIR = ".achira";
-const REGISTRY_PATH = path.join(ACHIRA_DIR, "workflows", "registry.json");
+const REGISTRY_PATH = path.join(ACHIRA_DIR, "registry.json");
 
 const program = new Command();
 
 program
   .name("achira-wf")
   .description(
-    "Achira Workflow V5.1 — Install agents, skills, and project scaffolds into any folder",
+    "Achira Workflow V5.2 — Install agents, skills, and project scaffolds into any folder",
   )
   .version(pkg.version);
 
@@ -32,7 +32,7 @@ program
 program
   .command("init")
   .description(
-    "Install .achira/ (agents, skills, workflows, scripts) into the current directory",
+    "Install .achira/ (agents, skills, scripts, rules) into the current directory",
   )
   .argument("[directory]", "Target directory (default: current directory)")
   .option("-f, --force", "Overwrite existing .achira/ directory")
@@ -73,22 +73,36 @@ program
 
     console.log(chalk.blue("═════════════════════════════════════════\n"));
 
-    // 2. Sync .agent/workflows/ for IDE slash command discovery
+    // 2. Sync .agent/skills/ for IDE slash command & skill discovery
     try {
-      const agentWfDir = path.join(target, ".agent", "workflows");
-      await fs.ensureDir(agentWfDir);
-      const wfSrc = path.join(dest, "workflows");
-      const mdFiles = (await fs.readdir(wfSrc)).filter((f) =>
-        f.endsWith(".md"),
-      );
-      for (const file of mdFiles) {
-        await fs.copy(path.join(wfSrc, file), path.join(agentWfDir, file), {
-          overwrite: true,
-        });
+      const agentSkillsDir = path.join(target, ".agent", "skills");
+      await fs.ensureDir(agentSkillsDir);
+      const skillsSrc = path.join(dest, "core", "skills");
+      const registryFile = path.join(dest, "registry.json");
+      let syncedCount = 0;
+
+      if (fs.existsSync(registryFile)) {
+        const registry = fs.readJsonSync(registryFile);
+        const allEntries = [
+          ...Object.values(registry.templates || {}),
+          ...Object.values(registry.commands || {}),
+        ];
+        for (const item of allEntries) {
+          const skillRel = item.skill;
+          if (!skillRel) continue;
+          const skillName = path.dirname(skillRel);
+          const srcSkillDir = path.join(skillsSrc, skillName);
+          if (fs.existsSync(srcSkillDir)) {
+            await fs.copy(srcSkillDir, path.join(agentSkillsDir, skillName), {
+              overwrite: true,
+            });
+            syncedCount++;
+          }
+        }
       }
       console.log(
         chalk.green(
-          `  ✔  Synced ${mdFiles.length} workflows → .agent/workflows/\n`,
+          `  ✔  Synced ${syncedCount} slash-command skills → .agent/skills/\n`,
         ),
       );
 
@@ -100,7 +114,7 @@ program
       }
     } catch (err) {
       console.log(
-        chalk.yellow(`  ⚠  Could not sync .agent/workflows/: ${err.message}\n`),
+        chalk.yellow(`  ⚠  Could not sync .agent/skills/: ${err.message}\n`),
       );
     }
 
@@ -123,7 +137,7 @@ program
     }
 
     // 4. Print registry summary
-    const registryFile = path.join(dest, "workflows", "registry.json");
+    const registryFile = path.join(dest, "registry.json");
     if (fs.existsSync(registryFile)) {
       try {
         const registry = fs.readJsonSync(registryFile);
@@ -137,22 +151,22 @@ program
             ),
           );
         }
-        console.log(chalk.white("  Achira Workflow V5.1 initialized.\n"));
-        console.log(chalk.cyan("  Project Scaffolds:\n"));
+        console.log(chalk.white("  Achira Workflow V5.2 initialized.\n"));
+        console.log(chalk.cyan("  Project Scaffold Skills:\n"));
         for (const [key, val] of Object.entries(registry.templates || {})) {
           console.log(
             chalk.white(`    /${key}`) +
               chalk.gray(`  — ${val.description}`),
           );
         }
-        console.log(chalk.cyan("\n  Slash Commands:\n"));
+        console.log(chalk.cyan("\n  Command Skills:\n"));
         for (const [key, val] of Object.entries(registry.commands || {})) {
           console.log(
             chalk.white(`    /${key}`) + chalk.gray(`  — ${val.description}`),
           );
         }
         console.log("");
-        console.log(chalk.gray("  Tip: Run `achira-wf global install` to enable all 54 skills & 21 agents globally across all projects!\n"));
+        console.log(chalk.gray("  Tip: Run `achira-wf global install` to enable all 85 skills & 21 agents globally across all projects!\n"));
       } catch {
         console.log(chalk.yellow("  ⚠  Could not parse registry.json\n"));
       }
@@ -164,7 +178,7 @@ program
 program
   .command("create <template>")
   .description(
-    "Scaffold a project from a registered template (react, next, html)",
+    "Scaffold a project from a registered skill template (react, next, html)",
   )
   .action((template) => {
     const registryFile = path.join(process.cwd(), REGISTRY_PATH);
@@ -192,16 +206,18 @@ program
       process.exit(1);
     }
 
-    const workflowPath = path.join(
+    const skillRel = entry.skill || entry.workflow;
+    const skillPath = path.join(
       process.cwd(),
       ACHIRA_DIR,
-      "workflows",
-      entry.workflow,
+      "core",
+      "skills",
+      skillRel,
     );
 
-    if (!fs.existsSync(workflowPath)) {
+    if (!fs.existsSync(skillPath)) {
       console.log(
-        chalk.red(`\n  ✖  Workflow file not found: ${entry.workflow}\n`),
+        chalk.red(`\n  ✖  Skill file not found: ${skillRel}\n`),
       );
       process.exit(1);
     }
@@ -209,11 +225,11 @@ program
     console.log(chalk.cyan(`\n  /${template}\n`));
     console.log(chalk.green(`  ✔  Template: ${entry.description}`));
     console.log(
-      chalk.green(`  ✔  Workflow: .achira/workflows/${entry.workflow}`),
+      chalk.green(`  ✔  Skill: .achira/core/skills/${skillRel}`),
     );
     console.log(
       chalk.white(
-        `\n  → Follow the workflow steps in the IDE, or use the /${template} slash command.\n`,
+        `\n  → Follow the skill steps in the IDE, or use the /${template} slash command.\n`,
       ),
     );
   });
@@ -222,7 +238,7 @@ program
 
 program
   .command("list")
-  .description("List all available workflows and templates")
+  .description("List all available skills and templates")
   .action(() => {
     const registryFile = path.join(process.cwd(), REGISTRY_PATH);
 
@@ -307,13 +323,13 @@ program
       console.log(chalk.yellow(`  ⚠  No local .achira/ found in: ${process.cwd()}\n`));
       const doc = await doctorGlobal({ baseDir: path.join(__dirname, ACHIRA_DIR) });
       if (doc.allOk) {
-        console.log(chalk.green("  ✔  Global Achira Workflow V5.1 is ACTIVE machine-wide!"));
+        console.log(chalk.green("  ✔  Global Achira Workflow V5.2 is ACTIVE machine-wide!"));
         console.log(chalk.gray(`     (${doc.counts.skills} skills, ${doc.counts.agents} agents available globally)\n`));
         console.log(
           chalk.cyan("  Tip:") +
             chalk.white(" Run ") +
             chalk.bold("`achira-wf init`") +
-            chalk.white(" to initialize local project workflows and safety gates.\n"),
+            chalk.white(" to initialize local project skills and safety gates.\n"),
         );
       } else {
         console.log(chalk.gray("  Run `achira-wf init` to initialize in this directory, or `achira-wf global install` for global access.\n"));
@@ -326,11 +342,8 @@ program
       { label: "core/agents/", path: path.join(base, "core", "agents") },
       { label: "core/skills/", path: path.join(base, "core", "skills") },
       { label: "core/shared/", path: path.join(base, "core", "shared") },
-      { label: "workflows/", path: path.join(base, "workflows") },
-      {
-        label: "workflows/registry.json",
-        path: path.join(base, "workflows", "registry.json"),
-      },
+      { label: "registry.json", path: path.join(base, "registry.json") },
+      { label: ".agent/skills/", path: path.join(process.cwd(), ".agent", "skills") },
       { label: "scripts/", path: path.join(base, "scripts") },
       { label: "rules/GEMINI.md", path: path.join(base, "rules", "GEMINI.md") },
       { label: "memory/", path: path.join(base, "memory") },
@@ -352,7 +365,6 @@ program
     // Count agents and skills
     const agentsDir = path.join(base, "core", "agents");
     const skillsDir = path.join(base, "core", "skills");
-    const workflowsDir = path.join(base, "workflows");
 
     if (fs.existsSync(agentsDir)) {
       const agentCount = fs
@@ -368,15 +380,9 @@ program
         ).length;
       console.log(chalk.gray(`  Skills: ${skillCount}`));
     }
-    if (fs.existsSync(workflowsDir)) {
-      const wfCount = fs
-        .readdirSync(workflowsDir)
-        .filter((f) => f.endsWith(".md")).length;
-      console.log(chalk.gray(`  Workflows: ${wfCount}`));
-    }
 
     // Registry engine check
-    const registryFile = path.join(base, "workflows", "registry.json");
+    const registryFile = path.join(base, "registry.json");
     if (fs.existsSync(registryFile)) {
       try {
         const registry = fs.readJsonSync(registryFile);

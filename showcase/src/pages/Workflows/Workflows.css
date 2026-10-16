@@ -1,11 +1,11 @@
 .terminal-intro {
-  background: var(--color-bg); /* Kept original theme base */
+  background: var(--color-bg);
   border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 16px;
+  border-radius: 12px;
   overflow: hidden;
-  margin-bottom: 4rem;
-  font-family: 'JetBrains Mono', monospace;
-  box-shadow: 0 20px 50px -10px rgba(0, 0, 0, 0.5);
+  margin-bottom: 3rem;
+  font-family: var(--font-mono);
+  box-shadow: 0 16px 40px -10px rgba(0, 0, 0, 0.5);
   position: relative;
 }
 
@@ -13,21 +13,21 @@
   content: '';
   position: absolute;
   top: 0; left: 0; right: 0; height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  background: linear-gradient(90deg, transparent, rgba(56, 189, 248, 0.3), transparent);
 }
 
 .terminal-bar {
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  padding: 0.85rem 1.25rem;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.02) 100%);
+  padding: 0.75rem 1.25rem;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.06) 0%, rgba(255, 255, 255, 0.02) 100%);
   border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .terminal-bar .dot {
-  width: 12px;
-  height: 12px;
+  width: 11px;
+  height: 11px;
   border-radius: 50%;
 }
 
@@ -39,30 +39,30 @@
   margin-left: 0.75rem;
   font-size: 0.75rem;
   color: var(--color-text-muted);
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-mono);
   font-weight: 500;
   letter-spacing: 0.02em;
 }
 
 .terminal-body {
-  padding: 2rem 1.5rem;
-  font-size: 0.9rem;
+  padding: 1.5rem 1.5rem;
+  font-size: 0.88rem;
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;
-  background: rgba(0, 0, 0, 0.4);
-  box-shadow: inset 0 5px 20px rgba(0,0,0,0.4);
+  gap: 0.65rem;
+  background: rgba(0, 0, 0, 0.45);
+  box-shadow: inset 0 4px 20px rgba(0,0,0,0.4);
 }
 
 .prompt {
   color: var(--color-primary);
   margin-right: 0.75rem;
-  text-shadow: 0 0 10px rgba(41, 151, 255, 0.4);
+  font-weight: 700;
 }
 
 .out { color: var(--color-text-dim); }
 .out.muted { color: var(--color-text-muted); }
-.out.success { color: #4ADE80; }
+.out.success { color: #34D399; }
 
 .key {
   color: #F59E0B;
@@ -80,101 +80,128 @@
 
 .workflows-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
-  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 1.25rem;
 }
 
-/* Filter Tabs - Premium Segmented Control */
+/* Filter Tabs - Modern Sleek Rectangles (No 9999px pills) */
 .filter-tabs {
   display: inline-flex;
-  gap: 0.25rem;
-  margin-bottom: 3rem;
+  gap: 0.35rem;
+  margin-bottom: 2.5rem;
   flex-wrap: wrap;
-  background: rgba(0, 0, 0, 0.2);
+  background: rgba(11, 17, 30, 0.8);
   padding: 0.35rem;
-  border-radius: 999px;
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  box-shadow: inset 0 2px 4px rgba(0,0,0,0.2);
+  border-radius: 8px;
+  border: 1px solid var(--glass-border);
 }
 
 .filter-tab {
-  padding: 0.5rem 1.5rem;
+  padding: 0.45rem 1rem;
   background: transparent;
   border: none;
-  border-radius: 999px;
+  border-radius: 6px;
   color: var(--color-text-dim);
-  font-size: 0.9rem;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
   font-weight: 500;
   cursor: pointer;
-  transition: all 0.25s cubic-bezier(0.25, 1, 0.5, 1);
+  transition: all var(--transition-fast);
 }
 
 .filter-tab:hover:not(.active) {
   color: var(--color-text);
-  background: rgba(255, 255, 255, 0.03);
+  background: rgba(255, 255, 255, 0.05);
 }
 
 .filter-tab.active {
-  background: rgba(255, 255, 255, 0.1);
-  color: var(--color-text);
+  background: rgba(56, 189, 248, 0.15);
+  color: var(--color-primary);
+  border: 1px solid rgba(56, 189, 248, 0.3);
   font-weight: 600;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+/* Core Skills Matrix (60 modules) */
+.core-skills-matrix {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 1rem;
+}
+
+.core-skill-card {
+  padding: 1.25rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  border-radius: 8px;
+  border: 1px solid var(--glass-border);
+  transition: border-color var(--transition-fast);
+}
+
+.core-skill-card:hover {
+  border-color: var(--glass-border-hover);
+}
+
+.core-skill-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 0.75rem;
+}
+
+.core-skill-id {
+  font-family: var(--font-mono);
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+.core-skill-label {
+  font-size: 0.8rem;
+  color: var(--color-text-dim);
+}
+
+.core-skill-desc {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  line-height: 1.5;
+  flex: 1;
+}
+
+.core-skill-path {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--color-text-dim);
+  background: rgba(0, 0, 0, 0.3);
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  border: 1px solid var(--grid-line);
 }
 
 @media (max-width: 768px) {
-  .workflows-grid {
+  .workflows-grid,
+  .core-skills-matrix {
     grid-template-columns: 1fr;
-    gap: 1.25rem;
+    gap: 1rem;
   }
-  
+
   .terminal-intro {
-    border-radius: 20px;
-    margin-bottom: 3rem;
-    width: 100%;
-    box-sizing: border-box;
-    overflow-x: hidden;
+    margin-bottom: 2rem;
   }
 
   .terminal-body {
-    padding: 1.5rem 1.25rem;
-    font-size: 0.85rem;
-    line-height: 1.8;
-    word-break: break-all;
-    overflow-wrap: break-word;
-    box-sizing: border-box;
-  }
-  
-  .terminal-bar {
-    padding: 0.75rem 1.25rem;
-    box-sizing: border-box;
+    padding: 1.25rem;
+    font-size: 0.82rem;
   }
 
-  .terminal-title-label {
-    margin-left: max(0.25rem, auto);
-    text-align: right;
-    font-size: 0.65rem;
-  }
-  
   .filter-tabs {
-    flex-wrap: nowrap;
-    overflow-x: auto; /* Allow horizontal scroll for tabs */
-    padding-bottom: 0.25rem; /* Space for scrollbar */
-    justify-content: flex-start;
-    -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
-    padding: 0.35rem; 
-    white-space: nowrap;
-    margin-bottom: 2rem;
-    scrollbar-width: none; 
-    border-radius: 20px;
     width: 100%;
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    scrollbar-width: none;
   }
-  
+
   .filter-tabs::-webkit-scrollbar {
     display: none;
-  }
-
-  .filter-tab {
-    padding: 0.5rem 1rem;
-    font-size: 0.85rem;
   }
 }

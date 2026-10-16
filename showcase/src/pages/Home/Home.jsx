@@ -7,8 +7,8 @@ import { motion } from "framer-motion";
 
 const STATS = [
   { value: "21", label: "Specialist Agents" },
-  { value: "60", label: "Modern Skills" },
-  { value: "25", label: "Mission Workflows" },
+  { value: "85", label: "Unified Skills" },
+  { value: "25", label: "Slash Scaffolds" },
   { value: "Global", label: "Runtime Engine" },
   { value: "100%", label: "Zero Slop" },
 ];
@@ -24,7 +24,7 @@ const HOW_IT_WORKS = [
     step: "02",
     icon: GitBranch,
     title: "Blueprint Generation",
-    description: "Creates a `blueprint.json` — a logical skeleton to prevent architectural drift before writing code.",
+    description: "Creates a blueprint.json — a logical skeleton to prevent architectural drift before writing code.",
   },
   {
     step: "03",
@@ -36,13 +36,13 @@ const HOW_IT_WORKS = [
     step: "04",
     icon: Layers,
     title: "Skill Loading",
-    description: "Agents dynamically load relevant skill modules on-demand for context-aware execution.",
+    description: "Agents dynamically load relevant SKILL.md modules on-demand for context-aware execution.",
   },
   {
     step: "05",
     icon: CheckCircle,
     title: "Verification Engine",
-    description: "A 4-priority suite runs on every change, demanding a Lighthouse audit before merge.",
+    description: "A 4-priority suite runs on every change, demanding runtime proof before completion.",
   },
 ];
 
@@ -56,39 +56,37 @@ const PILLARS = [
   {
     icon: Zap,
     title: "Premium Design",
-    description: "The ui-ux-pro-max skill contains 97 curated color palettes and 57 font pairings.",
+    description: "The ui-ux-pro-max skill contains 97 curated color palettes, 57 font pairings, and anti-slop rules.",
     colSpan: 1,
   },
   {
     icon: Shield,
-    title: "V5.1 Mission Integrity",
-    description: "Speed never comes at the cost of stability. PreToolUse safety gates and a 7-pillar verification suite guard every release.",
+    title: "V5.2 Mission Integrity",
+    description: "Speed never comes at the cost of stability. PreToolUse safety gates and an 85-skill modular suite guard every release.",
     colSpan: 3,
   },
 ];
 
-// Animation Variants
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.25, 1, 0.5, 1] } }
+  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.25, 1, 0.5, 1] } },
 };
 
 const staggerContainer = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
-    transition: { staggerChildren: 0.1 }
-  }
+    transition: { staggerChildren: 0.1 },
+  },
 };
 
 export default function Home() {
   return (
     <MainLayout>
       <div className="home-container">
-
-        {/* === HERO === */}
+        {/* === HERO: Simple Centered Fullscreen with Glow and Buttons === */}
         <section className="hero-section">
-          <motion.div 
+          <motion.div
             className="hero-content"
             initial="hidden"
             animate="visible"
@@ -97,28 +95,32 @@ export default function Home() {
             <motion.h1 variants={fadeUp} className="hero-title">
               Engineering Intelligence.
             </motion.h1>
-            
+
             <motion.p variants={fadeUp} className="hero-subtitle">
               The multi-agent orchestration framework for verified, zero-slop execution.
-              <span className="live-tag">V5.1 is now live.</span>
+              <span className="live-tag">V5.2 with 85 Unified Skills is live.</span>
             </motion.p>
-            
+
             <motion.div variants={fadeUp} className="hero-actions">
               <Link to="/agents" className="btn-solid btn-large">
                 Meet the Agents <ArrowRight size={16} />
+              </Link>
+              <Link to="/skills" className="btn-outline btn-large">
+                Explore 85 Skills
               </Link>
               <Link to="/architecture" className="btn-outline btn-large">
                 View Architecture
               </Link>
             </motion.div>
           </motion.div>
+
           <div className="hero-visual" aria-hidden="true">
             <div className="glow-sphere main-sphere"></div>
           </div>
         </section>
 
         {/* === STATS BAR === */}
-        <motion.section 
+        <motion.section
           className="stats-bar glass-panel"
           initial="hidden"
           whileInView="visible"
@@ -140,7 +142,7 @@ export default function Home() {
             title="Unbreakable pillars."
             subtitle="Every decision in Achira Workflow is a direct expression of these foundational principles."
           />
-          <motion.div 
+          <motion.div
             className="bento-grid"
             initial="hidden"
             whileInView="visible"
@@ -150,11 +152,11 @@ export default function Home() {
             {PILLARS.map((pillar, i) => {
               const Icon = pillar.icon;
               return (
-                <motion.div 
-                  key={i} 
+                <motion.div
+                  key={i}
                   className={`bento-card col-span-${pillar.colSpan}`}
                   variants={fadeUp}
-                  whileHover={{ scale: 0.98 }}
+                  whileHover={{ scale: 0.99 }}
                   transition={{ type: "spring", stiffness: 400, damping: 30 }}
                 >
                   <div className="bento-icon-wrap">
@@ -171,11 +173,11 @@ export default function Home() {
         {/* === HOW IT WORKS === */}
         <section id="walkthrough" className="walkthrough-section page-section">
           <SectionHeader
-            eyebrow="The Workflow"
+            eyebrow="The Execution Protocol"
             title="Concept to production."
-            subtitle="From the moment you write a slash command to the final Lighthouse audit — every step is intentional."
+            subtitle="From the moment you write a slash command to the final verification proof — every step is intentional."
           />
-          <motion.div 
+          <motion.div
             className="steps-list"
             initial="hidden"
             whileInView="visible"
@@ -203,7 +205,7 @@ export default function Home() {
         </section>
 
         {/* === CTA === */}
-        <motion.section 
+        <motion.section
           className="cta-section"
           initial="hidden"
           whileInView="visible"
@@ -212,14 +214,17 @@ export default function Home() {
         >
           <div className="cta-inner glass-panel">
             <h2>Ready to explore Achira Workflow?</h2>
-            <p>Browse all 21 elite agents, view the full 7-pillar architecture, or explore every mission workflow.</p>
+            <p>Browse all 21 elite agents, view the full architecture, or explore all 85 unified skills.</p>
             <div className="cta-actions">
-              <Link to="/agents" className="btn-solid btn-large">Explore Agents</Link>
-              <Link to="/workflows" className="btn-outline btn-large">View Workflows</Link>
+              <Link to="/agents" className="btn-solid btn-large">
+                Explore Agents
+              </Link>
+              <Link to="/skills" className="btn-outline btn-large">
+                View 85 Skills
+              </Link>
             </div>
           </div>
         </motion.section>
-
       </div>
     </MainLayout>
   );
