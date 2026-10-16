@@ -48,11 +48,10 @@ export default function MainLayout({ children }) {
           {/* Brand Identity */}
           <Link to="/" className="brand-link" title="Achira Workflow Home" onClick={closeMenu}>
             <div className="brand-icon-wrapper">
-              <img src="/favicon.svg" alt="Achira Workflow V5.2" className="brand-icon" />
+              <img src="/favicon.svg" alt="Achira Workflow" className="brand-icon" />
               <span className="brand-glow-halo" aria-hidden="true" />
             </div>
             <span className="brand-title">Achira Workflow</span>
-            <span className="brand-badge">V5.2</span>
           </Link>
 
           {/* Navigation Links (Desktop) */}
@@ -80,10 +79,6 @@ export default function MainLayout({ children }) {
 
           {/* Actions */}
           <div className="nav-actions">
-            <div className="engine-status" title="Antigravity Engine Active">
-              <span className="status-dot" aria-hidden="true" />
-              <span className="status-text">Active</span>
-            </div>
             <Link to="/skills" className="btn-nav-guide">
               Skills
             </Link>

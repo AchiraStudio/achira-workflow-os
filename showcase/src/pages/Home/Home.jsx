@@ -49,20 +49,20 @@ const HOW_IT_WORKS = [
 const PILLARS = [
   {
     icon: Sparkles,
-    title: "Socratic Discovery",
-    description: "The most expensive line of code is the one that shouldn't have been written.",
+    title: "Think Before Typing",
+    description: "Question assumptions early. Define boundaries, explore trade-offs, and write only the code that truly belongs in the system.",
     colSpan: 2,
   },
   {
     icon: Zap,
-    title: "Premium Design",
-    description: "The ui-ux-pro-max skill contains 97 curated color palettes, 57 font pairings, and anti-slop rules.",
+    title: "Design with Taste",
+    description: "No generic templates or AI-generated clutter. Every interface should feel responsive, fast, and respectful of the human using it.",
     colSpan: 1,
   },
   {
     icon: Shield,
-    title: "V5.2 Mission Integrity",
-    description: "Speed never comes at the cost of stability. PreToolUse safety gates and an 85-skill modular suite guard every release.",
+    title: "Proof Over Promises",
+    description: "Assumptions break software. Every change is tested, run in real environments, and backed by verifiable runtime evidence before shipping.",
     colSpan: 3,
   },
 ];
@@ -98,7 +98,6 @@ export default function Home() {
 
             <motion.p variants={fadeUp} className="hero-subtitle">
               The multi-agent orchestration framework for verified, zero-slop execution.
-              <span className="live-tag">V5.2 with 85 Unified Skills is live.</span>
             </motion.p>
 
             <motion.div variants={fadeUp} className="hero-actions">
@@ -138,9 +137,9 @@ export default function Home() {
         {/* === PILLARS (BENTO BOX) === */}
         <section id="pillars" className="pillars-section page-section">
           <SectionHeader
-            eyebrow="Core Philosophy"
-            title="Unbreakable pillars."
-            subtitle="Every decision in Achira Workflow is a direct expression of these foundational principles."
+            eyebrow="Philosophy"
+            title="Engineered with purpose."
+            subtitle="Software built with intention, discipline, and uncompromising craft."
           />
           <motion.div
             className="bento-grid"
