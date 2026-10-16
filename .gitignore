@@ -27,13 +27,26 @@ dist/
 build/
 out/
 
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyc
+*.pyo
+.pytest_cache/
+.coverage
+htmlcov/
+
 # Environment
 .env
 .env.*
 !.env.example
 
-# Logs
+# Logs and temps
 *.log
 logs/
+*.tmp
+*.bak
 /ag-kit-2026.8.31
 /anti-slop-3.2.20
+

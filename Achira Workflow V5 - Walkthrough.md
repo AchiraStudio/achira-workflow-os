@@ -1,8 +1,8 @@
-# Achira Workflow V5.1 — Technical Walkthrough
+# Achira Workflow V5.2 — Technical Walkthrough
 
-Welcome to the future of agentic engineering. Achira Workflow V5.1 is a massive leap forward in how AI assistants perceive, plan, and execute complex software engineering tasks.
+Welcome to the future of agentic engineering. Achira Workflow V5.2 is a massive leap forward in how AI assistants perceive, plan, and execute complex software engineering tasks.
 
-By combining high-density **7 Native Master Pillars** with **53 progressive domain skills** (60 total skills including the Anti-Slop Engineering suite), **25 mission-critical workflows**, and a **Google Antigravity-native runtime contract**, we have created a development ecosystem that is faster, safer, and globally accessible across every project on your machine.
+By combining high-density **7 Native Master Pillars** with **53 progressive domain skills** (60 core engineering skills) plus **25 command & scaffolding skills** (**85 unified skills** total), and a **Google Antigravity-native runtime contract**, we have created a development ecosystem that is faster, safer, and globally accessible across every project on your machine.
 
 ---
 
@@ -95,8 +95,9 @@ Achira Workflow V5.1 operates **machine-wide across every project** without need
 ## 🛡️ 5. Antigravity Runtime Integration & Native Safety Gate
 
 - **PreToolUse Safety Gate**: Registers `hooks.json` to inspect `run_command` and block high-confidence destructive operations (root deletion, disk formatting).
-- **Diagnostics**: `achira-wf doctor` checks all 21 agents, 54 skills, 25 workflows, memory, rules, and runtime hooks.
-- **IDE Discovery**: Workflows are automatically synced to `.agent/workflows/` so Antigravity, Cursor, and Gemini slash commands discover them instantly.
+- **Diagnostics**: `achira-wf doctor` checks all 21 agents, 85 skills, memory, rules, and runtime hooks.
+- **IDE Discovery**: Skills are automatically synced to `.agent/skills/` so Antigravity, Cursor, and Gemini slash commands discover them instantly.
+
 
 ---
 

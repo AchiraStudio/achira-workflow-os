@@ -1,8 +1,8 @@
-# ⚡ Achira Workflow V5.1
+# ⚡ Achira Workflow V5.2
 
 > **The premier multi-agent orchestration framework for AI-native software engineering.**
 
-Achira Workflow V5.1 is a high-performance laboratory of **21 specialist agents**, **60 skills** (7 native master pillars + 53 progressive domain skills), and **25 mission-critical workflows**, built natively for Google Antigravity & Gemini.
+Achira Workflow V5.2 is a high-performance ecosystem of **21 specialist agents** and **85 unified skills** (25 command & scaffolding skills + 60 core engineering pillars), built natively for Google Antigravity & Gemini.
 
 _Based on [antigravity-kit](https://github.com/vudovn/antigravity-kit)_
 
@@ -23,7 +23,7 @@ Most AI tools just "code." Achira **thinks**, **architects**, and **verifies**.
 - ⚡ **Native Safety Hook**: PreToolUse gate preventing high-confidence destructive operations.
 - 🧠 **Persistent Memory**: Cross-session recall for conventions, preferences, and technical decisions (`.achira/memory/`).
 - 🚀 **Standardized Excellence**: Strict enforcement of Clean Code, Accessibility (WCAG AA), and Performance guidelines across all projects.
-- 🌍 **Native Mastery**: Powered by **7 internal Expert Pillars** plus **53 progressive skills** distilling thousands of rules for web, app, game, ai, devops, and security engineering into zero-latency core knowledge.
+- 🌍 **Unified Skill Architecture**: All capabilities unified into 85 modern Antigravity skills with zero-latency discovery and standardized YAML frontmatter.
 
 ---
 
@@ -47,17 +47,17 @@ Deploy Achira Workflow OS to your machine's global Google Antigravity & Gemini r
 achira-wf global install
 ```
 
-> **Instant Machine-Wide Superpowers:** All **21 specialized agents**, **60 modern engineering skills**, and universal anti-slop rules immediately become active across **every folder and project** you open in Google Antigravity or Gemini CLI—with zero project configuration required!
+> **Instant Machine-Wide Superpowers:** All **21 specialized agents**, **85 unified skills**, and universal anti-slop rules immediately become active across **every folder and project** you open in Google Antigravity or Gemini CLI—with zero project configuration required!
 
 ### 3. Initialize in a Specific Project (Optional Project Workflows)
 
-When you want local workspace workflows, IDE slash command auto-completion, and dedicated project memory:
+When you want local workspace skills, IDE slash command auto-completion, and dedicated project memory:
 
 ```bash
 achira-wf init
 ```
 
-_This installs `.achira/`, syncs `.agent/workflows/` and `.agent/hooks.json`, links `.cursorrules`, and configures the PreToolUse safety gate for that repository._
+_This installs `.achira/`, syncs `.agent/skills/` and `.agent/hooks.json`, links `.cursorrules`, and configures the PreToolUse safety gate for that repository._
 
 ---
 
@@ -109,16 +109,16 @@ While most day-to-day work happens via slash commands, the CLI provides core lif
 | Command                    | Purpose                                                                                |
 | :------------------------- | :------------------------------------------------------------------------------------- |
 | `achira-wf global install` | **NEW** Deploy Achira OS globally into `~/.gemini/config/` for machine-wide access.     |
-| `achira-wf global doctor`  | **NEW** Validate health of the global Antigravity plugin, 60 skills, and agents.       |
+| `achira-wf global doctor`  | **NEW** Validate health of the global Antigravity plugin, 85 skills, and agents.       |
 | `achira-wf global sync`    | **NEW** Sync the latest agents and skills to the global environment.                   |
 | `achira-wf global status`  | **NEW** View global installation paths and active status.                              |
 | `achira-wf init`           | Install or repair the `.achira/` core and sync `.agent/` in the target folder.          |
-| `achira-wf list`           | View all registered workflows, commands, and templates.                                 |
+| `achira-wf list`           | View all registered skills, commands, and templates.                                  |
 | `achira-wf doctor`         | Check system integrity of the local workspace (or use `-g` for global check).         |
 
 ---
 
-## 🍱 Operational Workflows
+## 🍱 Operational Skills & Commands
 
 Access 14 powerful operational slash commands once the OS is initialized:
 
@@ -139,7 +139,7 @@ Access 14 powerful operational slash commands once the OS is initialized:
 
 ## 🍱 Visual Showcase
 
-Experience the full power of Achira Workflow OS in action. Our official showcase is a premium React + Vite application, engineered from the ground up using our very own `/react+vite` workflow.
+Experience the full power of Achira Workflow OS in action. Our official showcase is a premium React + Vite application, engineered from the ground up using our very own `/react+vite` skill.
 
 It serves as a living blueprint for:
 
