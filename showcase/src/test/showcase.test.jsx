@@ -1,9 +1,8 @@
 import { describe, it, expect } from "vitest";
 import { agents } from "@/data/agents";
 import { skills, coreSkills, commandSkills } from "@/data/skills";
-import { workflows } from "@/data/workflows";
 
-describe("Achira Workflow V5.2 Ecosystem", () => {
+describe("Achira Workflow V5.2.1 Ecosystem", () => {
   it("loads all 21 autonomous specialist agents", () => {
     expect(agents.length).toBe(21);
     const agentIds = agents.map((a) => a.id);
@@ -30,8 +29,8 @@ describe("Achira Workflow V5.2 Ecosystem", () => {
   });
 
   it("loads all 25 mission command and scaffold skills", () => {
-    expect(workflows.length).toBe(25);
-    const scaffolds = workflows.filter((w) => w.category === "Scaffolding");
+    expect(commandSkills.length).toBe(25);
+    const scaffolds = commandSkills.filter((w) => w.category === "Scaffolding");
     expect(scaffolds.length).toBe(12);
   });
 });

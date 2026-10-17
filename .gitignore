@@ -10,7 +10,6 @@ backups/
 .agent_backup/
 awesome-skills/
 showcase/.agent/
-showcase/.agent/
 
 # OS Files
 .DS_Store
@@ -47,6 +46,3 @@ htmlcov/
 logs/
 *.tmp
 *.bak
-/ag-kit-2026.8.31
-/anti-slop-3.2.20
-

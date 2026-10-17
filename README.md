@@ -1,8 +1,8 @@
-# ⚡ Achira Workflow V5.2
+# ⚡ Achira Workflow V5.2.1
 
 > **The premier multi-agent orchestration framework for AI-native software engineering.**
 
-Achira Workflow V5.2 is a high-performance ecosystem of **21 specialist agents** and **85 unified skills** (25 command & scaffolding skills + 60 core engineering pillars), built natively for Google Antigravity & Gemini.
+Achira Workflow V5.2.1 is a high-performance ecosystem of **21 specialist agents** and **85 unified skills** (25 command & scaffolding skills + 60 core engineering pillars), built natively for Google Antigravity & Gemini.
 
 _Based on [antigravity-kit](https://github.com/vudovn/antigravity-kit)_
 

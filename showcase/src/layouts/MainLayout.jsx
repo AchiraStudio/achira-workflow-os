@@ -180,8 +180,8 @@ export default function MainLayout({ children }) {
       <footer className="minimal-footer">
         <div className="footer-content">
           <div className="footer-brand" style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-            <img src="/favicon.svg" alt="Achira Workflow V5.2" style={{ width: "20px", height: "20px" }} />
-            <span className="footer-title">Achira Workflow V5.2</span>
+            <img src="/favicon.svg" alt="Achira Workflow V5.2.1" style={{ width: "20px", height: "20px" }} />
+            <span className="footer-title">Achira Workflow V5.2.1</span>
           </div>
           <p className="footer-tagline">
             The premier multi-agent orchestration framework for AI-native software engineering.

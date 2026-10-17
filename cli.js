@@ -23,7 +23,7 @@ const program = new Command();
 program
   .name("achira-wf")
   .description(
-    "Achira Workflow V5.2 — Install agents, skills, and project scaffolds into any folder",
+    "Achira Workflow V5.2.1 — Install agents, skills, and project scaffolds into any folder",
   )
   .version(pkg.version);
 
@@ -106,7 +106,7 @@ program
             ),
           );
         }
-        console.log(chalk.white("  Achira Workflow V5.2 initialized.\n"));
+        console.log(chalk.white("  Achira Workflow V5.2.1 initialized.\n"));
         console.log(chalk.cyan("  Project Scaffold Skills:\n"));
         for (const [key, val] of Object.entries(registry.templates || {})) {
           console.log(
@@ -216,7 +216,7 @@ program
       process.exit(1);
     }
 
-    console.log(chalk.cyan("\n  Achira Workflow V5.2\n"));
+    console.log(chalk.cyan("\n  Achira Workflow V5.2.1\n"));
     console.log(
       chalk.gray(
         `  Engine: ${registry.engine}  Version: ${registry.version}\n`,
@@ -282,7 +282,7 @@ program
       console.log(chalk.yellow(`  ⚠  No local .agent/ found in: ${process.cwd()}\n`));
       const doc = await doctorGlobal({ baseDir: path.join(__dirname, AGENT_DIR) });
       if (doc.allOk) {
-        console.log(chalk.green("  ✔  Global Achira Workflow V5.2 is ACTIVE machine-wide!"));
+        console.log(chalk.green("  ✔  Global Achira Workflow V5.2.1 is ACTIVE machine-wide!"));
         console.log(chalk.gray(`     (${doc.counts.skills} skills, ${doc.counts.agents} agents available globally)\n`));
         console.log(
           chalk.cyan("  Tip:") +
@@ -374,7 +374,7 @@ const globalCmd = program
 
 globalCmd
   .command("install")
-  .description("Deploy Achira Workflow V5.2 globally across all projects on your machine")
+  .description("Deploy Achira Workflow V5.2.1 globally across all projects on your machine")
   .option("-s, --silent", "Suppress non-error output (used during postinstall)")
   .action(async (options) => {
     if (!options.silent) {
@@ -392,7 +392,7 @@ globalCmd
         } else {
           console.log(chalk.gray("  ℹ  Note: Restart Antigravity IDE if open to pick up global plugin discovery."));
         }
-        console.log(chalk.cyan("\n  Success! Achira Workflow V5.2 is now accessible in ALL projects machine-wide.\n"));
+        console.log(chalk.cyan("\n  Success! Achira Workflow V5.2.1 is now accessible in ALL projects machine-wide.\n"));
       }
     } catch (err) {
       if (!options.silent) {
@@ -455,7 +455,7 @@ globalCmd
   .description("Show global installation status and active plugins")
   .action(async () => {
     const paths = getGlobalPaths();
-    console.log(chalk.cyan("\n  Achira Workflow V5.2 — Global Status\n"));
+    console.log(chalk.cyan("\n  Achira Workflow V5.2.1 — Global Status\n"));
     console.log(chalk.gray(`  Plugin Directory: ${paths.pluginTargetDir}`));
     console.log(chalk.gray(`  Skills Directory: ${paths.configSkillsDir}`));
     console.log(chalk.gray(`  Rules File:       ${paths.geminiMdPath}\n`));
@@ -469,7 +469,7 @@ globalCmd
 
 globalCmd
   .command("uninstall")
-  .description("Safely remove Achira Workflow V5.2 from global ~/.gemini/config/")
+  .description("Safely remove Achira Workflow V5.2.1 from global ~/.gemini/config/")
   .action(async () => {
     console.log(chalk.cyan("\n  achira-wf global uninstall\n"));
     const res = await uninstallGlobal({ baseDir: path.join(__dirname, AGENT_DIR) });
@@ -482,7 +482,7 @@ globalCmd
     if (res.cleanedGeminiMd) {
       console.log(chalk.green("  ✔  Cleaned universal rules from GEMINI.md"));
     }
-    console.log(chalk.cyan("\n  Uninstalled global Achira Workflow V5.2 components.\n"));
+    console.log(chalk.cyan("\n  Uninstalled global Achira Workflow V5.2.1 components.\n"));
   });
 
 program.parse();

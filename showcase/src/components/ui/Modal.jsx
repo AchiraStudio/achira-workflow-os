@@ -30,7 +30,7 @@ export default function Modal({ isOpen, onClose }) {
             onClick={(e) => e.stopPropagation()}
           >
             <div className="modal-header">
-              <h3>DEPLOY ACHIRA WORKFLOW V5.2</h3>
+              <h3>DEPLOY ACHIRA WORKFLOW V5.2.1</h3>
               <button className="close-btn" onClick={onClose} aria-label="Close modal">
                 <X size={18} />
               </button>
