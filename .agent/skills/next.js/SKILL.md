@@ -9,7 +9,7 @@ artifact_outputs: nextjs-architecture, feature-structure
 
 # Next.js App Router Project Scaffolding
 
-> 🔗 Skill: .achira/core/skills/web-expert
+> 🔗 Skill: .agent/skills/web-expert
 
 // turbo-all
 

@@ -9,7 +9,7 @@ artifact_outputs: shopify-architecture, configuration
 
 # Shopify Project Scaffolding
 
-> 🔗 Skill: .achira/core/skills/commerce-expert
+> 🔗 Skill: .agent/skills/commerce-expert
 
 // turbo-all
 

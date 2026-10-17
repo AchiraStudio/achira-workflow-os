@@ -48,7 +48,7 @@ export default function WorkflowsPage() {
             <p>
               <span className="prompt">$</span> achira-wf list
             </p>
-            <p className="out muted">Querying unified skill registry (.achira/registry.json)...</p>
+            <p className="out muted">Querying unified skill registry (.agent/registry.json)...</p>
             <p className="out success">
               Active: 85 unified skills (25 slash-command & scaffold skills + 60 core engineering skills).
             </p>
@@ -109,7 +109,7 @@ export default function WorkflowsPage() {
                 </div>
                 <p className="core-skill-desc">{cs.description}</p>
                 <div className="core-skill-path">
-                  <code>.achira/core/skills/{cs.id}/SKILL.md</code>
+                  <code>.agent/skills/{cs.id}/SKILL.md</code>
                 </div>
               </div>
             ))}

@@ -9,7 +9,7 @@ artifact_outputs: schema-definition, migration-plan
 
 # Database Schema Design & Query Optimization
 
-> 🔗 Skill: .achira/core/skills/backend-expert
+> 🔗 Skill: .agent/skills/backend-expert
 
 // turbo-all
 

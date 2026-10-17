@@ -9,7 +9,7 @@ yarn-error.log*
 backups/
 .agent_backup/
 awesome-skills/
-showcase/.achira/
+showcase/.agent/
 showcase/.agent/
 
 # OS Files

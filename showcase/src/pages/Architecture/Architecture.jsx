@@ -7,7 +7,7 @@ import { motion } from "framer-motion";
 
 const DIRECTORY_TREE = [
   {
-    name: ".achira/",
+    name: ".agent/",
     icon: Folder,
     description: "Root of the Achira Workflow V5.2 project configuration.",
     children: [
@@ -112,8 +112,8 @@ export default function ArchitecturePage() {
         <motion.div initial="hidden" animate="visible" variants={fadeUp}>
           <SectionHeader
             eyebrow="System Anatomy"
-            title="The .achira/ Core."
-            subtitle="Every component of Achira Workflow lives inside .achira or workstation-wide in ~/.gemini/ plugins for global availability."
+            title="The .agent/ Core."
+            subtitle="Every component of Achira Workflow lives inside .agent or workstation-wide in ~/.gemini/ plugins for global availability."
           />
         </motion.div>
 

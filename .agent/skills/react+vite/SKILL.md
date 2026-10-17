@@ -9,7 +9,7 @@ artifact_outputs: react-architecture, project-structure
 
 # React + Vite Scalable Project Scaffolding
 
-> 🔗 Skill: .achira/core/skills/web-expert
+> 🔗 Skill: .agent/skills/web-expert
 
 // turbo-all
 

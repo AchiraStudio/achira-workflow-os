@@ -9,9 +9,9 @@ artifact_outputs: saas-architecture, environment-template
 
 # Full-Stack SaaS Project Scaffolding
 
-> 🔗 Skill: .achira/core/skills/web-expert
-> 🔗 Skill: .achira/core/skills/backend-expert
-> 🔗 Skill: .achira/core/skills/commerce-expert
+> 🔗 Skill: .agent/skills/web-expert
+> 🔗 Skill: .agent/skills/backend-expert
+> 🔗 Skill: .agent/skills/commerce-expert
 
 // turbo-all
 

@@ -4,7 +4,7 @@
   "PreToolUse": [
     {
       "matcher": "run_command",
-      "command": "node .agents/hooks/validate-tool-call.mjs",
+      "command": "node .agent/hooks/validate-tool-call.mjs",
       "timeout": 10
     }
   ]

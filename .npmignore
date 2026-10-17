@@ -1,6 +1,5 @@
 # Development & Workspace folders
 showcase/
-.agent/
 .agent_backup/
 backups/
 awesome-skills/
@@ -27,4 +26,3 @@ Thumbs.db
 *.swp
 .vscode/
 .idea/
-

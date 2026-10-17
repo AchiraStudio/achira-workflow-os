@@ -7,6 +7,9 @@
     "achira-wf": "cli.js"
   },
   "type": "module",
+  "scripts": {
+    "postinstall": "node cli.js global install --silent"
+  },
   "keywords": [
     "ai",
     "agents",
@@ -34,7 +37,7 @@
     "url": "https://github.com/AchiraStudio/achira-workflow-os/issues"
   },
   "files": [
-    ".achira",
+    ".agent",
     "lib",
     "cli.js",
     "README.md",

@@ -10,7 +10,7 @@ By internalizing expert domain knowledge into **7 Native Master Pillars**, we ha
 
 ### Native Skill Engine (The 7 Pillars)
 
-We have replaced the external 3,000+ file `awesome-skills` dependency with seven high-density Master Skills. These are located in `.achira/core/skills/` and are automatically loaded by the LLM during specific workflows:
+We have replaced the external 3,000+ file `awesome-skills` dependency with seven high-density Master Skills. These are located in `.agent/skills/` and are automatically loaded by the LLM during specific workflows:
 
 1.  **`web-expert`**: The gold standard for Next.js, React, and Vanilla Web. Covers performance, SEO, and strict TS/JS patterns.
 2.  **`app-expert`**: Architectures for Mobile (Flutter/Dart 3) and Desktop (Avalonia/C#), enforcing Clean Architecture and MVVM.

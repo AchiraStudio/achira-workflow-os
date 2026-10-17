@@ -9,7 +9,7 @@ artifact_outputs: fastapi-architecture, project-structure
 
 # Python Backend (FastAPI) Project Scaffolding
 
-> 🔗 Skill: .achira/core/skills/backend-expert
+> 🔗 Skill: .agent/skills/backend-expert
 
 // turbo-all
 

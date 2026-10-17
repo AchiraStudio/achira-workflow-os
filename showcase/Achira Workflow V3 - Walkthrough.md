@@ -9,7 +9,7 @@ Welcome to the definitive guide for **Achira Workflow OS V3**. This document is 
 ## 📑 Table of Contents
 
 1. [Introduction & Philosophy](#-introduction--philosophy)
-2. [Anatomy of the OS (`.achira/`)](#-anatomy-of-the-os-achira)
+2. [Anatomy of the OS (`.agent/`)](#-anatomy-of-the-os-achira)
 3. [The CLI Command Center (`achira-wf`)](#-the-cli-command-center-achira-wf)
 4. [Agent Personas: The Elite 20](#-agent-personas-the-elite-20)
 5. [The Skill Ecosystem (38 Domain Modules)](#-the-skill-ecosystem-38-domain-modules)
@@ -37,9 +37,9 @@ Every feature is cross-verified. The system uses a multi-layered verification su
 
 ---
 
-## 🏗 Anatomy of the OS (`.achira/`)
+## 🏗 Anatomy of the OS (`.agent/`)
 
-The `.achira/` directory is the root of the Agentic OS. Here is a granular breakdown:
+The `.agent/` directory is the root of the Agentic OS. Here is a granular breakdown:
 
 - **`core/agents/`**: Contains the 20 `.md` files that define each agent's personality, triggers, and allowed skills.
 - **`core/skills/`**: The knowledge base. Each folder (e.g., `clean-code`, `database-design`) contains a `SKILL.md` and supporting resources like scripts or examples.
@@ -57,7 +57,7 @@ The `achira-wf` tool is your interface to the OS.
 
 ### Installation & Maintenance
 
-- **`achira-wf init`**: Downloads and installs the `.achira/` core.
+- **`achira-wf init`**: Downloads and installs the `.agent/` core.
 - **`achira-wf doctor`**: The ultimate health check. It verifies engine versions, file paths, and component counts. Use this if the AI feels "lost."
 
 ### Project Scaffolding
@@ -127,7 +127,7 @@ This is the OS's secret weapon for aesthetics.
 
 - **Design Data**: Contains curated CSVs for Colors, Typography, Landing Pages, and more.
 - **Theme Generator**: A Python tool (`generate_theme.py`) that exports CSS tokens.
-  - _Usage_: `python .achira/core/shared/ui-ux-pro-max/scripts/generate_theme.py [keyword]`
+  - _Usage_: `python .agent/shared/ui-ux-pro-max/scripts/generate_theme.py [keyword]`
   - _Example keywords_: `fintech`, `healthcare`, `creative-agency`, `cybersecurity`.
 
 ### **Spotlight: `clean-code` & The Standards**
@@ -170,7 +170,7 @@ Verification is the "Final Boss" of any Achira workflow.
 A central hub for all verification logic.
 
 - **`uv` Support**: If `uv` is installed, scripts run 2-5x faster.
-- **Path Resolution**: Automatically finds the `.achira/` root whether you are in the project root or a subfolder.
+- **Path Resolution**: Automatically finds the `.agent/` root whether you are in the project root or a subfolder.
 
 ### **2. `checklist.py`: The Developer Companion**
 

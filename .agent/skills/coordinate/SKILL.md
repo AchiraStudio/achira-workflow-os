@@ -15,7 +15,7 @@ $ARGUMENTS
 
 ## 🔴 CRITICAL RULES
 
-1. **Load coordinator-mode skill** — Read `.achira/core/skills/coordinator-mode/SKILL.md` first
+1. **Load coordinator-mode skill** — Read `.agent/skills/coordinator-mode/SKILL.md` first
 2. **Phase-based execution** — Research → Synthesis → Implementation → Verification
 3. **Never delegate understanding** — Write specific prompts, not vague instructions
 4. **Parallel reads, sequential writes** — Read-only tasks can run in parallel

@@ -9,7 +9,7 @@ artifact_outputs: landing-page-spec, landing-page-structure
 
 # High-Converting Marketing Landing Page Scaffolding
 
-> 🔗 Skill: .achira/core/skills/web-expert
+> 🔗 Skill: .agent/skills/web-expert
 
 // turbo-all
 

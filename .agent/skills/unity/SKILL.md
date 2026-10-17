@@ -9,7 +9,7 @@ artifact_outputs: game-architecture, unity-structure
 
 # Unity Game Development Project Scaffolding
 
-> 🔗 Skill: .achira/core/skills/game-expert
+> 🔗 Skill: .agent/skills/game-expert
 
 // turbo-all
 

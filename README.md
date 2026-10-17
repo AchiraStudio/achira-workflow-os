@@ -21,7 +21,7 @@ Most AI tools just "code." Achira **thinks**, **architects**, and **verifies**.
 - 🎨 **Deep Design Thinking**: Built-in design intelligence (`DESIGN.md` token specification and `/ui-ux-pro-max` with 50+ styles) rejecting generic templates in favor of crafted UI/UX.
 - 🛡️ **Mission-Critical Integrity**: A multi-layered verification engine (Security → Lint → Tests → UX) ensuring every commit is production-ready.
 - ⚡ **Native Safety Hook**: PreToolUse gate preventing high-confidence destructive operations.
-- 🧠 **Persistent Memory**: Cross-session recall for conventions, preferences, and technical decisions (`.achira/memory/`).
+- 🧠 **Persistent Memory**: Cross-session recall for conventions, preferences, and technical decisions (`.agent/memory/`).
 - 🚀 **Standardized Excellence**: Strict enforcement of Clean Code, Accessibility (WCAG AA), and Performance guidelines across all projects.
 - 🌍 **Unified Skill Architecture**: All capabilities unified into 85 modern Antigravity skills with zero-latency discovery and standardized YAML frontmatter.
 
@@ -57,7 +57,7 @@ When you want local workspace skills, IDE slash command auto-completion, and ded
 achira-wf init
 ```
 
-_This installs `.achira/`, syncs `.agent/skills/` and `.agent/hooks.json`, links `.cursorrules`, and configures the PreToolUse safety gate for that repository._
+_This installs `.agent/`, syncs `.agent/skills/` and `.agent/hooks.json`, links `.cursorrules`, and configures the PreToolUse safety gate for that repository._
 
 ---
 
@@ -112,7 +112,7 @@ While most day-to-day work happens via slash commands, the CLI provides core lif
 | `achira-wf global doctor`  | **NEW** Validate health of the global Antigravity plugin, 85 skills, and agents.       |
 | `achira-wf global sync`    | **NEW** Sync the latest agents and skills to the global environment.                   |
 | `achira-wf global status`  | **NEW** View global installation paths and active status.                              |
-| `achira-wf init`           | Install or repair the `.achira/` core and sync `.agent/` in the target folder.          |
+| `achira-wf init`           | Install or repair the `.agent/` core and sync `.agent/` in the target folder.          |
 | `achira-wf list`           | View all registered skills, commands, and templates.                                  |
 | `achira-wf doctor`         | Check system integrity of the local workspace (or use `-g` for global check).         |
 

@@ -16,14 +16,14 @@ npx achira-wf init
 
 This command will:
 
-- 📂 Provision the `.achira/` core directory
+- 📂 Provision the `.agent/` core directory
 - 🤖 Install 20 specialist AI personas
 - ⚡ Setup 38 domain-specific knowledge modules
 - 🛠️ Configure 14 slash command workflows
 
 ## 🏗️ Architecture
 
-Achira OS is designed to be highly modular and portable. Once initialized, the `.achira/` directory becomes the single source of truth for all AI-native interactions within your project.
+Achira OS is designed to be highly modular and portable. Once initialized, the `.agent/` directory becomes the single source of truth for all AI-native interactions within your project.
 
 ### Core Components
 

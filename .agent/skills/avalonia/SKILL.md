@@ -9,7 +9,7 @@ artifact_outputs: desktop-architecture, project-structure
 
 # Avalonia UI Desktop Application Scaffolding
 
-> 🔗 Skill: .achira/core/skills/app-expert
+> 🔗 Skill: .agent/skills/app-expert
 
 // turbo-all
 

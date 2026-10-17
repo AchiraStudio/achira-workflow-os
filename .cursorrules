@@ -78,7 +78,7 @@ When auto-applying an agent, inform the user:
 | Step | Check                                                    | If Unchecked                                  |
 | ---- | -------------------------------------------------------- | --------------------------------------------- |
 | 1    | Did I identify the correct agent for this domain?        | → STOP. Analyze request domain first.         |
-| 2    | Did I READ the agent's `.md` file (or recall its rules)? | → STOP. Open `.achira/core/agents/{agent}.md` |
+| 2    | Did I READ the agent's `.md` file (or recall its rules)? | → STOP. Open `.agent/agents/{agent}.md` |
 | 3    | Did I announce `🤖 Applying knowledge of @[agent]...`?   | → STOP. Add announcement before response.     |
 | 4    | Did I load required skills from agent's frontmatter?     | → STOP. Check `skills:` field and read them.  |
 
@@ -135,9 +135,9 @@ When user's prompt is NOT in English:
 
 **Path Awareness:**
 
-- Agents: `.achira/core/agents/` (Project)
-- Skills: `.achira/core/skills/` (Project)
-- Runtime Scripts: `.achira/core/skills/<skill>/scripts/`
+- Agents: `.agent/agents/` (Project)
+- Skills: `.agent/skills/` (Project)
+- Runtime Scripts: `.agent/skills/<skill>/scripts/`
 
 ### 🧠 Read → Understand → Apply
 
@@ -195,8 +195,8 @@ When user's prompt is NOT in English:
 
 | Task Stage       | Command                                             | Purpose                        |
 | ---------------- | --------------------------------------------------- | ------------------------------ |
-| **Manual Audit** | `python .achira/scripts/checklist.py .`             | Priority-based project audit   |
-| **Pre-Deploy**   | `python .achira/scripts/checklist.py . --url <URL>` | Full Suite + Performance + E2E |
+| **Manual Audit** | `python .agent/scripts/checklist.py .`             | Priority-based project audit   |
+| **Pre-Deploy**   | `python .agent/scripts/checklist.py . --url <URL>` | Full Suite + Performance + E2E |
 
 **Priority Execution Order:**
 
@@ -224,7 +224,7 @@ When user's prompt is NOT in English:
 | `lighthouse_audit.py`      | performance-profiling | Before deploy       |
 | `playwright_runner.py`     | webapp-testing        | Before deploy       |
 
-> 🔴 **Agents & Skills can invoke ANY script** via `python .achira/core/skills/<skill>/scripts/<script>.py`
+> 🔴 **Agents & Skills can invoke ANY script** via `python .agent/skills/<skill>/scripts/<script>.py`
 
 ### 🎭 Gemini Mode Mapping
 
@@ -251,8 +251,8 @@ When user's prompt is NOT in English:
 
 | Task         | Read                                         |
 | ------------ | -------------------------------------------- |
-| Web UI/UX    | `.achira/core/agents/frontend-specialist.md` |
-| Mobile UI/UX | `.achira/core/agents/mobile-developer.md`    |
+| Web UI/UX    | `.agent/agents/frontend-specialist.md` |
+| Mobile UI/UX | `.agent/agents/mobile-developer.md`    |
 
 **These agents contain:**
 
@@ -274,7 +274,7 @@ When user's prompt is NOT in English:
 
 ### Key Scripts
 
-- **Verify**: `.achira/scripts/verify_all.py`, `.achira/scripts/checklist.py`
+- **Verify**: `.agent/scripts/verify_all.py`, `.agent/scripts/checklist.py`
 - **Scanners**: `security_scan.py`, `dependency_analyzer.py`
 - **Audits**: `ux_audit.py`, `mobile_audit.py`, `lighthouse_audit.py`, `seo_checker.py`
 - **Test**: `playwright_runner.py`, `test_runner.py`

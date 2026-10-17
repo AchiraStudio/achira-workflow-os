@@ -9,7 +9,7 @@ artifact_outputs: vanilla-architecture, web-structure
 
 # Vanilla HTML + CSS + JavaScript Project Scaffolding
 
-> 🔗 Skill: .achira/core/skills/web-expert
+> 🔗 Skill: .agent/skills/web-expert
 
 // turbo-all
 

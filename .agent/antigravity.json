@@ -1,0 +1,39 @@
+{
+  "$schema": "hooks/antigravity-contract.schema.json",
+  "schemaVersion": "1.0.0",
+  "runtime": "antigravity",
+  "requiredCliCommands": [
+    "changelog",
+    "plugin",
+    "update"
+  ],
+  "phases": {
+    "discovery": {
+      "rules": ".agent/rules",
+      "skills": ".agent/skills",
+      "agents": ".agent/agents"
+    },
+    "mcp": {
+      "workspaceConfig": ".agent/mcp_config.json",
+      "suiteGlobalConfig": "~/.gemini/config/mcp_config.json",
+      "cliGlobalConfig": "~/.gemini/antigravity-cli/mcp_config.json"
+    },
+    "hooks": {
+      "config": ".agent/hooks.json",
+      "policy": ".agent/hooks/validate-tool-call.mjs"
+    },
+    "orchestration": {
+      "commands": ["coordinate", "orchestrate"],
+      "agents": ["orchestrator", "project-planner", "security-auditor", "test-engineer"],
+      "skills": ["coordinator-mode", "parallel-agents", "intelligent-routing", "verify-changes"]
+    },
+    "plugin": {
+      "builder": ".agent/hooks/build-plugin.mjs",
+      "defaultOutput": "dist/antigravity-plugin"
+    },
+    "validation": {
+      "doctor": ".agent/hooks/antigravity-doctor.mjs",
+      "tests": ".agent/hooks/tests"
+    }
+  }
+}

@@ -10,7 +10,7 @@ By combining high-density **7 Native Master Pillars** with **53 progressive doma
 
 ### Native Skill Engine (7 Master Pillars + 53 Domain Skills = 60 Skills)
 
-Achira replaces external bloated rule sets with 60 high-density, progressively disclosed skills located in `.achira/core/skills/`:
+Achira replaces external bloated rule sets with 60 high-density, progressively disclosed skills located in `.agent/skills/`:
 
 1.  **`web-expert`**: The gold standard for Next.js 15, React 19, and vanilla web. Covers performance, SEO, and strict TS/JS patterns.
 2.  **`app-expert`**: Architectures for Mobile (Flutter/Dart 3) and Desktop (Avalonia/C#), enforcing Clean Architecture and MVVM.
@@ -62,7 +62,7 @@ V5 delivers 25 distinct workflows: 11 scaffolds and 14 operational slash command
 
 ## 🧠 3. Persistent Memory System
 
-Located in `.achira/memory/` (and `.agents/memory/`), the persistent memory engine enables cross-session continuity:
+Located in `.agent/memory/` (and `.agents/memory/`), the persistent memory engine enables cross-session continuity:
 
 - `MEMORY.md`: One-line index mapping topics to specific storage files.
 - `project-conventions.md`: Coding standards, branch naming, repository rules.
@@ -74,7 +74,7 @@ Located in `.achira/memory/` (and `.agents/memory/`), the persistent memory engi
 
 ## 🌐 4. Global Accessibility Across All Projects
 
-Achira Workflow V5.1 operates **machine-wide across every project** without needing manual `.achira/` setup in every folder:
+Achira Workflow V5.1 operates **machine-wide across every project** without needing manual `.agent/` setup in every folder:
 
 1. **Global Plugin (`~/.gemini/config/plugins/achira-workflow-os/`)**:
    - Contains all **21 specialized agents** with full capability definitions.

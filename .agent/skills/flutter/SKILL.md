@@ -9,7 +9,7 @@ artifact_outputs: mobile-architecture, project-structure
 
 # Flutter Multi-Platform App Scaffolding
 
-> 🔗 Skill: .achira/core/skills/app-expert
+> 🔗 Skill: .agent/skills/app-expert
 
 // turbo-all
 
